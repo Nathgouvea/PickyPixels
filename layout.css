@@ -1,0 +1,603 @@
+/* General Styles */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Satoshi", sans-serif;
+}
+
+/* Hero Section Styles */
+.hero {
+  height: calc(100vh - 80px); /* Adjust height to account for navbar */
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, var(--soft-pink), rgba(92, 69, 55, 0.4));
+  color: var(--white-color);
+  background-blend-mode: overlay;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 80px; /* Offset for fixed navbar */
+  padding: var(--space-md);
+}
+
+.hero .container {
+  height: 100%;
+  display: flex;
+  flex-direction: row; /* Arrange content in a row */
+  justify-content: space-between;
+  align-items: center; /* Align items vertically center */
+  text-align: left; /* Align text to the left */
+  position: relative;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align content to the left */
+  max-width: 50%; /* Limit the width of the text content */
+}
+
+.hero h1 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px var(--dark-gray);
+  color: var(--white-color);
+  margin-bottom: 20px; /* Add space below the heading */
+}
+
+.hero p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.25rem;
+  font-weight: normal;
+  text-shadow: 1px 1px 2px var(--dark-gray);
+  color: var(--white-color);
+  margin-bottom: 30px; /* Add space below the subheading */
+}
+
+.cta-button {
+  background-color: var(--medium-pink);
+  color: var(--white-color) !important;
+  border-radius: 5px;
+  font-family: var(--button-font);
+  font-size: 20px;
+  font-weight: bold !important;
+  margin-left: 0;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: sticky;
+  top: 10px; /* Adjust based on your layout */
+}
+
+.cta-button:hover {
+  background-color: var(--light-pink);
+}
+
+.hero-svg {
+  max-width: 50%; /* Limit the width of the SVG content */
+}
+
+.animated-svg {
+  width: 100%;
+  height: auto;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Services Section Styles */
+.services-section {
+  background-color: var(--white-color);
+  padding: var(--space-lg) var(--space-md);
+}
+
+.section-header {
+  text-align: left; /* Align section header content to the left */
+  margin-bottom: var(--space-lg);
+}
+
+.section-header h2 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 2.5rem;
+  color: var(--soft-pink);
+  margin-bottom: var(--space-sm);
+  text-align: left;
+}
+
+.section-header p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.25rem;
+  color: var(--black);
+  text-align: left;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start; /* Align cards to the left */
+  gap: 24px; /* Use a consistent space unit */
+}
+
+.service-card {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  margin-bottom: 24px; /* Consistent margin size */
+  padding: 24px; /* Consistent padding size */
+  transition: transform 0.3s ease;
+  width: calc(33.333% - 16px); /* Adjust width calculation for gap */
+  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-icon {
+  font-size: 2.5rem; /* Icon size */
+  background: linear-gradient(135deg, var(--soft-pink), var(--medium-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
+  transition: transform 0.3s ease; /* Smooth transition for hover effects */
+  margin-bottom: 8px; /* Space between icon and h3 */
+}
+
+.service-card h3 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.5rem; /* Title font size */
+  color: var(--black);
+  margin-bottom: 12px; /* Margin below title */
+}
+
+.service-card p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem; /* Body text font size */
+  color: var(--dark-gray);
+  line-height: 1.6;
+  margin-bottom: 16px; /* Space below paragraph */
+}
+
+.services-cta {
+  text-align: left; /* Align CTA button to the left */
+  margin-top: var(--space-lg); /* Add space above the CTA */
+}
+
+.services-cta .cta-button {
+  background-color: var(--medium-pink);
+  color: var(--white-color) !important;
+  border-radius: 5px;
+  font-family: var(--button-font);
+  font-size: 20px;
+  font-weight: bold !important;
+  margin-left: 0;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: sticky;
+  top: 10px; /* Adjust based on your layout */
+}
+
+.services-cta .cta-button:hover {
+  background-color: var(--light-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .service-card {
+    width: calc(50% - 16px); /* Adjust width for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: calc(100% - 16px); /* Adjust width for mobile */
+  }
+}
+
+/* Heading styles */
+.main-heading {
+  text-align: left;
+  font-size: 2.5rem;
+  color: var(--medium-pink);
+  margin-bottom: 16px; /* Space below main heading */
+}
+
+.subheading {
+  text-align: left;
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  margin-bottom: 32px; /* Space below subheading */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .service-card {
+    width: calc(50% - 32px); /* Adjust width for tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: calc(100% - 32px); /* Adjust width for mobile */
+  }
+  .main-heading,
+  .subheading {
+    text-align: center; /* Center headings on mobile */
+  }
+}
+
+/* Owner Section Styles */
+.owner-section {
+  background-color: #f5f5f5; /* Soft grey background */
+  padding: var(--space-lg) var(--space-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owner-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1000px; /* Adjust this value as needed */
+  margin: 0 auto;
+}
+
+.owner-photo-container {
+  flex: 1; /* Adjusted size */
+  margin-right: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.owner-photo {
+  border-radius: 50%;
+  width: 300px; /* Fixed size */
+  height: 300px; /* Fixed size */
+  object-fit: cover;
+  object-position: top; /* Aligns the image from the top */
+  border: 4px solid var(--light-pink);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.owner-message {
+  flex: 1;
+  font-family: "Satoshi", sans-serif;
+  color: var(--dark-gray);
+  text-align: left;
+}
+
+.owner-message h2 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 2rem;
+  color: var(--soft-pink);
+  margin-bottom: var(--space-sm);
+}
+
+.owner-message p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.25rem;
+  color: var(--dark-gray);
+  margin-bottom: var(--space-md); /* Reduce space here */
+}
+
+.owner-message .cta-button {
+  background-color: var(--medium-pink);
+  color: var(--white-color) !important;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.owner-message .cta-button:hover {
+  background-color: #a64d6c;
+}
+
+@media (max-width: 768px) {
+  .owner-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .owner-photo-container {
+    margin-right: 0;
+    margin-bottom: var(--space-md);
+  }
+
+  .owner-message {
+    max-width: 100%;
+  }
+}
+
+/* Portfolio Section Styles */
+.portfolio-section {
+  background-color: var(--white-color);
+  padding: var(--space-lg) var(--space-md);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.portfolio-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.portfolio-card {
+  background-color: var(--white-color);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: var(--space-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 1 1 calc(33.333% - var(--space-md));
+  box-sizing: border-box;
+  text-align: left; /* Ensure left alignment */
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio-image {
+  width: 100%;
+  height: 200px; /* Set a fixed height for thumbnails */
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+  object-position: top; /* Aligns the image from the top */
+  border-radius: 8px;
+  margin-bottom: var(--space-sm);
+}
+
+.portfolio-title {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.5rem;
+  color: var(--soft-pink);
+  margin-bottom: var(--space-xs);
+}
+
+.portfolio-description {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-gray); /* Fixed color syntax */
+  line-height: 1.6;
+  margin-bottom: var(--space-md); /* Added margin bottom */
+}
+
+.portfolio-cta {
+  background-color: var(--light-pink);
+  color: var(--white-color) !important;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+  margin-top: var(--space-md);
+}
+
+.portfolio-cta:hover {
+  background-color: var(--medium-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .portfolio-card {
+    width: calc(50% - var(--space-md));
+  }
+}
+
+@media (max-width: 600px) {
+  .portfolio-card {
+    width: calc(100% - var(--space-md));
+  }
+  .section-header {
+    text-align: center; /* Center headings on mobile */
+  }
+}
+
+/* Contact Section Styles */
+.contact-section {
+  background-color: #fef5f7; /* Light pink background */
+  padding: var(--space-lg) var(--space-md);
+}
+
+.contact-container {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  border-radius: 8px; /* Rounded corners */
+  padding: var(--space-md); /* Padding around the content */
+  background-color: var(--white-color);
+}
+
+.contact-content {
+  flex: 1;
+  font-family: "Satoshi", sans-serif;
+  color: var(--dark-gray);
+  text-align: left;
+  max-width: 50%;
+}
+
+.contact-content h2 {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--soft-pink);
+  margin-bottom: var(--space-sm);
+  display: inline-block; /* Ensure the line is under the text */
+  border-bottom: 2px solid var(--light-pink); /* Subtle underline */
+  padding-bottom: var(--space-xs);
+  width: 85%; /* Adjust width to make the line longer */
+}
+
+.contact-content p {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6; /* Improved line height */
+  color: var(--dark-gray);
+  margin-bottom: var(--space-lg);
+  padding-right: 80px; /* More padding on the right */
+}
+
+.contact-svg {
+  display: flex;
+  justify-content: center; /* Center align the SVG */
+  align-items: center;
+  width: 80%; /* Make the SVG smaller */
+  height: auto;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.contact-form {
+  flex: 1;
+  max-width: 50%;
+}
+
+.form-group {
+  margin-bottom: var(--space-md);
+}
+
+.form-group label {
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  color: var(--soft-pink);
+  display: block;
+  margin-bottom: var(--space-xs);
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--medium-pink);
+}
+
+.input-icon input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) 40px; /* Increased padding for icon space */
+  border: 1px solid var(--dark-gray);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-gray);
+}
+
+.input-icon input:focus {
+  border-color: var(--light-pink);
+  outline: none;
+}
+
+textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  border: 1px solid var(--dark-gray);
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-gray);
+}
+
+textarea:focus {
+  border-color: var(--light-pink);
+  outline: none;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.875rem;
+  color: var(--dark-gray);
+}
+
+button[type="submit"] {
+  background-color: var(--medium-pink);
+  color: var(--white-color) !important;
+  font-family: "Satoshi", sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #a64d6c;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-note {
+  font-size: 0.875rem;
+  color: var(--dark-gray);
+  margin-top: var(--space-sm);
+}
+
+.alternative-contact {
+  margin-top: var(--space-lg);
+}
+
+.alternative-contact a {
+  display: inline-block;
+  margin-right: var(--space-sm);
+  color: var(--dark-gray);
+  font-size: 1.25rem;
+  transition: color 0.3s ease;
+}
+
+.alternative-contact a:hover {
+  color: var(--soft-pink);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .contact-content,
+  .contact-form {
+    max-width: 100%;
+  }
+
+  .contact-content {
+    margin-bottom: var(--space-md);
+  }
+
+  .alternative-contact {
+    text-align: center;
+  }
+}

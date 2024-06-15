@@ -1,0 +1,105 @@
+/* Header Styles */
+nav {
+  align-items: center;
+  background: linear-gradient(
+    rgba(235, 167, 172, 0.95),
+    rgba(235, 167, 172, 0.75)
+  );
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-md);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  color: var(--white-color);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  font-size: 24px;
+  color: var(--white-color);
+}
+
+.navigation-links {
+  align-items: center;
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.navigation-links a,
+.contact-btn {
+  color: var(--white-color);
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+.navigation-links .active-link,
+.navigation-links a:hover,
+.navigation-links a:focus {
+  border-bottom: 2px solid var(--medium-pink);
+  color: var(--medium-pink);
+  font-weight: bold;
+}
+
+.contact-btn {
+  background-color: var(--medium-pink);
+  color: var(--white-color) !important;
+  border-radius: 5px;
+  font-family: var(--button-font);
+  font-size: 20px;
+  font-weight: bold !important;
+  margin-left: 0;
+  padding: 15px 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: sticky;
+  top: 10px; /* Adjust based on your layout */
+}
+
+.contact-btn:hover {
+  background-color: #b39471;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .navigation-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: var(--soft-pink);
+    position: absolute;
+    top: var(--space-md);
+    left: 0;
+    padding: var(--space-sm) 0;
+  }
+
+  .navigation-links.active {
+    display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--white-color);
+  }
+}

@@ -1,0 +1,144 @@
+/* Footer Styles */
+.site-footer {
+  background-color: var(--medium-pink); /* Slightly darker pink background */
+  color: var(--white-color); /* Light text for readability */
+  padding: var(--space-md) 0; /* Reduced padding around the entire footer */
+}
+
+.site-footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  text-align: left;
+  padding: 0 40px; /* Consistent left and right padding with other sections */
+}
+
+.footer-column {
+  flex: 1; /* Each column takes up an equal amount of space */
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px; /* Padding on the sides for some spacing */
+}
+
+.footer-heading {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  font-size: 20px; /* Increased font size */
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-xs); /* Added spacing between links */
+}
+
+.footer-links li a {
+  font-family: var(--body-font);
+  color: var(--white-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex; /* To align icon and text */
+  align-items: center;
+}
+
+.footer-links li a i {
+  margin-right: var(--space-xs); /* Spacing between icon and text */
+}
+
+.footer-links li a:hover {
+  color: var(--light-pink); /* Light brown on hover */
+}
+
+/* Apply the same style to contact info */
+.footer-column p {
+  font-family: var(--body-font);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--space-xs); /* Added spacing between contact info */
+}
+
+.footer-column p i {
+  margin-right: var(--space-xs); /* Spacing between icon and text */
+}
+
+.footer-cta {
+  background-color: var(--light-pink);
+  color: var(--black);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-color: var(--light-pink);
+  font-family: var(--button-font);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-cta:hover {
+  background-color: #b39471;
+}
+
+.social-media-links {
+  margin-top: var(--space-sm);
+}
+
+.social-media-links a {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  margin-right: var(--space-sm);
+  transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+  color: var(--light-pink);
+}
+
+.footer-line {
+  width: 100%;
+  height: 1px; /* Fine line */
+  background-color: var(--light-pink);
+  margin: var(--space-xs) 0; /* Space around the line */
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 14px;
+  color: var(--white-color);
+  margin: 0; /* Removed margin */
+  padding: 5px 0; /* Reduced padding */
+}
+
+.footer-bottom p {
+  margin: 0; /* Ensure no margin around the paragraph */
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+  }
+
+  .footer-column {
+    width: 100%; /* Full width to stack them on mobile */
+    padding: 10px 0; /* Adjust padding */
+    text-align: center; /* Center the content on small screens */
+  }
+
+  .footer-bottom {
+    margin-top: 10px;
+    padding-bottom: 10px; /* Ensuring minimal padding */
+  }
+}
