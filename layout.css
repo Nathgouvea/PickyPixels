@@ -592,8 +592,7 @@ button[type="submit"]:hover {
   .contact-form {
     max-width: 100%;
   }
-
-  .contact-content {
+  x .contact-content {
     margin-bottom: var(--space-md);
   }
 

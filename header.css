@@ -85,7 +85,7 @@ nav {
     width: 100%;
     background-color: var(--soft-pink);
     position: absolute;
-    top: var(--space-md);
+    top: 80px; /* Adjust to match the navbar height */
     left: 0;
     padding: var(--space-sm) 0;
   }
@@ -102,4 +102,10 @@ nav {
     border: none;
     color: var(--white-color);
   }
+}
+
+.hamburger-menu.open::before {
+  content: "\2715"; /* Unicode for the "X" icon */
+  font-size: 24px;
+  color: var(--white-color);
 }

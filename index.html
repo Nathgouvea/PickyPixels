@@ -3,7 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Picky Pixels</title>
+    <meta
+      name="description"
+      content="Picky Pixels Studio: Empowering your business with beautiful and effective web design."
+    />
+    <title>Picky Pixels Studio</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="footer.css" />
@@ -33,20 +37,20 @@
       </nav>
     </header>
 
-    <section class="hero parallax-background">
+    <section class="hero parallax-background" id="home">
       <div class="container">
         <div class="hero-content">
           <h1>Empower Your Business Dreams</h1>
           <p class="fade-in-text">
-            A personalised website reflects your unique vision. <br />
-            Boost your business with beautiful, effective web design.
+            Build a stunning website that reflects your unique vision. Empower
+            your business with beautiful, effective web design.
           </p>
           <a href="#" class="cta-button">Start Your Journey</a>
         </div>
         <div class="hero-svg">
           <img
             src="images/design-illustrator-drawing-with-ipad-01-7.svg"
-            alt="Hero SVG"
+            alt="Illustration of web design"
             class="animated-svg"
           />
         </div>
@@ -65,7 +69,7 @@
           </header>
           <div class="cards-container">
             <article class="service-card">
-              <i class="fas fa-laptop-code service-icon"></i>
+              <i class="fas fa-laptop-code service-icon" aria-hidden="true"></i>
               <h3>Web Design and Development</h3>
               <p>
                 Crafting bespoke websites with WordPress, our team specializes
@@ -74,7 +78,10 @@
               </p>
             </article>
             <article class="service-card">
-              <i class="fas fa-search-dollar service-icon"></i>
+              <i
+                class="fas fa-search-dollar service-icon"
+                aria-hidden="true"
+              ></i>
               <h3>SEO Optimization</h3>
               <p>
                 Elevate your site's presence in search results with our advanced
@@ -83,7 +90,7 @@
               </p>
             </article>
             <article class="service-card">
-              <i class="fas fa-globe service-icon"></i>
+              <i class="fas fa-globe service-icon" aria-hidden="true"></i>
               <h3>Landing Pages</h3>
               <p>
                 Convert your prospects with custom-designed landing pages that
@@ -92,7 +99,10 @@
               </p>
             </article>
             <article class="service-card">
-              <i class="fas fa-object-ungroup service-icon"></i>
+              <i
+                class="fas fa-object-ungroup service-icon"
+                aria-hidden="true"
+              ></i>
               <h3>UI/UX Design</h3>
               <p>
                 Transform your users' experience with intuitive and responsive
@@ -101,7 +111,7 @@
               </p>
             </article>
             <article class="service-card">
-              <i class="fas fa-tools service-icon"></i>
+              <i class="fas fa-tools service-icon" aria-hidden="true"></i>
               <h3>Website Maintenance</h3>
               <p>
                 Keep your website at the forefront of innovation with our
@@ -110,7 +120,10 @@
               </p>
             </article>
             <article class="service-card">
-              <i class="fas fa-chalkboard-teacher service-icon"></i>
+              <i
+                class="fas fa-chalkboard-teacher service-icon"
+                aria-hidden="true"
+              ></i>
               <h3>Consulting Services</h3>
               <p>
                 Leverage our expertise to navigate the complexities of web
@@ -131,7 +144,7 @@
             <div class="owner-photo-container">
               <img
                 src="images/Nathielle.jpg"
-                alt="Owner's Name"
+                alt="Nathielle Gouvêa, founder of Picky Pixels Studio"
                 class="owner-photo"
               />
             </div>
@@ -139,8 +152,9 @@
               <h2>Inspiring Growth Together</h2>
               <p>
                 Hello! I'm Nathielle Gouvêa, the founder of Picky Pixels Studio.
-                I've embarked on a mission to empower female entrepreneurs
-                through beautiful, effective web design.
+                With a professional course in web design from Coimbra, I've
+                embarked on a mission to empower women entrepreneurs through
+                beautiful, effective web design.
               </p>
               <p>
                 As an extroverted and creative individual, I thrive on human
@@ -171,8 +185,8 @@
           <div class="portfolio-container">
             <article class="portfolio-card">
               <img
-                src="images/eleganciaboutique.pt_ .jpg"
-                alt="Elegância Boutique"
+                src="images/eleganciaboutique.pt_.jpg"
+                alt="Elegância Boutique website"
                 class="portfolio-image"
               />
               <h3 class="portfolio-title">Elegância Boutique</h3>
@@ -185,7 +199,7 @@
             <article class="portfolio-card">
               <img
                 src="images/isabelvieira.pt_.jpg"
-                alt="Isabel Vieira Therapist"
+                alt="Isabel Vieira Therapist website"
                 class="portfolio-image"
               />
               <h3 class="portfolio-title">Isabel Vieira Therapist</h3>
@@ -198,7 +212,7 @@
             <article class="portfolio-card">
               <img
                 src="images/stegel.pt_.jpg"
-                alt="Stegel Beauty Salon"
+                alt="Stegel Beauty Salon website"
                 class="portfolio-image"
               />
               <h3 class="portfolio-title">Stegel Beauty Salon</h3>
@@ -226,7 +240,7 @@
               <div class="contact-svg">
                 <img
                   src="images/Group 1000002753.svg"
-                  alt="Contact SVG"
+                  alt="Contact illustration"
                   class="animated-svg"
                 />
               </div>
@@ -236,32 +250,39 @@
                 <div class="form-group">
                   <label for="full-name">Full Name</label>
                   <div class="input-icon">
-                    <i class="fas fa-user"></i>
+                    <i class="fas fa-user" aria-hidden="true"></i>
                     <input
                       type="text"
                       id="full-name"
+                      name="full-name"
                       placeholder="Enter your full name"
+                      aria-required="true"
+                      required
                     />
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="email">Email Address</label>
                   <div class="input-icon">
-                    <i class="fas fa-envelope"></i>
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
                     <input
                       type="email"
                       id="email"
+                      name="email"
                       placeholder="yourname@example.com"
+                      aria-required="true"
+                      required
                     />
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="phone">Phone Number (Optional)</label>
                   <div class="input-icon">
-                    <i class="fas fa-phone"></i>
+                    <i class="fas fa-phone" aria-hidden="true"></i>
                     <input
                       type="tel"
                       id="phone"
+                      name="phone"
                       placeholder="+1 (555) 000-0000"
                     />
                   </div>
@@ -270,8 +291,11 @@
                   <label for="message">Message</label>
                   <textarea
                     id="message"
+                    name="message"
                     placeholder="Type your message here..."
                     maxlength="500"
+                    aria-required="true"
+                    required
                   ></textarea>
                   <div class="char-count">
                     <span id="char-count">0</span>/500
@@ -284,14 +308,21 @@
               </form>
               <div class="alternative-contact">
                 <a href="mailto:info@pickypixels.com"
-                  ><i class="fas fa-envelope"></i> Email Us</a
+                  ><i class="fas fa-envelope" aria-hidden="true"></i> Email
+                  Us</a
                 >
                 <a href="tel:+15551234567"
-                  ><i class="fas fa-phone"></i> Call Us</a
+                  ><i class="fas fa-phone" aria-hidden="true"></i> Call Us</a
                 >
-                <a href="#"><i class="fas fa-facebook"></i></a>
-                <a href="#"><i class="fas fa-twitter"></i></a>
-                <a href="#"><i class="fas fa-linkedin"></i></a>
+                <a href="#"
+                  ><i class="fas fa-facebook" aria-hidden="true"></i
+                ></a>
+                <a href="#"
+                  ><i class="fas fa-twitter" aria-hidden="true"></i
+                ></a>
+                <a href="#"
+                  ><i class="fas fa-linkedin" aria-hidden="true"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -305,36 +336,51 @@
           <h3 class="footer-heading">Quick Links</h3>
           <ul class="footer-links">
             <li>
-              <a href="#home"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li>
-              <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
-            </li>
-            <li>
-              <a href="#services"><i class="fas fa-cogs"></i> Services</a>
-            </li>
-            <li>
-              <a href="#portfolio"
-                ><i class="fas fa-briefcase"></i> Portfolio</a
+              <a href="#home"
+                ><i class="fas fa-home" aria-hidden="true"></i> Home</a
               >
             </li>
             <li>
-              <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+              <a href="#about"
+                ><i class="fas fa-info-circle" aria-hidden="true"></i> About
+                Us</a
+              >
+            </li>
+            <li>
+              <a href="#services"
+                ><i class="fas fa-cogs" aria-hidden="true"></i> Services</a
+              >
+            </li>
+            <li>
+              <a href="#portfolio"
+                ><i class="fas fa-briefcase" aria-hidden="true"></i>
+                Portfolio</a
+              >
+            </li>
+            <li>
+              <a href="#contact"
+                ><i class="fas fa-envelope" aria-hidden="true"></i> Contact</a
+              >
             </li>
           </ul>
         </div>
         <div class="footer-column">
           <h3 class="footer-heading">Contact Us</h3>
-          <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
-          <p><i class="fas fa-envelope"></i> info@pickypixels.com</p>
+          <p>
+            <i class="fas fa-phone" aria-hidden="true"></i> +1 (555) 123-4567
+          </p>
+          <p>
+            <i class="fas fa-envelope" aria-hidden="true"></i>
+            info@pickypixels.com
+          </p>
         </div>
         <div class="footer-column">
           <h3 class="footer-heading">Get in Touch</h3>
           <button class="footer-cta">Contact Us</button>
           <div class="social-media-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
           </div>
         </div>
       </div>
@@ -355,6 +401,7 @@
 
         hamburger.addEventListener("click", function () {
           navLinks.classList.toggle("active");
+          hamburger.classList.toggle("open");
         });
       });
 
