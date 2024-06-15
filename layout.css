@@ -19,6 +19,7 @@ html {
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-top: 80px; /* Offset for fixed navbar */
   padding: var(--space-md);
+  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
 }
 
 .hero .container {
@@ -52,7 +53,7 @@ html {
   font-size: 1.25rem;
   font-weight: normal;
   text-shadow: 1px 1px 2px var(--dark-gray);
-  color: var(--white-color);
+  color: var (--white-color);
   margin-bottom: 30px; /* Add space below the subheading */
 }
 
@@ -91,6 +92,45 @@ html {
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero {
+    height: auto; /* Adjust height for mobile */
+    padding: var(--space-sm); /* Adjust padding for mobile */
+  }
+
+  .hero .container {
+    flex-direction: column; /* Change to column layout for mobile */
+    text-align: left; /* Keep left alignment */
+    align-items: flex-start; /* Align items to the left */
+  }
+
+  .hero-content {
+    align-items: flex-start; /* Align content to the left */
+    max-width: 100%; /* Full width for mobile */
+    text-align: left; /* Keep left alignment */
+  }
+
+  .hero-svg {
+    max-width: 100%; /* Full width for mobile */
+    margin-bottom: var(--space-sm); /* Add margin below the image */
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* Adjust font size for mobile */
+    margin-top: var(--space-sm); /* Margin to separate from navbar */
+  }
+
+  .hero p {
+    font-size: 1rem; /* Adjust font size for mobile */
+  }
+
+  .cta-button {
+    font-size: 1rem; /* Adjust font size for mobile */
+    padding: 10px 20px; /* Adjust padding for mobile */
   }
 }
 
