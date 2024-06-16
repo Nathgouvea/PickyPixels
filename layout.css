@@ -321,14 +321,14 @@ html {
 
 .owner-message h2 {
   font-family: "Satoshi", sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--soft-pink);
   margin-bottom: var(--space-sm);
 }
 
 .owner-message p {
   font-family: "Satoshi", sans-serif;
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: var(--dark-gray);
   margin-bottom: var(--space-md); /* Reduce space here */
 }
