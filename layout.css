@@ -296,15 +296,16 @@ html {
 .owner-photo-container {
   flex: 1; /* Adjusted size */
   margin-right: 0px;
+  margin-left: 40px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
 }
 
 .owner-photo {
   border-radius: 50%;
-  width: 300px; /* Fixed size */
-  height: 300px; /* Fixed size */
+  width: 330px; /* Fixed size */
+  height: 330px; /* Fixed size */
   object-fit: cover;
   object-position: top; /* Aligns the image from the top */
   border: 4px solid var(--light-pink);
@@ -329,6 +330,8 @@ html {
 .owner-message p {
   font-family: "Satoshi", sans-serif;
   font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px; /* Space below paragraph */
   color: var(--dark-gray);
   margin-bottom: var(--space-md); /* Reduce space here */
 }
