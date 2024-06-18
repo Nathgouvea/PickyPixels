@@ -4,7 +4,7 @@ nav {
   background: linear-gradient(
     rgba(235, 167, 172, 0.95),
     rgba(235, 167, 172, 0.75)
-  );
+  ); /* Gradient background */
   display: flex;
   justify-content: space-between;
   padding: var(--space-md);
@@ -13,7 +13,12 @@ nav {
   width: 100%;
   z-index: 1000;
   color: var(--white-color);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /* Blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  background-color: linear-gradient(
+    rgba(235, 167, 172, 0.95),
+    rgba(235, 167, 172, 0.75)
+  ); /* Gradient background */
 }
 
 .logo {
