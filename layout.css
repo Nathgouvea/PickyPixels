@@ -7,7 +7,7 @@ html {
   font-family: "Satoshi", sans-serif;
 }
 
-/* Hero Section Styles */
+/* Existing Hero Section Styles */
 .hero {
   height: calc(100vh - 80px); /* Adjust height to account for navbar */
   position: relative;
@@ -30,6 +30,8 @@ html {
   align-items: center; /* Align items vertically center */
   text-align: left; /* Align text to the left */
   position: relative;
+  max-width: 1200px;
+  margin: 0 auto; /* Center align the container */
 }
 
 .hero-content {
@@ -40,8 +42,8 @@ html {
 }
 
 .hero h1 {
-  font-family: "Satoshi", sans-serif;
-  font-size: 3rem;
+  font-family: var(--heading-font);
+  font-size: 2.5rem; /* Original font size */
   font-weight: bold;
   text-shadow: 1px 1px 2px var(--dark-gray);
   color: var(--white-color);
@@ -49,11 +51,11 @@ html {
 }
 
 .hero p {
-  font-family: "Satoshi", sans-serif;
-  font-size: 1.25rem;
+  font-family: var(--body-font);
+  font-size: 1.25rem; /* Original font size */
   font-weight: normal;
   text-shadow: 1px 1px 2px var(--dark-gray);
-  color: var (--white-color);
+  color: var(--white-color);
   margin-bottom: 30px; /* Add space below the subheading */
 }
 
@@ -62,7 +64,7 @@ html {
   color: var(--white-color) !important;
   border-radius: 5px;
   font-family: var(--button-font);
-  font-size: 20px;
+  font-size: 1rem; /* Original font size */
   font-weight: bold !important;
   margin-left: 0;
   padding: 15px 30px;
@@ -106,6 +108,8 @@ html {
     flex-direction: column; /* Change to column layout for mobile */
     text-align: left; /* Keep left alignment */
     align-items: flex-start; /* Align items to the left */
+    width: 100%; /* Full width for the container */
+    padding: 0 var(--space-sm); /* Adjust padding for the container */
   }
 
   .hero-content {
@@ -114,23 +118,69 @@ html {
     text-align: left; /* Keep left alignment */
   }
 
-  .hero-svg {
-    max-width: 100%; /* Full width for mobile */
-    margin-bottom: var(--space-sm); /* Add margin below the image */
-  }
-
   .hero h1 {
-    font-size: 2rem; /* Adjust font size for mobile */
+    font-size: 2rem; /* Original mobile font size */
     margin-top: var(--space-sm); /* Margin to separate from navbar */
   }
 
   .hero p {
-    font-size: 1rem; /* Adjust font size for mobile */
+    font-size: 1rem; /* Original mobile font size */
   }
 
   .cta-button {
-    font-size: 1rem; /* Adjust font size for mobile */
+    font-size: 1rem; /* Original mobile font size */
     padding: 10px 20px; /* Adjust padding for mobile */
+  }
+}
+
+/* Additional adjustments for very small screens */
+@media (max-width: 480px) {
+  .hero {
+    padding: var(
+      --space-xs
+    ); /* Further adjust padding for very small screens */
+  }
+
+  .hero .container {
+    padding: 0 10px; /* Adjust padding for very small screens */
+  }
+
+  .hero-content {
+    width: 100%; /* Ensure full width for content */
+  }
+
+  .hero h1 {
+    font-size: 1.5rem; /* Further adjust font size */
+  }
+
+  .hero p {
+    font-size: 0.875rem; /* Further adjust font size */
+  }
+
+  .cta-button {
+    font-size: 0.875rem; /* Further adjust button font size */
+    padding: 8px 16px; /* Further adjust padding */
+  }
+}
+
+/* Adjustments for larger screens */
+@media (min-width: 1200px) {
+  .hero .container {
+    max-width: 1300px; /* Increase the maximum width for larger screens */
+    padding: 0 50px; /* Add padding on the sides */
+  }
+
+  .hero h1 {
+    font-size: 3rem; /* Original larger screen font size */
+  }
+
+  .hero p {
+    font-size: 1.25rem; /* Original larger screen font size */
+  }
+
+  .cta-button {
+    font-size: 1rem; /* Original larger screen button font size */
+    padding: 15px 30px; /* Original larger screen padding */
   }
 }
 

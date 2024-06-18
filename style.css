@@ -33,6 +33,7 @@ html {
   padding: 0;
   height: 100%;
   font-family: "Satoshi", sans-serif;
+  overflow-x: hidden;
 }
 
 body {
@@ -41,9 +42,16 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
   padding: 0 40px; /* Consistent left and right padding */
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Section Padding */
