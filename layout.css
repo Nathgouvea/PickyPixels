@@ -7,9 +7,8 @@ html {
   font-family: "Satoshi", sans-serif;
 }
 
-/* Existing Hero Section Styles */
 .hero {
-  height: calc(100vh - 80px); /* Adjust height to account for navbar */
+  height: calc(100vh - 80px);
   position: relative;
   width: 100%;
   background: linear-gradient(180deg, var(--soft-pink), rgba(92, 69, 55, 0.4));
@@ -17,46 +16,45 @@ html {
   background-blend-mode: overlay;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 80px; /* Offset for fixed navbar */
+  margin-top: 80px;
   padding: var(--space-md);
-  box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+  box-sizing: border-box;
 }
 
 .hero .container {
   height: 100%;
   display: flex;
-  flex-direction: row; /* Arrange content in a row */
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center; /* Align items vertically center */
-  text-align: left; /* Align text to the left */
-  position: relative;
+  align-items: center;
+  text-align: left;
   max-width: 1200px;
-  margin: 0 auto; /* Center align the container */
+  margin: 0 auto;
 }
 
 .hero-content {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align content to the left */
-  max-width: 50%; /* Limit the width of the text content */
+  align-items: flex-start;
+  max-width: 50%;
 }
 
 .hero h1 {
   font-family: var(--heading-font);
-  font-size: 2.5rem; /* Original font size */
+  font-size: 2.5rem;
   font-weight: bold;
   text-shadow: 1px 1px 2px var(--dark-gray);
   color: var(--white-color);
-  margin-bottom: 20px; /* Add space below the heading */
+  margin-bottom: 20px;
 }
 
 .hero p {
   font-family: var(--body-font);
-  font-size: 1.25rem; /* Original font size */
+  font-size: 1.25rem;
   font-weight: normal;
   text-shadow: 1px 1px 2px var(--dark-gray);
   color: var(--white-color);
-  margin-bottom: 30px; /* Add space below the subheading */
+  margin-bottom: 30px;
 }
 
 .cta-button {
@@ -64,14 +62,11 @@ html {
   color: var(--white-color) !important;
   border-radius: 5px;
   font-family: var(--button-font);
-  font-size: 1rem; /* Original font size */
+  font-size: 1rem;
   font-weight: bold !important;
-  margin-left: 0;
   padding: 15px 30px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  position: sticky;
-  top: 10px; /* Adjust based on your layout */
 }
 
 .cta-button:hover {
@@ -79,7 +74,7 @@ html {
 }
 
 .hero-svg {
-  max-width: 50%; /* Limit the width of the SVG content */
+  max-width: 50%;
 }
 
 .animated-svg {
@@ -97,90 +92,38 @@ html {
   }
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .hero {
-    height: auto; /* Adjust height for mobile */
-    padding: var(--space-sm); /* Adjust padding for mobile */
+    height: auto;
+    padding: var(--space-sm);
   }
 
   .hero .container {
-    flex-direction: column; /* Change to column layout for mobile */
-    text-align: left; /* Keep left alignment */
-    align-items: flex-start; /* Align items to the left */
-    width: 100%; /* Full width for the container */
-    padding: 0 var(--space-sm); /* Adjust padding for the container */
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .hero-content {
-    align-items: flex-start; /* Align content to the left */
-    max-width: 100%; /* Full width for mobile */
-    text-align: left; /* Keep left alignment */
+    max-width: 100%;
   }
 
   .hero h1 {
-    font-size: 2rem; /* Original mobile font size */
-    margin-top: var(--space-sm); /* Margin to separate from navbar */
+    font-size: 2rem;
+    margin-top: var(--space-sm);
   }
 
   .hero p {
-    font-size: 1rem; /* Original mobile font size */
+    font-size: 1rem;
   }
 
   .cta-button {
-    font-size: 1rem; /* Original mobile font size */
-    padding: 10px 20px; /* Adjust padding for mobile */
-  }
-}
-
-/* Additional adjustments for very small screens */
-@media (max-width: 480px) {
-  .hero {
-    padding: var(
-      --space-xs
-    ); /* Further adjust padding for very small screens */
+    font-size: 1rem;
+    padding: 10px 20px;
   }
 
-  .hero .container {
-    padding: 0 10px; /* Adjust padding for very small screens */
-  }
-
-  .hero-content {
-    width: 100%; /* Ensure full width for content */
-  }
-
-  .hero h1 {
-    font-size: 1.5rem; /* Further adjust font size */
-  }
-
-  .hero p {
-    font-size: 0.875rem; /* Further adjust font size */
-  }
-
-  .cta-button {
-    font-size: 0.875rem; /* Further adjust button font size */
-    padding: 8px 16px; /* Further adjust padding */
-  }
-}
-
-/* Adjustments for larger screens */
-@media (min-width: 1200px) {
-  .hero .container {
-    max-width: 1300px; /* Increase the maximum width for larger screens */
-    padding: 0 50px; /* Add padding on the sides */
-  }
-
-  .hero h1 {
-    font-size: 3rem; /* Original larger screen font size */
-  }
-
-  .hero p {
-    font-size: 1.25rem; /* Original larger screen font size */
-  }
-
-  .cta-button {
-    font-size: 1rem; /* Original larger screen button font size */
-    padding: 15px 30px; /* Original larger screen padding */
+  .hero-svg {
+    max-width: 100%;
+    margin-top: var(--space-sm);
   }
 }
 

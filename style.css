@@ -7,12 +7,12 @@
 
 :root {
   /* Color Variables */
-  --soft-pink: #eba7ac; /* Formerly --dark-brown */
-  --black: #000000; /* Formerly --soft-brown and --dark-olive */
-  --light-pink: #f4c2c2; /* Formerly --light-brown */
-  --medium-pink: #cd5e77; /* Formerly --light-gray */
-  --dark-gray: #333333; /* No change needed */
-  --white-color: #ffffff; /* No change needed */
+  --soft-pink: #eba7ac;
+  --black: #000000;
+  --light-pink: #f4c2c2;
+  --medium-pink: #cd5e77;
+  --dark-gray: #333333;
+  --white-color: #ffffff;
 
   /* Spacing Variables */
   --space-xs: 8px;
@@ -32,20 +32,19 @@ html {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   overflow-x: hidden;
 }
 
 body {
   padding-top: 80px;
-  margin: 0;
 }
 
 .container {
-  max-width: 100%;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 40px; /* Consistent left and right padding */
+  padding: 0 var(--space-md);
 }
 
 img,
@@ -54,12 +53,10 @@ video {
   height: auto;
 }
 
-/* Section Padding */
 section {
   padding: var(--space-lg) 0;
 }
 
-/* Common CTA Button Styles */
 .cta-button {
   background-color: var(--light-pink);
   border-radius: 5px;
@@ -76,4 +73,19 @@ section {
 .cta-button:hover {
   background-color: #b39471;
   transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  section {
+    padding: var(--space-md) 0;
+  }
+
+  .cta-button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
 }

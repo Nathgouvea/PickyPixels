@@ -4,7 +4,7 @@ nav {
   background: linear-gradient(
     rgba(235, 167, 172, 0.95),
     rgba(235, 167, 172, 0.75)
-  ); /* Gradient background */
+  );
   display: flex;
   justify-content: space-between;
   padding: var(--space-md);
@@ -13,12 +13,8 @@ nav {
   width: 100%;
   z-index: 1000;
   color: var(--white-color);
-  backdrop-filter: blur(10px); /* Blur effect */
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px); /* For Safari */
-  background-color: linear-gradient(
-    rgba(235, 167, 172, 0.95),
-    rgba(235, 167, 172, 0.75)
-  ); /* Gradient background */
 }
 
 .logo {
@@ -39,7 +35,7 @@ nav {
 .navigation-links {
   align-items: center;
   display: flex;
-  gap: 40px;
+  gap: var(--space-md);
   list-style: none;
 }
 
@@ -70,12 +66,9 @@ nav {
   font-family: var(--button-font);
   font-size: 20px;
   font-weight: bold !important;
-  margin-left: 0;
   padding: 15px 30px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  position: sticky;
-  top: 10px; /* Adjust based on your layout */
 }
 
 .contact-btn:hover {
@@ -90,7 +83,7 @@ nav {
     width: 100%;
     background-color: var(--soft-pink);
     position: absolute;
-    top: 80px; /* Adjust to match the navbar height */
+    top: 80px;
     left: 0;
     padding: var(--space-sm) 0;
   }
@@ -107,10 +100,14 @@ nav {
     border: none;
     color: var(--white-color);
   }
+
+  .contact-btn {
+    margin-top: var(--space-sm);
+  }
 }
 
 .hamburger-menu.open::before {
-  content: "\2715"; /* Unicode for the "X" icon */
+  content: "\2715";
   font-size: 24px;
   color: var(--white-color);
 }
