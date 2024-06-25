@@ -40,7 +40,7 @@
     <section class="hero parallax-background" id="home">
       <div class="container">
         <div class="hero-content">
-          <h1>Empower Your Business Dreams</h1>
+          <h1>Empower <span id="typed-element"></span></h1>
           <p class="fade-in-text">
             A personalised website reflects your unique vision. <br />
             Boost your business with beautiful, effective web design.
@@ -193,7 +193,7 @@
                 A fashionable and elegant online store with a vibrant visual
                 tapestry set against a clean background.
               </p>
-              <a href="#" class="portfolio-cta">View Project</a>
+              <button class="portfolio-cta" data-id="1">View Project</button>
             </article>
             <article class="portfolio-card">
               <img
@@ -206,7 +206,7 @@
                 A serene web experience with a soft blue hero background,
                 inspiring tranquility and healing.
               </p>
-              <a href="#" class="portfolio-cta">View Project</a>
+              <button class="portfolio-cta" data-id="2">View Project</button>
             </article>
             <article class="portfolio-card">
               <img
@@ -219,11 +219,21 @@
                 Exuding luxury with a muted, warm grey background, making the
                 vivid gallery images pop.
               </p>
-              <a href="#" class="portfolio-cta">View Project</a>
+              <button class="portfolio-cta" data-id="3">View Project</button>
             </article>
           </div>
         </div>
       </section>
+
+      <!-- Modal Structure -->
+      <div id="projectModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <img id="modalImage" src="" alt="Project Image" />
+          <h3 id="modalTitle"></h3>
+          <p id="modalDescription"></p>
+        </div>
+      </div>
 
       <section class="contact-section" id="contact">
         <div class="container">
@@ -405,24 +415,81 @@
         });
       });
 
-      var options = {
-        strings: ["", "Your Business Dreams"],
-        typeSpeed: 50,
-        backSpeed: 50,
-        showCursor: true,
-        cursorChar: "|",
-        loop: false,
-      };
+      document.addEventListener("DOMContentLoaded", function () {
+        var typedElement = document.getElementById("typed-element");
+        var options = {
+          strings: ["Your Business Dreams"],
+          typeSpeed: 50,
+          backSpeed: 50,
+          showCursor: true,
+          cursorChar: "|",
+          loop: false,
+        };
 
-      var typed = new Typed("#typed", options);
+        if (typedElement) {
+          var typed = new Typed("#typed-element", options);
+        }
+      });
 
       document.addEventListener("DOMContentLoaded", function () {
         var messageInput = document.getElementById("message");
         var charCount = document.getElementById("char-count");
 
-        messageInput.addEventListener("input", function () {
-          charCount.textContent = messageInput.value.length;
+        if (messageInput && charCount) {
+          messageInput.addEventListener("input", function () {
+            charCount.textContent = messageInput.value.length;
+          });
+        }
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        var modal = document.getElementById("projectModal");
+        var modalImage = document.getElementById("modalImage");
+        var modalTitle = document.getElementById("modalTitle");
+        var modalDescription = document.getElementById("modalDescription");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        var projects = {
+          1: {
+            title: "Elegância Boutique",
+            description:
+              "A fashionable and elegant online store with a vibrant visual tapestry set against a clean background.",
+            image: "images/eleganciaboutique.pt_.jpg",
+          },
+          2: {
+            title: "Isabel Vieira Therapist",
+            description:
+              "A serene web experience with a soft blue hero background, inspiring tranquility and healing.",
+            image: "images/isabelvieira.pt_.jpg",
+          },
+          3: {
+            title: "Stegel Beauty Salon",
+            description:
+              "Exuding luxury with a muted, warm grey background, making the vivid gallery images pop.",
+            image: "images/stegel.pt_.jpg",
+          },
+        };
+
+        document.querySelectorAll(".portfolio-cta").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var projectId = this.getAttribute("data-id");
+            var project = projects[projectId];
+            modalImage.src = project.image;
+            modalTitle.textContent = project.title;
+            modalDescription.textContent = project.description;
+            modal.style.display = "block";
+          });
         });
+
+        closeBtn.onclick = function () {
+          modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+          if (event.target == modal) {
+            modal.style.display = "none";
+          }
+        };
       });
     </script>
   </body>
