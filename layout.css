@@ -8,7 +8,7 @@ html {
 
 .hero {
   height: calc(
-    100vh - 110px
+    100vh - 80px
   ); /* Adjusted height to account for navbar and top bar */
   position: relative;
   width: 100%;
@@ -17,8 +17,8 @@ html {
   background-blend-mode: overlay;
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 110px; /* Adjust based on navbar and top bar combined height */
-  padding: var(--space-md) var(--space-md) 0; /* Adjusted padding to ensure proper spacing */
+  margin-top: 110px;
+  padding: var(--space-md);
   box-sizing: border-box;
 }
 
