@@ -37,7 +37,7 @@ html {
 }
 
 body {
-  padding-top: 80px;
+  padding-top: 0px;
 }
 
 .container {
@@ -141,5 +141,26 @@ section {
 @media (max-width: 768px) {
   .modal-content {
     width: 90%;
+  }
+}
+
+/* Ensure consistent spacing for sections */
+section {
+  padding: var(--space-lg) 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--space-sm);
+  }
+
+  section {
+    padding: var(--space-md) 0;
+  }
+
+  .cta-button {
+    font-size: 18px;
+    padding: 10px 20px;
   }
 }
