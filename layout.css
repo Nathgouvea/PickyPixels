@@ -98,6 +98,7 @@ html {
   .hero {
     height: auto;
     padding: var(--space-sm);
+    padding-top: 70px;
     margin-top: 110px; /* Adjust based on combined height on small screens */
   }
 
@@ -435,6 +436,7 @@ html {
   transition: background-color 0.3s ease, transform 0.3s ease;
   display: inline-block;
   margin-top: var(--space-md);
+  border: none;
 }
 
 .portfolio-cta:hover {
@@ -627,6 +629,12 @@ button[type="submit"]:hover {
     text-align: center;
   }
 
+  .contact-content h2 {
+    font-size: 1.4rem;
+  }
+  .contact-content p {
+    padding-right: 0px; /* More padding on the right */
+  }
   .contact-content,
   .contact-form {
     max-width: 100%;
