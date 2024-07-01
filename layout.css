@@ -217,7 +217,7 @@ html {
   font-size: 1.1rem;
   font-weight: bold !important;
   margin-left: 0;
-  padding: 15px 30px;
+  padding: var(--space-sm) var(--space-md);
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: sticky;
