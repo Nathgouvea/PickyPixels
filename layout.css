@@ -214,7 +214,7 @@ html {
   color: var(--white-color) !important;
   border-radius: 5px;
   font-family: var(--button-font);
-  font-size: 20px;
+  font-size: 1.1rem;
   font-weight: bold !important;
   margin-left: 0;
   padding: 15px 30px;
@@ -236,8 +236,30 @@ html {
 }
 
 @media (max-width: 600px) {
+  .section-header h2 {
+    font-size: 2rem;
+  }
+  .section-header p {
+    font-size: 1.1rem;
+  }
   .service-card {
     width: calc(100% - 16px); /* Adjust width for mobile */
+    width: 100% !important; /* Ajuste para 100% sem subtração */
+  }
+
+  .cards-container {
+    justify-content: center !important; /* Centralize o container no modo mobile */
+  }
+
+  .services-cta {
+    margin-top: 20px;
+  }
+  .services-cta .cta-button {
+    width: 100% !important; /* Garante que o botão ocupe 100% da largura */
+    text-align: center !important; /* Centraliza o texto do botão */
+    padding: 10px 20px !important; /* Ajusta o padding do botão */
+    margin: var(--space-sm) 0 !important; /* Adiciona margem acima e abaixo do botão */
+    font-size: 0.9rem;
   }
 }
 
@@ -260,16 +282,6 @@ html {
 @media (max-width: 1200px) {
   .service-card {
     width: calc(50% - 32px); /* Adjust width for tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .service-card {
-    width: calc(100% - 32px); /* Adjust width for mobile */
-  }
-  .main-heading,
-  .subheading {
-    text-align: center; /* Center headings on mobile */
   }
 }
 
@@ -337,7 +349,7 @@ html {
   background-color: var(--medium-pink);
   color: var(--white-color) !important;
   font-family: "Satoshi", sans-serif;
-  font-size: 1rem;
+  font-size: 1.1rem;
   font-weight: bold;
   padding: var(--space-sm) var(--space-md);
   border-radius: 5px;
@@ -363,6 +375,10 @@ html {
 
   .owner-message {
     max-width: 100%;
+  }
+
+  .owner-message .cta-button {
+    font-size: 0.9rem;
   }
 }
 
