@@ -4,8 +4,6 @@
     rgba(235, 167, 172, 0.95),
     rgba(201, 118, 124, 0.75)
   );
-  /* background: #cd5e788c; */
-
   padding: var(--space-md);
   width: 100%;
   position: fixed;
@@ -92,8 +90,7 @@ nav {
   list-style: none;
 }
 
-.navigation-links a,
-.contact-btn {
+.navigation-links a {
   color: var(--white-color);
   font-family: var(--heading-font);
   font-size: 16px;
@@ -104,24 +101,53 @@ nav {
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
+/* Remove existing underline and add stroke effect */
+.navigation-links a,
 .navigation-links .active-link,
-.navigation-links a:hover,
 .navigation-links a:focus {
-  border-bottom: 2px solid var(--medium-pink);
-  color: var(--medium-pink);
-  font-weight: bold;
+  position: relative;
 }
 
+.navigation-links a:after,
+.navigation-links .active-link:after,
+.navigation-links a:focus:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Adjust as needed */
+  width: 0;
+  height: 2px; /* Adjust as needed */
+  background: var(--medium-pink);
+  transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.navigation-links a:hover,
+.navigation-links .active-link:hover,
+.navigation-links a:focus:hover {
+  color: var(--medium-pink);
+}
+
+.navigation-links a:hover:after {
+  width: 100%;
+}
+
+/* Contact button */
 .contact-btn {
   background-color: var(--medium-pink);
   color: var(--white-color) !important;
-  border-radius: 5px;
+  border-radius: 8px; /* Adjust border radius */
   font-family: var(--button-font);
   font-size: 20px;
   font-weight: bold !important;
   padding: 15px 30px;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-btn:after {
+  display: none; /* Ensure no stroke effect on the contact button */
 }
 
 .contact-btn:hover {
@@ -139,10 +165,26 @@ nav {
     top: 60px; /* Adjusted to remove the overlap with the hero section */
     left: 0;
     padding: var(--space-sm) 0;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 0;
+    overflow: hidden;
   }
 
   .navigation-links.active {
     display: flex;
+    max-height: 500px; /* Adjust as needed to accommodate the menu items */
+  }
+
+  .navigation-links a {
+    padding: 10px 20px;
+    border-radius: 8px; /* Adjust border radius for links */
+    transition: color 0.3s ease;
+  }
+
+  .navigation-links a:hover,
+  .navigation-links a:active,
+  .navigation-links a:focus {
+    color: var(--medium-pink); /* Ensure text changes to medium pink */
   }
 
   .hamburger-menu {
