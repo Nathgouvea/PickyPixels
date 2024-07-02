@@ -10,7 +10,7 @@
   --soft-pink: #eba7ac;
   --black: #000000;
   --light-pink: #f4c2c2;
-  --medium-pink: #cd5e77;
+  --medium-pink: #d85372;
   --dark-gray: #333333;
   --white-color: #ffffff;
 
@@ -24,7 +24,6 @@
   /* Font Variables */
   --heading-font: "Satoshi", sans-serif;
   --body-font: "Lato", sans-serif;
-  --button-font: "Satoshi", sans-serif;
 }
 
 body,
@@ -59,19 +58,17 @@ section {
 
 .cta-button {
   background-color: var(--light-pink);
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px rgba(203, 165, 129, 0.3);
-  color: var(--black) !important;
   font-family: var(--button-font);
   font-size: 20px;
   font-weight: bold !important;
-  padding: 15px 30px;
+  padding: 15px 30px !important;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #b39471;
   transform: scale(1.05);
 }
 
