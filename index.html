@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Picky Pixels Studio: Empoderando seu negócio com design web bonito e eficaz."
+      content="Picky Pixels Studio: Empoderando seu negócio com website bonito e eficaz."
     />
     <title>Picky Pixels Studio</title>
     <link rel="stylesheet" href="style.css" />
@@ -37,9 +37,7 @@
         </div>
       </div>
       <nav class="stroke" aria-label="Main navigation">
-        <div class="logo">
-          <p>Picky Pixels Studio</p>
-        </div>
+        <div class="logo"><p>Picky Pixels Studio</p></div>
         <button class="hamburger-menu" aria-label="Toggle navigation">
           &#9776;
         </button>
@@ -335,18 +333,17 @@
                 </p>
               </form>
               <div class="alternative-contact">
-                <a href="mailto:nathielle@pickypixels.studio">
-                  <i class="fas fa-envelope" aria-hidden="true"></i>
-                </a>
+                <a href="mailto:nathielle@pickypixels.studio"
+                  ><i class="fas fa-envelope" aria-hidden="true"></i
+                ></a>
                 <a
                   href="https://www.instagram.com/pickypixelsstudio/"
                   target="_blank"
-                >
-                  <i class="fab fa-instagram" aria-hidden="true"></i>
-                </a>
-                <a href="https://github.com/Nathgouvea" target="_blank">
-                  <i class="fab fa-github" aria-hidden="true"></i>
-                </a>
+                  ><i class="fab fa-instagram" aria-hidden="true"></i
+                ></a>
+                <a href="https://github.com/Nathgouvea" target="_blank"
+                  ><i class="fab fa-github" aria-hidden="true"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -421,51 +418,41 @@
     </footer>
 
     <script>
-      // JavaScript for the hamburger menu interaction
       document.addEventListener("DOMContentLoaded", function () {
-        var hamburger = document.querySelector(".hamburger-menu");
-        var navLinks = document.querySelector(".navigation-links");
+        // Hamburger menu interaction
+        document
+          .querySelector(".hamburger-menu")
+          .addEventListener("click", function () {
+            document
+              .querySelector(".navigation-links")
+              .classList.toggle("active");
+            this.classList.toggle("open");
+          });
 
-        hamburger.addEventListener("click", function () {
-          navLinks.classList.toggle("active");
-          hamburger.classList.toggle("open");
-        });
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
+        // Typed.js initialization
         var typedElement = document.getElementById("typed-element");
-        var options = {
-          strings: ["Seus Sonhos em Realidade"],
-          typeSpeed: 50,
-          backSpeed: 50,
-          showCursor: true,
-          cursorChar: "|",
-          loop: false,
-        };
-
         if (typedElement) {
-          var typed = new Typed("#typed-element", options);
-        }
-      });
-
-      document.addEventListener("DOMContentLoaded", function () {
-        var messageInput = document.getElementById("message");
-        var charCount = document.getElementById("char-count");
-
-        if (messageInput && charCount) {
-          messageInput.addEventListener("input", function () {
-            charCount.textContent = messageInput.value.length;
+          new Typed("#typed-element", {
+            strings: ["Seus Sonhos em Realidade"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            showCursor: true,
+            cursorChar: "|",
+            loop: false,
           });
         }
-      });
 
-      document.addEventListener("DOMContentLoaded", function () {
+        // Character count for message input
+        var messageInput = document.getElementById("message");
+        if (messageInput) {
+          messageInput.addEventListener("input", function () {
+            document.getElementById("char-count").textContent =
+              this.value.length;
+          });
+        }
+
+        // Modal functionality for portfolio projects
         var modal = document.getElementById("projectModal");
-        var modalImage = document.getElementById("modalImage");
-        var modalTitle = document.getElementById("modalTitle");
-        var modalDescription = document.getElementById("modalDescription");
-        var closeBtn = document.getElementsByClassName("close")[0];
-
         var projects = {
           1: {
             title: "Elegância Boutique",
@@ -491,14 +478,15 @@
           button.addEventListener("click", function () {
             var projectId = this.getAttribute("data-id");
             var project = projects[projectId];
-            modalImage.src = project.image;
-            modalTitle.textContent = project.title;
-            modalDescription.textContent = project.description;
+            modal.querySelector("#modalImage").src = project.image;
+            modal.querySelector("#modalTitle").textContent = project.title;
+            modal.querySelector("#modalDescription").textContent =
+              project.description;
             modal.style.display = "block";
           });
         });
 
-        closeBtn.onclick = function () {
+        document.querySelector(".close").onclick = function () {
           modal.style.display = "none";
         };
 

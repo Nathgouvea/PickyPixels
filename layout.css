@@ -1,11 +1,4 @@
-body,
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  font-family: "Satoshi", sans-serif;
-}
-
+/* Hero section styles */
 .hero {
   position: relative;
   width: 100%;
@@ -56,26 +49,9 @@ html {
   margin-bottom: 30px;
 }
 
-.cta-button {
-  background-color: var(--medium-pink);
-  color: #ffffff !important;
-  border-radius: 8px;
-  font-family: var(--button-font);
-  font-size: 1rem;
-  font-weight: bold !important;
-  padding: 15px 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: var(--white-color);
-  color: var(--medium-pink) !important;
-}
-
 .hero-svg {
   max-width: 48%;
-  padding-top: var(--space-lg); /* Add padding to push the SVG down */
+  padding-top: var(--space-lg);
 }
 
 .animated-svg {
@@ -99,7 +75,7 @@ html {
     height: auto;
     padding: var(--space-sm);
     padding-top: 70px;
-    margin-top: 110px; /* Adjust based on combined height on small screens */
+    margin-top: 110px;
   }
 
   .hero .container {
@@ -132,19 +108,19 @@ html {
   }
 }
 
-/* Services Section Styles */
+/* Services section styles */
 .services-section {
   background-color: var(--white-color);
   padding: var(--space-lg) var(--space-md);
 }
 
 .section-header {
-  text-align: left; /* Align section header content to the left */
+  text-align: left;
   margin-bottom: var(--space-lg);
 }
 
 .section-header h2 {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--heading-font);
   font-size: 2.5rem;
   color: var(--soft-pink);
   margin-bottom: var(--space-sm);
@@ -152,7 +128,7 @@ html {
 }
 
 .section-header p {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1.25rem;
   color: var(--black);
   text-align: left;
@@ -161,19 +137,19 @@ html {
 .cards-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start; /* Align cards to the left */
-  gap: 24px; /* Use a consistent space unit */
+  justify-content: flex-start;
+  gap: 24px;
 }
 
 .service-card {
   background-color: var(--white-color);
   border-radius: 8px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  margin-bottom: 24px; /* Consistent margin size */
-  padding: 24px; /* Consistent padding size */
+  margin-bottom: 24px;
+  padding: 24px;
   transition: transform 0.3s ease;
-  width: calc(33.333% - 16px); /* Adjust width calculation for gap */
-  box-sizing: border-box; /* Ensures padding and border are included in width/height */
+  width: calc(33.333% - 16px);
+  box-sizing: border-box;
 }
 
 .service-card:hover {
@@ -181,33 +157,33 @@ html {
 }
 
 .service-icon {
-  font-size: 2.5rem; /* Icon size */
+  font-size: 2.5rem;
   background: linear-gradient(135deg, var(--soft-pink), var(--medium-pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Adds subtle depth */
-  transition: transform 0.3s ease; /* Smooth transition for hover effects */
-  margin-bottom: 8px; /* Space between icon and h3 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  margin-bottom: 8px;
 }
 
 .service-card h3 {
-  font-family: "Satoshi", sans-serif;
-  font-size: 1.5rem; /* Title font size */
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
   color: var(--black);
-  margin-bottom: 12px; /* Margin below title */
+  margin-bottom: 12px;
 }
 
 .service-card p {
-  font-family: "Satoshi", sans-serif;
-  font-size: 1rem; /* Body text font size */
+  font-family: var(--body-font);
+  font-size: 1rem;
   color: var(--dark-gray);
   line-height: 1.6;
-  margin-bottom: 16px; /* Space below paragraph */
+  margin-bottom: 16px;
 }
 
 .services-cta {
-  text-align: left; /* Align CTA button to the left */
-  margin-top: var(--space-lg); /* Add space above the CTA */
+  text-align: left;
+  margin-top: var(--space-lg);
 }
 
 .services-cta .cta-button {
@@ -218,21 +194,19 @@ html {
   font-size: 1.1rem;
   font-weight: bold !important;
   margin-left: 0;
-  padding: 15px 30px !important;
   text-decoration: none;
   transition: background-color 0.3s ease, transform 0.3s ease;
   position: sticky;
-  top: 10px; /* Adjust based on your layout */
+  top: 10px;
 }
 
 .services-cta .cta-button:hover {
   background-color: var(--light-pink);
 }
 
-/* Responsive adjustments */
 @media (max-width: 1200px) {
   .service-card {
-    width: calc(50% - 16px); /* Adjust width for tablets */
+    width: calc(50% - 16px);
   }
 }
 
@@ -240,55 +214,34 @@ html {
   .section-header h2 {
     font-size: 2rem;
   }
+
   .section-header p {
     font-size: 1.1rem;
   }
+
   .service-card {
-    width: calc(100% - 16px); /* Adjust width for mobile */
-    width: 100% !important; /* Ajuste para 100% sem subtração */
+    width: calc(100% - 2px);
   }
 
   .cards-container {
-    justify-content: center !important; /* Centralize o container no modo mobile */
+    justify-content: center;
   }
 
   .services-cta {
     margin-top: 20px;
   }
+
   .services-cta .cta-button {
-    width: 100% !important; /* Garante que o botão ocupe 100% da largura */
-    text-align: center !important; /* Centraliza o texto do botão */
-    padding: 10px 20px !important; /* Ajusta o padding do botão */
-    margin: var(--space-sm) 0 !important; /* Adiciona margem acima e abaixo do botão */
+    width: 100%;
+    text-align: center;
+    margin: var(--space-sm) 0;
     font-size: 0.9rem;
   }
 }
 
-/* Heading styles */
-.main-heading {
-  text-align: left;
-  font-size: 2.5rem;
-  color: var(--medium-pink);
-  margin-bottom: 16px; /* Space below main heading */
-}
-
-.subheading {
-  text-align: left;
-  font-size: 1.25rem;
-  color: var(--dark-gray);
-  margin-bottom: 32px; /* Space below subheading */
-}
-
-/* Responsive adjustments */
-@media (max-width: 1200px) {
-  .service-card {
-    width: calc(50% - 32px); /* Adjust width for tablets */
-  }
-}
-
-/* Owner Section Styles */
+/* Owner section styles */
 .owner-section {
-  background-color: #f5f5f5; /* Soft grey background */
+  background-color: #f5f5f5;
   padding: var(--space-lg) var(--space-md);
   display: flex;
   justify-content: center;
@@ -299,12 +252,12 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 1000px; /* Adjust this value as needed */
+  max-width: 1000px;
   margin: 0 auto;
 }
 
 .owner-photo-container {
-  flex: 1; /* Adjusted size */
+  flex: 1;
   margin-right: 0px;
   margin-left: 40px;
   display: flex;
@@ -314,10 +267,10 @@ html {
 
 .owner-photo {
   border-radius: 50%;
-  width: 330px; /* Fixed size */
-  height: 330px; /* Fixed size */
+  width: 330px;
+  height: 330px;
   object-fit: cover;
-  object-position: top; /* Aligns the image from the top */
+  object-position: top;
   border: 4px solid var(--light-pink);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease-in-out;
@@ -325,31 +278,31 @@ html {
 
 .owner-message {
   flex: 1;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   color: var(--dark-gray);
   text-align: left;
 }
 
 .owner-message h2 {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--heading-font);
   font-size: 1.8rem;
   color: var(--soft-pink);
   margin-bottom: var(--space-sm);
 }
 
 .owner-message p {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 16px; /* Space below paragraph */
+  margin-bottom: 16px;
   color: var(--dark-gray);
-  margin-bottom: var(--space-md); /* Reduce space here */
+  margin-bottom: var(--space-md);
 }
 
 .owner-message .cta-button {
   background-color: var(--medium-pink);
   color: var(--white-color) !important;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--button-font);
   font-size: 1.1rem;
   font-weight: bold;
   padding: var(--space-sm) var(--space-md);
@@ -383,7 +336,7 @@ html {
   }
 }
 
-/* Portfolio Section Styles */
+/* Portfolio section styles */
 .portfolio-section {
   background-color: var(--white-color);
   padding: var(--space-lg) var(--space-md);
@@ -409,7 +362,7 @@ html {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   flex: 1 1 calc(33.333% - var(--space-md));
   box-sizing: border-box;
-  text-align: left; /* Ensure left alignment */
+  text-align: left;
 }
 
 .portfolio-card:hover {
@@ -419,32 +372,32 @@ html {
 
 .portfolio-image {
   width: 100%;
-  height: 200px; /* Set a fixed height for thumbnails */
-  object-fit: cover; /* Ensure the image covers the container without distortion */
-  object-position: top; /* Aligns the image from the top */
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 8px;
   margin-bottom: var(--space-sm);
 }
 
 .portfolio-title {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--heading-font);
   font-size: 1.5rem;
   color: var(--soft-pink);
   margin-bottom: var(--space-xs);
 }
 
 .portfolio-description {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
-  color: var(--dark-gray); /* Fixed color syntax */
+  color: var(--dark-gray);
   line-height: 1.6;
-  margin-bottom: var(--space-md); /* Added margin bottom */
+  margin-bottom: var(--space-md);
 }
 
 .portfolio-cta {
   background-color: var(--light-pink);
   color: var(--white-color) !important;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--button-font);
   font-size: 1rem;
   font-weight: bold;
   padding: var(--space-sm) var(--space-md);
@@ -460,7 +413,6 @@ html {
   background-color: var(--medium-pink);
 }
 
-/* Responsive adjustments */
 @media (max-width: 1200px) {
   .portfolio-card {
     width: calc(50% - var(--space-md));
@@ -471,61 +423,62 @@ html {
   .portfolio-card {
     width: calc(100% - var(--space-md));
   }
+
   .section-header {
-    text-align: center; /* Center headings on mobile */
+    text-align: center;
   }
 }
 
-/* Contact Section Styles */
+/* Contact section styles */
 .contact-section {
-  background-color: #fef5f7; /* Light pink background */
+  background-color: #fef5f7;
   padding: var(--space-lg) var(--space-md);
 }
 
 .contact-container {
   display: flex;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start;
   justify-content: space-between;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-  border-radius: 8px; /* Rounded corners */
-  padding: var(--space-md); /* Padding around the content */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: var(--space-md);
   background-color: var(--white-color);
 }
 
 .contact-content {
   flex: 1;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   color: var(--dark-gray);
   text-align: left;
   max-width: 50%;
 }
 
 .contact-content h2 {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--heading-font);
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--soft-pink);
   margin-bottom: var(--space-sm);
-  display: inline-block; /* Ensure the line is under the text */
-  border-bottom: 2px solid var(--light-pink); /* Subtle underline */
+  display: inline-block;
+  border-bottom: 2px solid var(--light-pink);
   padding-bottom: var(--space-xs);
-  width: 85%; /* Adjust width to make the line longer */
+  width: 85%;
 }
 
 .contact-content p {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
-  line-height: 1.6; /* Improved line height */
+  line-height: 1.6;
   color: var(--dark-gray);
   margin-bottom: var(--space-lg);
-  padding-right: 80px; /* More padding on the right */
+  padding-right: 80px;
 }
 
 .contact-svg {
   display: flex;
-  justify-content: center; /* Center align the SVG */
+  justify-content: center;
   align-items: center;
-  width: 80%; /* Make the SVG smaller */
+  width: 80%;
   height: auto;
   animation: fadeIn 2s ease-in-out;
 }
@@ -540,7 +493,7 @@ html {
 }
 
 .form-group label {
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
   color: var(--soft-pink);
   display: block;
@@ -561,11 +514,11 @@ html {
 
 .input-icon input {
   width: 100%;
-  padding: var(--space-sm) var(--space-sm) var(--space-sm) 40px; /* Increased padding for icon space */
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) 40px;
   border: 1px solid var(--dark-gray);
   border-radius: 8px;
   background-color: #f9f9f9;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
   color: var(--dark-gray);
 }
@@ -581,9 +534,9 @@ textarea {
   border: 1px solid var(--dark-gray);
   border-radius: 8px;
   background-color: #f9f9f9;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--body-font);
   font-size: 1rem;
-  color: var (--dark-gray);
+  color: var(--dark-gray);
 }
 
 textarea:focus {
@@ -600,7 +553,7 @@ textarea:focus {
 button[type="submit"] {
   background-color: var(--medium-pink);
   color: var(--white-color) !important;
-  font-family: "Satoshi", sans-serif;
+  font-family: var(--button-font);
   font-size: 1rem;
   font-weight: bold;
   padding: var(--space-sm) var(--space-md);
@@ -639,7 +592,6 @@ button[type="submit"]:hover {
   color: var(--soft-pink);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -649,9 +601,11 @@ button[type="submit"]:hover {
   .contact-content h2 {
     font-size: 1.4rem;
   }
+
   .contact-content p {
-    padding-right: 0px; /* More padding on the right */
+    padding-right: 0;
   }
+
   .contact-content,
   .contact-form {
     max-width: 100%;
@@ -663,5 +617,59 @@ button[type="submit"]:hover {
 
   .alternative-contact {
     text-align: center;
+  }
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
   }
 }

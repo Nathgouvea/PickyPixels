@@ -1,8 +1,8 @@
-/* Footer Styles */
+/* Footer styles */
 .site-footer {
-  background-color: var(--medium-pink); /* Slightly darker pink background */
-  color: var(--white-color); /* Light text for readability */
-  padding: var(--space-md) 0; /* Reduced padding around the entire footer */
+  background-color: var(--medium-pink);
+  color: var(--white-color);
+  padding: var(--space-md) 0;
 }
 
 .site-footer .container {
@@ -12,20 +12,20 @@
   justify-content: space-between;
   flex-wrap: wrap;
   text-align: left;
-  padding: 0 40px; /* Consistent left and right padding with other sections */
+  padding: 0 40px;
 }
 
 .footer-column {
-  flex: 1; /* Each column takes up an equal amount of space */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 20px; /* Padding on the sides for some spacing */
+  padding: 0 20px;
 }
 
 .footer-heading {
   font-family: var(--heading-font);
   font-weight: 600;
-  font-size: 20px; /* Increased font size */
+  font-size: 20px;
   margin-bottom: 20px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .footer-links li {
-  margin-bottom: var(--space-xs); /* Added spacing between links */
+  margin-bottom: var(--space-xs);
 }
 
 .footer-links li a {
@@ -43,29 +43,28 @@
   color: var(--white-color);
   text-decoration: none;
   transition: color 0.3s ease;
-  display: flex; /* To align icon and text */
+  display: flex;
   align-items: center;
 }
 
 .footer-links li a i {
-  margin-right: var(--space-xs); /* Spacing between icon and text */
+  margin-right: var(--space-xs);
 }
 
 .footer-links li a:hover {
-  color: var(--light-pink); /* Light brown on hover */
+  color: var(--light-pink);
 }
 
-/* Apply the same style to contact info */
 .footer-column p {
   font-family: var(--body-font);
   color: var(--white-color);
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-xs); /* Added spacing between contact info */
+  margin-bottom: var(--space-xs);
 }
 
 .footer-column p i {
-  margin-right: var(--space-xs); /* Spacing between icon and text */
+  margin-right: var(--space-xs);
 }
 
 .footer-cta {
@@ -103,9 +102,9 @@
 
 .footer-line {
   width: 100%;
-  height: 1px; /* Fine line */
+  height: 1px;
   background-color: var(--light-pink);
-  margin: var(--space-xs) 0; /* Space around the line */
+  margin: var(--space-xs) 0;
 }
 
 .footer-bottom {
@@ -115,12 +114,12 @@
   text-align: center;
   font-size: 14px;
   color: var(--white-color);
-  margin: 0; /* Removed margin */
-  padding: 5px 0; /* Reduced padding */
+  margin: 0;
+  padding: 5px 0;
 }
 
 .footer-bottom p {
-  margin: 0; /* Ensure no margin around the paragraph */
+  margin: 0;
   line-height: 1.5;
   display: flex;
   align-items: center;
@@ -132,13 +131,13 @@
   }
 
   .footer-column {
-    width: 100%; /* Full width to stack them on mobile */
-    padding: 10px 0; /* Adjust padding */
-    text-align: center; /* Center the content on small screens */
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
   }
 
   .footer-bottom {
     margin-top: 10px;
-    padding-bottom: 10px; /* Ensuring minimal padding */
+    padding-bottom: 10px;
   }
 }
