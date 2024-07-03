@@ -25,6 +25,63 @@
   --heading-font: "Satoshi", sans-serif;
   --body-font: "Lato", sans-serif;
   --button-font: "Satoshi", sans-serif;
+
+  /* Other variables */
+
+  --button-padding: 15px 30px;
+  --button-radius: 8px;
+  --button-font-size: 1rem;
+  --button-font-weight: bold;
+}
+/* Base button styles */
+button,
+.cta-button {
+  font-family: var(--button-font);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  padding: var(--button-padding);
+  border-radius: var(--button-radius);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Primary button */
+.button-primary,
+.cta-button {
+  background-color: var(--medium-pink);
+  color: var(--white-color);
+  border: none;
+  text-decoration: none; /* Ensure no underline */
+}
+
+.button-primary:hover,
+.cta-button:hover {
+  transform: scale(1.05);
+}
+
+/* Secondary button */
+.button-secondary {
+  background-color: var(--white-color);
+  color: var(--medium-pink);
+  border: 2px solid var(--medium-pink);
+}
+
+.button-secondary:hover {
+  background-color: var(--medium-pink);
+  color: var(--white-color);
+  border-color: var(--medium-pink);
+  transform: scale(1.05);
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  button,
+  .cta-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
 }
 
 body,
@@ -57,22 +114,6 @@ section {
   padding: var(--space-lg) 0;
 }
 
-.cta-button {
-  background-color: var(--light-pink);
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(203, 165, 129, 0.3);
-  font-family: var(--button-font);
-  font-size: 20px;
-  font-weight: bold;
-  padding: 15px 30px;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.cta-button:hover {
-  transform: scale(1.05);
-}
-
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-sm);
@@ -81,9 +122,27 @@ section {
   section {
     padding: var(--space-md) 0;
   }
+}
 
-  .cta-button {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
+/* Navigation links */
+.navigation-links a {
+  position: relative;
+  color: var(--white-color);
+  font-family: var(--heading-font);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 15px 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Specific rule to remove underline from contact button in navbar */
+#contact-btn {
+  text-decoration: none;
+}
+
+#contact-btn:hover {
+  text-decoration: none;
+  transform: scale(1.05);
 }

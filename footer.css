@@ -67,24 +67,6 @@
   margin-right: var(--space-xs);
 }
 
-.footer-cta {
-  background-color: var(--white-color);
-  color: var(--medium-pink);
-  padding: 15px 30px;
-  border-radius: 8px;
-  border: none;
-  font-family: var(--button-font);
-  font-size: 20px;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.footer-cta:hover {
-  color: var(--medium-pink);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
 .social-media-links {
   margin-top: var(--space-sm);
 }
