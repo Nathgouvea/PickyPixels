@@ -8,118 +8,175 @@
 .site-footer .container {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  text-align: left;
-  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  padding: 0 var(--space-md);
 }
 
 .footer-column {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
 }
 
 .footer-heading {
   font-family: var(--heading-font);
   font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 20px;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+  color: var(--white-color);
 }
 
 .footer-links {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .footer-links li {
-  margin-bottom: var(--space-xs);
+  margin-bottom: 8px;
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .footer-links li a {
   font-family: var(--body-font);
   color: var(--white-color);
   text-decoration: none;
-  transition: color 0.3s ease;
   display: flex;
   align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  padding: 4px 8px;
+  margin-left: -8px;
+  border-radius: 4px;
+  transition: transform 0.3s ease;
 }
 
 .footer-links li a i {
-  margin-right: var(--space-xs);
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
 }
 
-.footer-links li a:hover {
-  color: var(--light-pink);
+.footer-links li:hover {
+  transform: translateX(8px);
 }
 
+.footer-links li:hover i {
+  transform: translateX(2px);
+}
+
+/* Contact info styles */
 .footer-column p {
   font-family: var(--body-font);
   color: var(--white-color);
   display: flex;
   align-items: center;
-  margin-bottom: var(--space-xs);
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
 }
 
 .footer-column p i {
-  margin-right: var(--space-xs);
+  font-size: 0.9rem;
 }
 
+.footer-column p a {
+  color: var(--white-color);
+  text-decoration: none;
+  transition: opacity 0.25s ease;
+}
+
+.footer-column p a:hover {
+  opacity: 0.9;
+}
+
+/* Social media section */
 .social-media-links {
+  display: flex;
+  gap: var(--space-sm);
   margin-top: var(--space-sm);
 }
 
 .social-media-links a {
   color: var(--white-color);
-  font-size: 1.5rem;
-  margin-right: var(--space-sm);
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  transition: all 0.25s ease;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .social-media-links a:hover {
-  color: var(--light-pink);
+  background: rgba(255, 255, 255, 0.25);
 }
 
+/* Footer bottom section */
 .footer-line {
   width: 100%;
   height: 1px;
-  background-color: var(--light-pink);
-  margin: var(--space-xs) 0;
+  background: rgba(255, 255, 255, 0.2);
+  margin: var(--space-md) 0 var(--space-sm);
 }
 
 .footer-bottom {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  font-size: 14px;
-  color: var(--white-color);
-  margin: 0;
-  padding: 5px 0;
+  height: 40px;
 }
 
 .footer-bottom p {
   margin: 0;
-  line-height: 1.5;
-  display: flex;
-  align-items: center;
+  font-size: 0.85rem;
+  color: var(--white-color);
+  text-align: center;
 }
 
-@media (max-width: 768px) {
-  .site-footer {
-    flex-direction: column;
-  }
+/* Updated Footer CTA Button styles */
+.footer-cta {
+  background-color: var(--white-color);
+  color: var(--medium-pink);
+  border: 2px solid var(--white-color);
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  border-radius: var(--button-radius);
+  transition: all 0.25s ease;
+  font-weight: 600;
+}
 
-  .footer-column {
-    width: 100%;
-    padding: 10px 0;
+.footer-cta:hover {
+  background-color: transparent;
+  color: var(--white-color);
+  border-color: var(--white-color);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .site-footer .container {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
     text-align: center;
   }
 
-  .footer-bottom {
-    margin-top: 10px;
-    padding-bottom: 10px;
+  .footer-links li {
+    transform-origin: center;
+  }
+
+  .footer-links li a {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .footer-column p {
+    justify-content: center;
+  }
+
+  .social-media-links {
+    justify-content: center;
   }
 }

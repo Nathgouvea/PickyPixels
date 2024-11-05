@@ -452,11 +452,11 @@
         var typedElement = document.getElementById("typed-element");
         if (typedElement) {
           new Typed("#typed-element", {
-            strings: ["Seus Sonhos em Realidade"],
+            strings: ["Seus Sonhos em Realidade |"],
             typeSpeed: 50,
             backSpeed: 50,
             showCursor: true,
-            cursorChar: "|",
+            cursorChar: "",
             loop: false,
           });
         }
@@ -465,7 +465,7 @@
         var messageInput = document.getElementById("message");
         if (messageInput) {
           messageInput.addEventListener("input", function () {
-            document.getElementById("char-count").textContent =
+            document.getElementById("char-count").textContent,
               this.value.length;
           });
         }
