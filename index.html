@@ -268,59 +268,51 @@
       </div>
 
       <section class="contact-section" id="contact">
-        <div class="container">
-          <div class="contact-container">
-            <div class="contact-content">
-              <h2>Conecte-se Conosco</h2>
-              <p>
-                Desbloqueie todo o potencial de seus projetos digitais com o
-                Picky Pixels Studio. Nossa equipe está ansiosa para colaborar e
-                dar vida às suas ideias únicas. Preencha o formulário ou entre
-                em contato diretamente, e vamos começar a moldar o futuro
-                juntos.
-              </p>
-              <div class="contact-svg">
-                <img
-                  src="images/Group 1000002753.svg"
-                  alt="Ilustração de contato"
-                  class="animated-svg"
-                />
-              </div>
-            </div>
-            <div class="contact-form">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2>Conecte-se Conosco</h2>
+            <p>
+              Desbloqueie todo o potencial de seus projetos digitais com o Picky
+              Pixels Studio.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <!-- Left side - Contact Form -->
+            <div class="contact-form-section">
               <form action="https://formspree.io/f/mpwaajew" method="POST">
                 <div class="form-group">
                   <label for="full-name">Nome Completo</label>
                   <div class="input-icon">
-                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <i class="fas fa-user"></i>
                     <input
                       type="text"
                       id="full-name"
                       name="name"
                       placeholder="Digite seu nome completo"
-                      aria-required="true"
                       required
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="email">Endereço de Email</label>
+                  <label for="email">Email</label>
                   <div class="input-icon">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <i class="fas fa-envelope"></i>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       placeholder="seunome@exemplo.com"
-                      aria-required="true"
                       required
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="phone">Número de Telefone (Opcional)</label>
+                  <label for="phone">Telefone (Opcional)</label>
                   <div class="input-icon">
-                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <i class="fas fa-phone"></i>
                     <input
                       type="tel"
                       id="phone"
@@ -329,6 +321,7 @@
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label for="message">Mensagem</label>
                   <textarea
@@ -336,33 +329,60 @@
                     name="message"
                     placeholder="Digite sua mensagem aqui..."
                     maxlength="500"
-                    aria-required="true"
                     required
                   ></textarea>
                   <div class="char-count">
                     <span id="char-count">0</span>/500
                   </div>
                 </div>
+
                 <button type="submit" class="button-primary">
                   Enviar Mensagem
                 </button>
-                <p class="privacy-note">
-                  Respeitamos sua privacidade. Suas informações não serão
-                  compartilhadas.
-                </p>
               </form>
-              <div class="alternative-contact">
-                <a href="mailto:nathielle@pickypixels.studio"
-                  ><i class="fas fa-envelope" aria-hidden="true"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com/pickypixelsstudio/"
-                  target="_blank"
-                  ><i class="fab fa-instagram" aria-hidden="true"></i
-                ></a>
-                <a href="https://github.com/Nathgouvea" target="_blank"
-                  ><i class="fab fa-github" aria-hidden="true"></i
-                ></a>
+            </div>
+
+            <!-- Right side - Info and SVG -->
+            <div class="contact-info-section">
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="info-content">
+                    <h4>Localização</h4>
+                    <p>Porto, Portugal</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="info-content">
+                    <h4>WhatsApp / Telefone</h4>
+                    <p>+351 935185809</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-envelope"></i>
+                  <div class="info-content">
+                    <h4>Email</h4>
+                    <p>nathielle@pickypixels.studio</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-globe"></i>
+                  <div class="info-content">
+                    <h4>Atendimento Internacional</h4>
+                    <p>Disponível para clientes globais</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-illustration">
+                <img
+                  src="images/Group 1000002753.svg"
+                  alt="Ilustração de contato"
+                />
               </div>
             </div>
           </div>

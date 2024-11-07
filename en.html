@@ -261,58 +261,52 @@
       </div>
 
       <section class="contact-section" id="contact">
-        <div class="container">
-          <div class="contact-container">
-            <div class="contact-content">
-              <h2>Connect With Us</h2>
-              <p>
-                Unlock the full potential of your digital projects with Picky
-                Pixels Studio. Our team is eager to collaborate and bring your
-                unique ideas to life. Fill out the form or reach out directly,
-                and let's start shaping the future together.
-              </p>
-              <div class="contact-svg">
-                <img
-                  src="images/Group 1000002753.svg"
-                  alt="Contact illustration"
-                  class="animated-svg"
-                />
-              </div>
-            </div>
-            <div class="contact-form">
+        <div class="contact-container">
+          <div class="contact-header">
+            <h2>Connect With Us</h2>
+            <p>
+              Ready to transform your digital presence? Let's create something
+              amazing together.
+            </p>
+          </div>
+
+          <div class="contact-card">
+            <!-- Left side - Contact Form -->
+            <div class="contact-form-section">
               <form action="https://formspree.io/f/mpwaajew" method="POST">
+                <!-- English Version -->
                 <div class="form-group">
                   <label for="full-name">Full Name</label>
                   <div class="input-icon">
-                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <i class="fas fa-user"></i>
                     <input
                       type="text"
                       id="full-name"
                       name="name"
                       placeholder="Enter your full name"
-                      aria-required="true"
                       required
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="email">Email Address</label>
+                  <label for="email">Email</label>
                   <div class="input-icon">
-                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <i class="fas fa-envelope"></i>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       placeholder="yourname@example.com"
-                      aria-required="true"
                       required
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label for="phone">Phone Number (Optional)</label>
+                  <label for="phone">Phone (Optional)</label>
                   <div class="input-icon">
-                    <i class="fas fa-phone" aria-hidden="true"></i>
+                    <i class="fas fa-phone"></i>
                     <input
                       type="tel"
                       id="phone"
@@ -321,6 +315,7 @@
                     />
                   </div>
                 </div>
+
                 <div class="form-group">
                   <label for="message">Message</label>
                   <textarea
@@ -328,32 +323,60 @@
                     name="message"
                     placeholder="Type your message here..."
                     maxlength="500"
-                    aria-required="true"
                     required
                   ></textarea>
                   <div class="char-count">
                     <span id="char-count">0</span>/500
                   </div>
                 </div>
+
                 <button type="submit" class="button-primary">
                   Send Message
                 </button>
-                <p class="privacy-note">
-                  We respect your privacy. Your information will not be shared.
-                </p>
               </form>
-              <div class="alternative-contact">
-                <a href="mailto:nathielle@pickypixels.studio"
-                  ><i class="fas fa-envelope" aria-hidden="true"></i
-                ></a>
-                <a
-                  href="https://www.instagram.com/pickypixelsstudio/"
-                  target="_blank"
-                  ><i class="fab fa-instagram" aria-hidden="true"></i
-                ></a>
-                <a href="https://github.com/Nathgouvea" target="_blank"
-                  ><i class="fab fa-github" aria-hidden="true"></i
-                ></a>
+            </div>
+
+            <!-- Right side - Info and SVG -->
+            <div class="contact-info-section">
+              <div class="contact-info-list">
+                <div class="contact-info-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div class="info-content">
+                    <h4>Location</h4>
+                    <p>Porto, Portugal</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-phone"></i>
+                  <div class="info-content">
+                    <h4>WhatsApp / Phone</h4>
+                    <p>+351 935185809</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-envelope"></i>
+                  <div class="info-content">
+                    <h4>Email</h4>
+                    <p>nathielle@pickypixels.studio</p>
+                  </div>
+                </div>
+
+                <div class="contact-info-item">
+                  <i class="fas fa-globe"></i>
+                  <div class="info-content">
+                    <h4>International Service</h4>
+                    <p>Available for global clients</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="contact-illustration">
+                <img
+                  src="images/Group 1000002753.svg"
+                  alt="Contact illustration"
+                />
               </div>
             </div>
           </div>
