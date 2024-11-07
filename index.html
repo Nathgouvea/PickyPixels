@@ -199,73 +199,69 @@
       </section>
 
       <section class="portfolio-section" id="portfolio">
-        <div class="container">
-          <header class="section-header">
-            <h2>Nosso Portfólio</h2>
-            <p>
-              Descubra nossos projetos mais recentes e a jornada criativa por
-              trás de cada um.
-            </p>
-          </header>
-          <div class="portfolio-container">
-            <article class="portfolio-card">
-              <img
-                src="images/eleganciaboutique.pt_.jpg"
-                alt="Website da Elegância Boutique"
-                class="portfolio-image"
-              />
+        <div class="portfolio-header">
+          <h2>Nosso Portfólio</h2>
+          <p>
+            Descubra como transformamos ideias em experiências digitais
+            excepcionais.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-item">
+            <img
+              src="images/eleganciaboutique.pt_.jpg"
+              alt="Website da Elegância Boutique"
+              class="portfolio-image"
+            />
+            <div class="portfolio-content">
               <h3 class="portfolio-title">Elegância Boutique</h3>
               <p class="portfolio-description">
                 Uma loja online elegante e moderna com um visual vibrante contra
                 um fundo limpo.
               </p>
-              <button class="button-secondary portfolio-cta" data-id="1">
-                Ver Projeto
-              </button>
-            </article>
-            <article class="portfolio-card">
-              <img
-                src="images/isabelvieira.pt_.jpg"
-                alt="Website da Terapeuta Isabel Vieira"
-                class="portfolio-image"
-              />
-              <h3 class="portfolio-title">Terapeuta Isabel Vieira</h3>
+              <a href="#" class="portfolio-link">
+                Ver Projeto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <img
+              src="images/isabelvieira.pt_.jpg"
+              alt="Website da Terapeuta Isabel Vieira"
+              class="portfolio-image"
+            />
+            <div class="portfolio-content">
+              <h3 class="portfolio-title">Isabel Vieira Terapeuta</h3>
               <p class="portfolio-description">
-                Uma experiência web serena com um fundo azul suave, inspirando
-                tranquilidade e cura.
+                Uma experiência web serena inspirando tranquilidade e bem-estar.
               </p>
-              <button class="button-secondary portfolio-cta" data-id="2">
-                Ver Projeto
-              </button>
-            </article>
-            <article class="portfolio-card">
-              <img
-                src="images/stegel.pt_.jpg"
-                alt="Website do Salão de Beleza Stegel"
-                class="portfolio-image"
-              />
+              <a href="#" class="portfolio-link">
+                Ver Projeto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
+
+          <article class="portfolio-item">
+            <img
+              src="images/stegel.pt_.jpg"
+              alt="Website do Salão de Beleza Stegel"
+              class="portfolio-image"
+            />
+            <div class="portfolio-content">
               <h3 class="portfolio-title">Salão de Beleza Stegel</h3>
               <p class="portfolio-description">
-                Exalando luxo com um fundo cinza quente e suave, fazendo as
-                imagens da galeria se destacarem.
+                Exalando luxo com uma estética refinada que faz o conteúdo
+                brilhar.
               </p>
-              <button class="button-secondary portfolio-cta" data-id="3">
-                Ver Projeto
-              </button>
-            </article>
-          </div>
+              <a href="#" class="portfolio-link">
+                Ver Projeto <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </article>
         </div>
       </section>
-
-      <!-- Estrutura do Modal -->
-      <div id="projectModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <img id="modalImage" src="" alt="Imagem do Projeto" />
-          <h3 id="modalTitle"></h3>
-          <p id="modalDescription"></p>
-        </div>
-      </div>
 
       <section class="contact-section" id="contact">
         <div class="contact-container">
@@ -461,6 +457,22 @@
       </div>
     </footer>
 
+    <div class="portfolio-modal" id="portfolioModal">
+      <span class="modal-close">&times;</span>
+      <div class="portfolio-modal-content">
+        <img
+          src=""
+          alt="Project Image"
+          class="portfolio-modal-image"
+          id="modalImage"
+        />
+        <div class="portfolio-modal-info">
+          <h3 class="portfolio-modal-title" id="modalTitle"></h3>
+          <p class="portfolio-modal-description" id="modalDescription"></p>
+        </div>
+      </div>
+    </div>
+
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         // Hamburger menu interaction
@@ -495,50 +507,53 @@
           });
         }
 
-        // Modal functionality for portfolio projects
-        var modal = document.getElementById("projectModal");
-        var projects = {
-          1: {
-            title: "Elegância Boutique",
-            description:
-              "Uma loja online elegante e moderna com um visual vibrante contra um fundo limpo.",
-            image: "images/eleganciaboutique.pt_.jpg",
-          },
-          2: {
-            title: "Terapeuta Isabel Vieira",
-            description:
-              "Uma experiência web serena com um fundo azul suave, inspirando tranquilidade e cura.",
-            image: "images/isabelvieira.pt_.jpg",
-          },
-          3: {
-            title: "Salão de Beleza Stegel",
-            description:
-              "Exalando luxo com um fundo cinza quente e suave, fazendo as imagens da galeria se destacarem.",
-            image: "images/stegel.pt_.jpg",
-          },
-        };
+        // Portfolio modal functionality
+        const portfolioModal = document.getElementById("portfolioModal");
+        const modalClose = document.querySelector(".modal-close");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
 
-        document.querySelectorAll(".portfolio-cta").forEach(function (button) {
-          button.addEventListener("click", function () {
-            var projectId = this.getAttribute("data-id");
-            var project = projects[projectId];
-            modal.querySelector("#modalImage").src = project.image;
-            modal.querySelector("#modalTitle").textContent = project.title;
-            modal.querySelector("#modalDescription").textContent =
-              project.description;
-            modal.style.display = "block";
+        // Update portfolio items to use the modal
+        document.querySelectorAll(".portfolio-link").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const portfolioItem = this.closest(".portfolio-item");
+            const image = portfolioItem.querySelector(".portfolio-image").src;
+            const title =
+              portfolioItem.querySelector(".portfolio-title").textContent;
+            const description = portfolioItem.querySelector(
+              ".portfolio-description"
+            ).textContent;
+
+            modalImage.src = image;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            portfolioModal.style.display = "block";
+            document.body.style.overflow = "hidden";
           });
         });
 
-        document.querySelector(".close").onclick = function () {
-          modal.style.display = "none";
-        };
+        // Close modal functionality
+        modalClose.addEventListener("click", () => {
+          portfolioModal.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
 
-        window.onclick = function (event) {
-          if (event.target == modal) {
-            modal.style.display = "none";
+        window.addEventListener("click", (e) => {
+          if (e.target === portfolioModal) {
+            portfolioModal.style.display = "none";
+            document.body.style.overflow = "auto";
           }
-        };
+        });
+
+        // Add keyboard support for closing modal
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && portfolioModal.style.display === "block") {
+            portfolioModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
       });
     </script>
   </body>
