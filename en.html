@@ -470,15 +470,40 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Hamburger menu interaction
-        document
-          .querySelector(".hamburger-menu")
-          .addEventListener("click", function () {
-            document
-              .querySelector(".navigation-links")
-              .classList.toggle("active");
-            this.classList.toggle("open");
+        // Hamburger menu functionality
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const navigationLinks = document.querySelector(".navigation-links");
+
+        if (hamburgerMenu) {
+          hamburgerMenu.addEventListener("click", function () {
+            navigationLinks.classList.toggle("active");
+            hamburgerMenu.classList.toggle("open");
+
+            // Optional: Prevent body scrolling when menu is open
+            document.body.classList.toggle("menu-open");
           });
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll(".navigation-links a").forEach((link) => {
+          link.addEventListener("click", function () {
+            navigationLinks.classList.remove("active");
+            hamburgerMenu.classList.remove("open");
+            document.body.classList.remove("menu-open");
+          });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !hamburgerMenu.contains(e.target) &&
+            !navigationLinks.contains(e.target)
+          ) {
+            navigationLinks.classList.remove("active");
+            hamburgerMenu.classList.remove("open");
+            document.body.classList.remove("menu-open");
+          }
+        });
 
         // Typed.js initialization
         var typedElement = document.getElementById("typed-element");
@@ -613,6 +638,27 @@
         // Initial call and scroll listener
         setActiveLink();
         window.addEventListener("scroll", setActiveLink);
+
+        // Add this to your existing JavaScript
+        document.querySelectorAll(".portfolio-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            // Remove active class from all items
+            document.querySelectorAll(".portfolio-item").forEach((i) => {
+              i.classList.remove("active");
+            });
+            // Add active class to clicked item
+            this.classList.add("active");
+          });
+        });
+
+        // Close overlay when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".portfolio-item")) {
+            document.querySelectorAll(".portfolio-item").forEach((item) => {
+              item.classList.remove("active");
+            });
+          }
+        });
       });
     </script>
   </body>

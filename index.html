@@ -46,7 +46,7 @@
       <nav class="stroke" aria-label="Main navigation">
         <div class="logo"><p>Picky Pixels Studio</p></div>
         <button class="hamburger-menu" aria-label="Toggle navigation">
-          &#9776;
+          <span></span>
         </button>
         <ul class="navigation-links">
           <li><a href="#home" class="active-link">Início</a></li>
@@ -483,81 +483,37 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Navigation active state management
-        function setActiveLink() {
-          const sections = document.querySelectorAll("section[id]");
-          const navLinks = document.querySelectorAll(".navigation-links a");
-          const scrollPosition = window.scrollY;
+        // Hamburger menu functionality
+        const hamburgerMenu = document.querySelector(".hamburger-menu");
+        const navigationLinks = document.querySelector(".navigation-links");
 
-          sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute("id");
-
-            if (
-              scrollPosition >= sectionTop &&
-              scrollPosition < sectionTop + sectionHeight
-            ) {
-              // Remove active class from all links
-              navLinks.forEach((link) => {
-                link.classList.remove("active-link");
-              });
-
-              // Add active class to corresponding link
-              const correspondingLink = document.querySelector(
-                `.navigation-links a[href="#${sectionId}"]`
-              );
-              if (correspondingLink) {
-                correspondingLink.classList.add("active-link");
-              }
-            }
+        if (hamburgerMenu) {
+          hamburgerMenu.addEventListener("click", function (e) {
+            e.stopPropagation(); // Prevent click from bubbling
+            this.classList.toggle("open");
+            navigationLinks.classList.toggle("active");
+            document.body.classList.toggle("menu-open");
           });
-
-          // Special case for home section when at top of page
-          if (scrollPosition < 100) {
-            navLinks.forEach((link) => link.classList.remove("active-link"));
-            document
-              .querySelector('.navigation-links a[href="#home"]')
-              .classList.add("active-link");
-          }
         }
 
-        // Add click event listeners to navigation links
+        // Close mobile menu when clicking a link
         document.querySelectorAll(".navigation-links a").forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-
-            // Remove active class from all links
-            document.querySelectorAll(".navigation-links a").forEach((l) => {
-              l.classList.remove("active-link");
-            });
-
-            // Add active class to clicked link
-            this.classList.add("active-link");
-
-            // Get the target section
-            const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
-
-            if (targetSection) {
-              // Smooth scroll to section
-              targetSection.scrollIntoView({ behavior: "smooth" });
-            }
+          link.addEventListener("click", function () {
+            hamburgerMenu.classList.remove("open");
+            navigationLinks.classList.remove("active");
+            document.body.classList.remove("menu-open");
           });
         });
 
-        // Initial call
-        setActiveLink();
-
-        // Scroll listener with throttling
-        let isScrolling = false;
-        window.addEventListener("scroll", () => {
-          if (!isScrolling) {
-            window.requestAnimationFrame(() => {
-              setActiveLink();
-              isScrolling = false;
-            });
-            isScrolling = true;
+        // Close menu when clicking outside
+        document.addEventListener("click", function (e) {
+          if (
+            !navigationLinks.contains(e.target) &&
+            !hamburgerMenu.contains(e.target)
+          ) {
+            hamburgerMenu.classList.remove("open");
+            navigationLinks.classList.remove("active");
+            document.body.classList.remove("menu-open");
           }
         });
 
@@ -626,6 +582,27 @@
           if (e.key === "Escape" && portfolioModal.style.display === "block") {
             portfolioModal.style.display = "none";
             document.body.style.overflow = "auto";
+          }
+        });
+
+        // Portfolio click functionality
+        document.querySelectorAll(".portfolio-item").forEach((item) => {
+          item.addEventListener("click", function () {
+            // Remove active class from all items
+            document.querySelectorAll(".portfolio-item").forEach((i) => {
+              i.classList.remove("active");
+            });
+            // Add active class to clicked item
+            this.classList.add("active");
+          });
+        });
+
+        // Close overlay when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".portfolio-item")) {
+            document.querySelectorAll(".portfolio-item").forEach((item) => {
+              item.classList.remove("active");
+            });
           }
         });
       });
