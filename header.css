@@ -17,7 +17,7 @@
 .top-bar-icons {
   display: flex;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 4px;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -31,7 +31,7 @@
   text-decoration: none;
   transition: all 0.25s ease-out;
   font-size: 16px;
-  padding: 4px 8px;
+  padding: 4px 4px;
   border-radius: 6px;
 }
 
@@ -42,14 +42,14 @@
 
 .top-bar-icons p {
   color: rgba(255, 255, 255, 0.6);
-  margin: 0 4px;
+  margin: 0 1px;
 }
 
 .language-switch {
   font-family: var(--heading-font);
   font-size: 14px;
   font-weight: 500;
-  padding: 4px 8px !important;
+  padding: 4px 4px !important;
 }
 
 /* Navigation styles */
@@ -227,4 +227,57 @@ nav.scrolled {
 
 nav.scroll-up {
   animation: slideDown 0.3s ease forwards;
+}
+
+/* Navigation link styles */
+.navigation-links a {
+  color: var(--dark-gray);
+  font-family: var(--heading-font);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Underline animation for nav links */
+.navigation-links a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--medium-pink);
+  transition: width 0.25s ease-out;
+}
+
+.navigation-links a:hover {
+  color: var(--medium-pink);
+}
+
+.navigation-links a:hover::after {
+  width: 100%;
+}
+
+/* Active link style */
+.navigation-links a.active-link {
+  color: var(--medium-pink);
+}
+
+.navigation-links a.active-link::after {
+  width: 100%;
+}
+
+/* Contact button exception */
+.navigation-links a.contact-btn {
+  background: linear-gradient(135deg, var(--medium-pink), var(--light-pink));
+  color: var(--white-color) !important;
+  padding: 10px 20px !important;
+  border-radius: var(--button-radius) !important;
+}
+
+.navigation-links a.contact-btn::after {
+  display: none;
 }

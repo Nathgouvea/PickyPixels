@@ -43,8 +43,8 @@
         </button>
         <ul class="navigation-links">
           <li><a href="#home" class="active-link">Home</a></li>
-          <li><a href="#owner">About</a></li>
           <li><a href="#services">Services</a></li>
+          <li><a href="#owner">About</a></li>
           <li><a href="#portfolio">Portfolio</a></li>
           <li>
             <a href="#contact" class="contact-btn button-primary">Contact</a>
@@ -149,11 +149,6 @@
                 impactful and enduring.
               </p>
             </article>
-          </div>
-          <div class="services-cta">
-            <a href="#contact" class="button-primary cta-button"
-              >Discover How We Can Help</a
-            >
           </div>
         </div>
       </section>
@@ -409,14 +404,14 @@
               >
             </li>
             <li>
-              <a href="#about"
-                ><i class="fas fa-info-circle" aria-hidden="true"></i> About
-                Us</a
+              <a href="#services"
+                ><i class="fas fa-cogs" aria-hidden="true"></i> Services</a
               >
             </li>
             <li>
-              <a href="#services"
-                ><i class="fas fa-cogs" aria-hidden="true"></i> Services</a
+              <a href="#about"
+                ><i class="fas fa-info-circle" aria-hidden="true"></i> About
+                Us</a
               >
             </li>
             <li>
@@ -510,7 +505,7 @@
         const modalTitle = document.getElementById("modalTitle");
         const modalDescription = document.getElementById("modalDescription");
 
-        // Update portfolio items to use the modal
+        // Modal event listeners
         document.querySelectorAll(".portfolio-link").forEach((link) => {
           link.addEventListener("click", function (e) {
             e.preventDefault();
@@ -526,14 +521,13 @@
             modalTitle.textContent = title;
             modalDescription.textContent = description;
             portfolioModal.style.display = "block";
-            document.body.style.overflow = "hidden"; // Prevent scrolling when modal is open
+            document.body.style.overflow = "hidden";
           });
         });
 
-        // Close modal functionality
         modalClose.addEventListener("click", () => {
           portfolioModal.style.display = "none";
-          document.body.style.overflow = "auto"; // Re-enable scrolling
+          document.body.style.overflow = "auto";
         });
 
         window.addEventListener("click", (e) => {
@@ -543,12 +537,58 @@
           }
         });
 
-        // Add keyboard support for closing modal
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && portfolioModal.style.display === "block") {
             portfolioModal.style.display = "none";
             document.body.style.overflow = "auto";
           }
+        });
+
+        // Navigation active state management
+        function setActiveLink() {
+          try {
+            const sections = document.querySelectorAll("section[id]");
+            const navLinks = document.querySelectorAll(".navigation-links a");
+            const scrollPosition = window.scrollY + 120; // Adjusted for header height
+
+            sections.forEach((section) => {
+              const sectionTop = section.offsetTop - 120;
+              const sectionHeight = section.offsetHeight;
+
+              if (
+                scrollPosition >= sectionTop &&
+                scrollPosition < sectionTop + sectionHeight
+              ) {
+                navLinks.forEach((link) =>
+                  link.classList.remove("active-link")
+                );
+
+                const sectionId = section.getAttribute("id");
+                const correspondingLink = document.querySelector(
+                  `.navigation-links a[href="#${sectionId}"]`
+                );
+                if (correspondingLink) {
+                  correspondingLink.classList.add("active-link");
+                }
+              }
+            });
+          } catch (error) {
+            console.log("Error in setActiveLink:", error);
+          }
+        }
+
+        // Initial call
+        setActiveLink();
+
+        // Debounced scroll listener
+        let scrollTimeout;
+        window.addEventListener("scroll", () => {
+          if (scrollTimeout) {
+            window.cancelAnimationFrame(scrollTimeout);
+          }
+          scrollTimeout = window.requestAnimationFrame(() => {
+            setActiveLink();
+          });
         });
       });
     </script>
