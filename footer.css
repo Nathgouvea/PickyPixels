@@ -155,6 +155,9 @@
   border-radius: var(--button-radius);
   transition: all 0.25s ease;
   font-weight: 600;
+  text-align: center;
+  width: 100%;
+  display: inline-block;
 }
 
 .footer-cta:hover {

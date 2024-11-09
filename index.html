@@ -16,7 +16,14 @@
       src="https://kit.fontawesome.com/b176a46ae5.js"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" defer></script>
+    <link
+      rel="preload"
+      href="fonts/Satoshi-Variable.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body>
     <header>
@@ -432,7 +439,7 @@
         </div>
         <div class="footer-column">
           <h3 class="footer-heading">Fale Conosco</h3>
-          <button class="button-secondary footer-cta">Contate-nos</button>
+          <a href="#contact" class="button-secondary footer-cta">Contate-nos</a>
           <div class="social-media-links">
             <a
               href="https://www.instagram.com/pickypixelsstudio/"
@@ -472,37 +479,27 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Remove default active class from Home link
-        document
-          .querySelector('.navigation-links a[href="#home"]')
-          .classList.remove("active-link");
-
         // Navigation active state management
         function setActiveLink() {
           const sections = document.querySelectorAll("section[id]");
           const navLinks = document.querySelectorAll(".navigation-links a");
           const scrollPosition = window.scrollY;
 
-          // Special case for home section
-          if (scrollPosition < window.innerHeight / 3) {
-            navLinks.forEach((link) => link.classList.remove("active-link"));
-            document
-              .querySelector('.navigation-links a[href="#home"]')
-              .classList.add("active-link");
-            return;
-          }
-
           sections.forEach((section) => {
-            const sectionTop = section.offsetTop - 150; // Adjusted offset
-            const sectionBottom = sectionTop + section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
 
             if (
               scrollPosition >= sectionTop &&
-              scrollPosition < sectionBottom
+              scrollPosition < sectionTop + sectionHeight
             ) {
-              navLinks.forEach((link) => link.classList.remove("active-link"));
+              // Remove active class from all links
+              navLinks.forEach((link) => {
+                link.classList.remove("active-link");
+              });
 
-              const sectionId = section.getAttribute("id");
+              // Add active class to corresponding link
               const correspondingLink = document.querySelector(
                 `.navigation-links a[href="#${sectionId}"]`
               );
@@ -511,12 +508,44 @@
               }
             }
           });
+
+          // Special case for home section when at top of page
+          if (scrollPosition < 100) {
+            navLinks.forEach((link) => link.classList.remove("active-link"));
+            document
+              .querySelector('.navigation-links a[href="#home"]')
+              .classList.add("active-link");
+          }
         }
+
+        // Add click event listeners to navigation links
+        document.querySelectorAll(".navigation-links a").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all links
+            document.querySelectorAll(".navigation-links a").forEach((l) => {
+              l.classList.remove("active-link");
+            });
+
+            // Add active class to clicked link
+            this.classList.add("active-link");
+
+            // Get the target section
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+              // Smooth scroll to section
+              targetSection.scrollIntoView({ behavior: "smooth" });
+            }
+          });
+        });
 
         // Initial call
         setActiveLink();
 
-        // Throttled scroll listener
+        // Scroll listener with throttling
         let isScrolling = false;
         window.addEventListener("scroll", () => {
           if (!isScrolling) {
@@ -528,7 +557,73 @@
           }
         });
 
-        // Rest of your existing JavaScript...
+        // Typed.js initialization for Portuguese
+        const typedElement = document.getElementById("typed-element");
+        if (typedElement) {
+          new Typed("#typed-element", {
+            strings: ["Seus Sonhos em Realidade |"],
+            typeSpeed: 50,
+            backSpeed: 50,
+            showCursor: true,
+            cursorChar: "",
+            loop: false,
+          });
+        }
+
+        // Character count for message input
+        const messageInput = document.getElementById("message");
+        if (messageInput) {
+          messageInput.addEventListener("input", function () {
+            document.getElementById("char-count").textContent =
+              this.value.length;
+          });
+        }
+
+        // Portfolio modal functionality
+        const portfolioModal = document.getElementById("portfolioModal");
+        const modalClose = document.querySelector(".modal-close");
+        const modalImage = document.getElementById("modalImage");
+        const modalTitle = document.getElementById("modalTitle");
+        const modalDescription = document.getElementById("modalDescription");
+
+        // Modal event listeners
+        document.querySelectorAll(".portfolio-link").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const portfolioItem = this.closest(".portfolio-item");
+            const image = portfolioItem.querySelector(".portfolio-image").src;
+            const title =
+              portfolioItem.querySelector(".portfolio-title").textContent;
+            const description = portfolioItem.querySelector(
+              ".portfolio-description"
+            ).textContent;
+
+            modalImage.src = image;
+            modalTitle.textContent = title;
+            modalDescription.textContent = description;
+            portfolioModal.style.display = "block";
+            document.body.style.overflow = "hidden";
+          });
+        });
+
+        modalClose?.addEventListener("click", () => {
+          portfolioModal.style.display = "none";
+          document.body.style.overflow = "auto";
+        });
+
+        window.addEventListener("click", (e) => {
+          if (e.target === portfolioModal) {
+            portfolioModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape" && portfolioModal.style.display === "block") {
+            portfolioModal.style.display = "none";
+            document.body.style.overflow = "auto";
+          }
+        });
       });
     </script>
   </body>

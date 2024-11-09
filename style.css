@@ -1,96 +1,15 @@
-/* Reset and base styles */
+@import "variables.css";
+@import "animations.css";
+@import "components.css";
+@import "header.css";
+@import "footer.css";
+@import "layout.css";
+
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  /* Darker Pink Color Variables */
-  --soft-pink: #fff1f4;
-  --black: #1f2937;
-  --light-pink: #ff6b88;
-  --medium-pink: #ff4d6d;
-  --dark-gray: #4b5563;
-  --white-color: #ffffff;
-
-  /* Refined accent colors */
-  --background-light: #fafafa;
-  --shadow-color: rgba(0, 0, 0, 0.06);
-  --accent-color: #ff4d6d;
-  --text-light: #6b7280;
-  --border-light: rgba(0, 0, 0, 0.08);
-
-  /* Update spacing for better rhythm */
-  --space-xs: 0.5rem; /* 8px */
-  --space-sm: 1rem; /* 16px */
-  --space-md: 2rem; /* 32px */
-  --space-lg: 4rem; /* 64px */
-  --space-xl: 8rem; /* 128px */
-
-  /* Modern button styling */
-  --button-padding: 1rem 2rem;
-  --button-radius: 12px;
-  --button-font-size: 1.125rem;
-
-  /* Font Variables */
-  --heading-font: "Satoshi", sans-serif;
-  --body-font: "Lato", sans-serif;
-  --button-font: "Satoshi", sans-serif;
-
-  /* Other variables */
-
-  --button-font-weight: bold;
-}
-/* Base button styles */
-button,
-.cta-button {
-  font-family: var(--button-font);
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  padding: var(--button-padding);
-  border-radius: var(--button-radius);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, transform 0.3s ease;
-}
-
-/* Primary button */
-.button-primary,
-.cta-button {
-  background-color: var(--medium-pink);
-  color: var(--white-color);
-  border: none;
-  text-decoration: none; /* Ensure no underline */
-}
-
-.button-primary:hover,
-.cta-button:hover {
-  transform: scale(1.05);
-}
-
-/* Secondary button */
-.button-secondary {
-  background-color: var(--white-color);
-  color: var(--medium-pink);
-  border: 2px solid var(--medium-pink);
-}
-
-.button-secondary:hover {
-  background-color: var(--medium-pink);
-  color: var(--white-color);
-  border-color: var(--medium-pink);
-  transform: scale(1.05);
-}
-
-/* Media queries */
-@media (max-width: 768px) {
-  button,
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 10px 20px;
-  }
 }
 
 body,
@@ -103,10 +22,7 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  padding-top: 0px;
-}
-
+/* Global utility classes and base styles */
 .container {
   max-width: 1200px;
   width: 100%;
@@ -120,161 +36,4 @@ video {
   height: auto;
 }
 
-section {
-  padding: var(--space-lg) 0;
-}
-
-@media (max-width: 768px) {
-  .container {
-    padding: 0 var(--space-sm);
-  }
-
-  section {
-    padding: var(--space-md) 0;
-  }
-}
-
-/* Navigation links */
-.navigation-links a {
-  position: relative;
-  color: var(--white-color);
-  font-family: var(--heading-font);
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: 0.5px;
-  padding: 15px 20px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-/* Specific rule to remove underline from contact button in navbar */
-#contact-btn {
-  text-decoration: none;
-}
-
-#contact-btn:hover {
-  text-decoration: none;
-  transform: scale(1.05);
-}
-
-/* Button Base Styles */
-.button-primary,
-.button-secondary {
-  display: inline-block;
-  font-family: var(--button-font);
-  font-size: var(--button-font-size);
-  font-weight: 600;
-  padding: 12px 24px;
-  border-radius: var(--button-radius);
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.25s ease-out;
-  text-align: center;
-  letter-spacing: 0.01em;
-  line-height: 1.4;
-  position: relative;
-}
-
-/* Primary Button */
-.button-primary {
-  background-color: var(--medium-pink);
-  color: var(--white-color);
-  border: none;
-  box-shadow: 0 2px 4px rgba(251, 113, 133, 0.15);
-}
-
-.button-primary:hover {
-  background-color: var(--light-pink);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(251, 113, 133, 0.2);
-}
-
-.button-primary:active {
-  transform: translateY(0);
-}
-
-/* Secondary Button */
-.button-secondary {
-  background-color: transparent;
-  color: var(--medium-pink);
-  border: 1.5px solid var(--medium-pink);
-}
-
-.button-secondary:hover {
-  background-color: rgba(251, 113, 133, 0.05);
-  transform: translateY(-1px);
-}
-
-.button-secondary:active {
-  transform: translateY(0);
-}
-
-/* Portfolio Button Specific Styles */
-.portfolio-cta {
-  background-color: transparent;
-  color: var(--medium-pink);
-  border: 1.5px solid var(--medium-pink);
-  padding: 10px 20px;
-  font-size: 0.95rem;
-  transition: all 0.25s ease-out;
-}
-
-.portfolio-cta:hover {
-  background-color: var(--medium-pink);
-  color: var(--white-color);
-  transform: translateY(-1px);
-}
-
-/* Footer Button Specific Styles */
-.footer-cta {
-  background-color: var(--white-color);
-  color: var(--medium-pink);
-  border: 1.5px solid var(--white-color);
-  padding: 10px 20px;
-  font-size: 0.95rem;
-}
-
-.footer-cta:hover {
-  background-color: rgba(255, 255, 255, 0.9);
-  transform: translateY(-1px);
-}
-
-/* Contact Button in Navigation */
-.contact-btn {
-  background-color: var(--medium-pink);
-  color: var(--white-color);
-  transition: all 0.25s ease-out;
-}
-
-.contact-btn:hover {
-  background-color: var(--light-pink);
-  transform: translateY(-1px);
-}
-
-/* Disabled state */
-.button-primary:disabled,
-.button-secondary:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
-}
-
-/* Button sizes */
-.button-small {
-  font-size: 0.875rem;
-  padding: 8px 16px;
-}
-
-.button-large {
-  font-size: 1.125rem;
-  padding: 14px 28px;
-}
-
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .button-primary,
-  .button-secondary {
-    font-size: 1rem;
-    padding: 10px 20px;
-  }
-}
+/* ... other base styles ... */

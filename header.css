@@ -31,7 +31,10 @@
   text-decoration: none;
   transition: all 0.25s ease-out;
   font-size: 16px;
-  padding: 4px 4px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
   border-radius: 6px;
 }
 
@@ -49,7 +52,6 @@
   font-family: var(--heading-font);
   font-size: 14px;
   font-weight: 500;
-  padding: 4px 4px !important;
 }
 
 /* Navigation styles */

@@ -2,17 +2,17 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 76px);
   background: linear-gradient(
     135deg,
     rgba(255, 241, 244, 0.4) 0%,
     rgba(255, 255, 255, 0.95) 100%
   );
-  margin-top: 110px;
+  margin-top: 76px;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
-  scroll-margin-top: 110px;
+  scroll-margin-top: 76px;
 }
 
 .hero::before {
@@ -25,6 +25,7 @@
   background: url("../images/hero-pattern.svg") repeat;
   opacity: 0.1;
   z-index: 0;
+  pointer-events: none;
 }
 
 .hero .container {
@@ -37,12 +38,24 @@
   margin: 0 auto;
   padding: 0 var(--space-md);
   gap: var(--space-lg);
+  position: relative;
+  z-index: 2;
 }
 
 .hero-content {
   flex: 1;
   max-width: 550px;
   animation: fadeIn 0.8s ease-out;
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content .cta-button {
+  position: relative;
+  z-index: 4;
+  pointer-events: auto;
+  cursor: pointer;
+  display: inline-block;
 }
 
 .hero h1 {

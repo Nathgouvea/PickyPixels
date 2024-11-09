@@ -210,7 +210,7 @@
                 tapestry set against a clean background.
               </p>
               <a href="#" class="portfolio-link">
-                View Case Study <i class="fas fa-arrow-right"></i>
+                View Project <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -227,7 +227,7 @@
                 A serene web experience inspiring tranquility and healing.
               </p>
               <a href="#" class="portfolio-link">
-                View Case Study <i class="fas fa-arrow-right"></i>
+                View Project <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -245,7 +245,7 @@
                 shine.
               </p>
               <a href="#" class="portfolio-link">
-                View Case Study <i class="fas fa-arrow-right"></i>
+                View Project <i class="fas fa-arrow-right"></i>
               </a>
             </div>
           </article>
@@ -442,7 +442,7 @@
         </div>
         <div class="footer-column">
           <h3 class="footer-heading">Get in Touch</h3>
-          <button class="button-secondary footer-cta">Contact Us</button>
+          <a href="#contact" class="button-secondary footer-cta">Contact Us</a>
           <div class="social-media-links">
             <a
               href="https://www.instagram.com/pickypixelsstudio/"
@@ -546,50 +546,69 @@
 
         // Navigation active state management
         function setActiveLink() {
-          try {
-            const sections = document.querySelectorAll("section[id]");
-            const navLinks = document.querySelectorAll(".navigation-links a");
-            const scrollPosition = window.scrollY + 120; // Adjusted for header height
+          const sections = document.querySelectorAll("section[id]");
+          const navLinks = document.querySelectorAll(".navigation-links a");
+          const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-            sections.forEach((section) => {
-              const sectionTop = section.offsetTop - 120;
-              const sectionHeight = section.offsetHeight;
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute("id");
 
-              if (
-                scrollPosition >= sectionTop &&
-                scrollPosition < sectionTop + sectionHeight
-              ) {
-                navLinks.forEach((link) =>
-                  link.classList.remove("active-link")
-                );
+            // Check if we're in the current section
+            if (
+              scrollPosition >= sectionTop &&
+              scrollPosition < sectionTop + sectionHeight
+            ) {
+              // Remove active class from all links
+              navLinks.forEach((link) => link.classList.remove("active-link"));
 
-                const sectionId = section.getAttribute("id");
-                const correspondingLink = document.querySelector(
-                  `.navigation-links a[href="#${sectionId}"]`
-                );
-                if (correspondingLink) {
-                  correspondingLink.classList.add("active-link");
-                }
+              // Add active class to corresponding link
+              const correspondingLink = document.querySelector(
+                `.navigation-links a[href="#${sectionId}"]`
+              );
+              if (correspondingLink) {
+                correspondingLink.classList.add("active-link");
               }
-            });
-          } catch (error) {
-            console.log("Error in setActiveLink:", error);
+            }
+          });
+
+          // Special case for top of page
+          if (window.scrollY < 100) {
+            navLinks.forEach((link) => link.classList.remove("active-link"));
+            document
+              .querySelector('.navigation-links a[href="#home"]')
+              ?.classList.add("active-link");
           }
         }
 
-        // Initial call
-        setActiveLink();
+        // Add click event listeners to navigation links
+        document.querySelectorAll(".navigation-links a").forEach((link) => {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute("href").substring(1);
+            const targetSection = document.getElementById(targetId);
 
-        // Debounced scroll listener
-        let scrollTimeout;
-        window.addEventListener("scroll", () => {
-          if (scrollTimeout) {
-            window.cancelAnimationFrame(scrollTimeout);
-          }
-          scrollTimeout = window.requestAnimationFrame(() => {
-            setActiveLink();
+            if (targetSection) {
+              // Remove active class from all links
+              document
+                .querySelectorAll(".navigation-links a")
+                .forEach((link) => {
+                  link.classList.remove("active-link");
+                });
+
+              // Add active class to clicked link
+              this.classList.add("active-link");
+
+              // Smooth scroll to section
+              targetSection.scrollIntoView({ behavior: "smooth" });
+            }
           });
         });
+
+        // Initial call and scroll listener
+        setActiveLink();
+        window.addEventListener("scroll", setActiveLink);
       });
     </script>
   </body>
