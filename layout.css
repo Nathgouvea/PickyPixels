@@ -1173,6 +1173,7 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
   transition: all 0.3s ease;
+  z-index: 1200;
 }
 
 .modal-close:hover {
@@ -1192,20 +1193,33 @@
 }
 
 @media (max-width: 768px) {
-  .portfolio-modal {
-    padding: var(--space-sm);
+  .modal-close {
+    top: 20px;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+    background: var(--medium-pink);
+    position: fixed;
   }
 
   .portfolio-modal-content {
-    margin: var(--space-lg) auto;
+    margin: var(--space-sm) auto;
   }
 
-  .portfolio-modal-title {
-    font-size: 1.5rem;
+  .portfolio-modal-image {
+    width: 100%;
+    height: auto;
   }
+}
 
-  .portfolio-modal-description {
-    font-size: 1rem;
+/* Small mobile devices */
+@media (max-width: 375px) {
+  .modal-close {
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
   }
 }
 
