@@ -1174,6 +1174,8 @@
   border-radius: 50%;
   transition: all 0.3s ease;
   z-index: 1200;
+  line-height: 0;
+  padding-bottom: 4px;
 }
 
 .modal-close:hover {
@@ -1201,6 +1203,7 @@
     font-size: 1.5rem;
     background: var(--medium-pink);
     position: fixed;
+    padding-bottom: 3px;
   }
 
   .portfolio-modal-content {
@@ -1220,6 +1223,7 @@
     right: 15px;
     width: 30px;
     height: 30px;
+    padding-bottom: 2px;
   }
 }
 
