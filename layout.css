@@ -566,12 +566,78 @@
 }
 
 .portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-md);
-  max-width: 1200px;
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0;
+  overflow: hidden;
+}
+
+.portfolio-slider {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.portfolio-slide {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(auto, 400px));
+  gap: var(--space-lg);
+  min-width: 100%;
+  width: 100%;
+  flex: 0 0 100%;
+  justify-content: center;
   padding: 0 var(--space-md);
+  box-sizing: border-box;
+}
+
+.slider-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.slider-button {
+  background: var(--medium-pink);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.slider-button:hover {
+  background: var(--light-pink);
+  transform: scale(1.1);
+}
+
+.slider-dots {
+  display: flex;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+  justify-content: center;
+}
+
+.slider-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+  background: var(--medium-pink);
+  transform: scale(1.2);
 }
 
 .portfolio-item {
@@ -583,6 +649,7 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
   transition: all 0.4s ease;
   cursor: pointer;
+  width: 100%;
 }
 
 .portfolio-item:hover {
@@ -662,9 +729,8 @@
 }
 
 @media (max-width: 768px) {
-  .portfolio-grid {
+  .portfolio-slide {
     grid-template-columns: 1fr;
-    gap: var(--space-md);
   }
 
   .portfolio-item {

@@ -210,82 +210,105 @@
         </div>
 
         <div class="portfolio-grid">
-          <!-- LivingLeaving - Projeto Mais Recente -->
-          <article class="portfolio-item large">
-            <img
-              src="images/livingleaving.jpeg"
-              alt="Website do LivingLeaving"
-              class="portfolio-image"
-            />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">LivingLeaving</h3>
-              <p class="portfolio-description">
-                Uma plataforma dinâmica que conecta expatriados e locais,
-                apresentando uma interface intuitiva para compartilhar
-                experiências e recursos sobre viver no exterior.
-              </p>
-              <a href="#" class="portfolio-link">
-                Ver Projeto <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
+          <div class="portfolio-slider">
+            <!-- Slide 1 -->
+            <div class="portfolio-slide">
+              <!-- LivingLeaving -->
+              <article class="portfolio-item">
+                <img
+                  src="images/livingleaving.jpeg"
+                  alt="Website do LivingLeaving"
+                  class="portfolio-image"
+                />
+                <div class="portfolio-content">
+                  <h3 class="portfolio-title">LivingLeaving</h3>
+                  <p class="portfolio-description">
+                    Uma plataforma dinâmica que conecta expatriados e locais,
+                    apresentando uma interface intuitiva para compartilhar
+                    experiências e recursos sobre viver no exterior.
+                  </p>
+                  <a href="#" class="portfolio-link">
+                    Ver Projeto <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
 
-          <!-- Fazum Cafezim -->
-          <article class="portfolio-item large">
-            <img
-              src="images/fazumcafezim.jpg"
-              alt="Website da Fazum Cafezim"
-              class="portfolio-image"
-            />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Fazum Cafezim</h3>
-              <p class="portfolio-description">
-                Um website acolhedor para cafeteria, apresentando produtos
-                artesanais e um design caloroso que captura a essência da
-                cultura do café especial.
-              </p>
-              <a href="#" class="portfolio-link">
-                Ver Projeto <i class="fas fa-arrow-right"></i>
-              </a>
+              <!-- Fazum Cafezim -->
+              <article class="portfolio-item">
+                <img
+                  src="images/fazumcafezim.jpg"
+                  alt="Website da Fazum Cafezim"
+                  class="portfolio-image"
+                />
+                <div class="portfolio-content">
+                  <h3 class="portfolio-title">Fazum Cafezim</h3>
+                  <p class="portfolio-description">
+                    Um website acolhedor para cafeteria, apresentando produtos
+                    artesanais e um design caloroso que captura a essência da
+                    cultura do café especial.
+                  </p>
+                  <a href="#" class="portfolio-link">
+                    Ver Projeto <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
             </div>
-          </article>
 
-          <!-- Isabel Vieira -->
-          <article class="portfolio-item medium">
-            <img
-              src="images/isabelvieira.pt_.jpg"
-              alt="Website da Terapeuta Isabel Vieira"
-              class="portfolio-image"
-            />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Isabel Vieira Terapeuta</h3>
-              <p class="portfolio-description">
-                Uma experiência web serena inspirando tranquilidade e bem-estar.
-              </p>
-              <a href="#" class="portfolio-link">
-                Ver Projeto <i class="fas fa-arrow-right"></i>
-              </a>
-            </div>
-          </article>
+            <!-- Slide 2 -->
+            <div class="portfolio-slide">
+              <!-- Isabel Vieira -->
+              <article class="portfolio-item">
+                <img
+                  src="images/isabelvieira.pt_.jpg"
+                  alt="Website da Terapeuta Isabel Vieira"
+                  class="portfolio-image"
+                />
+                <div class="portfolio-content">
+                  <h3 class="portfolio-title">Isabel Vieira Terapeuta</h3>
+                  <p class="portfolio-description">
+                    Uma experiência web serena inspirando tranquilidade e
+                    bem-estar.
+                  </p>
+                  <a href="#" class="portfolio-link">
+                    Ver Projeto <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
 
-          <!-- Elegância Boutique -->
-          <article class="portfolio-item medium">
-            <img
-              src="images/eleganciaboutique.pt_.jpg"
-              alt="Website da Elegância Boutique"
-              class="portfolio-image"
-            />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Elegância Boutique</h3>
-              <p class="portfolio-description">
-                Uma loja online elegante e moderna com um visual vibrante contra
-                um fundo limpo.
-              </p>
-              <a href="#" class="portfolio-link">
-                Ver Projeto <i class="fas fa-arrow-right"></i>
-              </a>
+              <!-- Elegância Boutique -->
+              <article class="portfolio-item">
+                <img
+                  src="images/eleganciaboutique.pt_.jpg"
+                  alt="Website da Elegância Boutique"
+                  class="portfolio-image"
+                />
+                <div class="portfolio-content">
+                  <h3 class="portfolio-title">Elegância Boutique</h3>
+                  <p class="portfolio-description">
+                    Uma loja online elegante e moderna com um visual vibrante
+                    contra um fundo limpo.
+                  </p>
+                  <a href="#" class="portfolio-link">
+                    Ver Projeto <i class="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </article>
             </div>
-          </article>
+          </div>
+
+          <div class="slider-controls">
+            <button class="slider-button prev-button">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="slider-button next-button">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
+
+          <div class="slider-dots">
+            <span class="slider-dot active"></span>
+            <span class="slider-dot"></span>
+          </div>
         </div>
       </section>
 
@@ -625,6 +648,50 @@
             });
           }
         });
+
+        // Portfolio slider functionality
+        const slider = document.querySelector(".portfolio-slider");
+        const slides = document.querySelectorAll(".portfolio-slide");
+        const prevButton = document.querySelector(".prev-button");
+        const nextButton = document.querySelector(".next-button");
+        const dots = document.querySelectorAll(".slider-dot");
+        let currentSlide = 0;
+
+        function updateSlider() {
+          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+          dots.forEach((dot, index) => {
+            dot.classList.toggle("active", index === currentSlide);
+          });
+
+          // Update button states
+          prevButton.style.opacity = currentSlide === 0 ? "0.5" : "1";
+          nextButton.style.opacity =
+            currentSlide === slides.length - 1 ? "0.5" : "1";
+        }
+
+        prevButton.addEventListener("click", () => {
+          if (currentSlide > 0) {
+            currentSlide--;
+            updateSlider();
+          }
+        });
+
+        nextButton.addEventListener("click", () => {
+          if (currentSlide < slides.length - 1) {
+            currentSlide++;
+            updateSlider();
+          }
+        });
+
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentSlide = index;
+            updateSlider();
+          });
+        });
+
+        // Initialize slider
+        updateSlider();
       });
     </script>
   </body>
