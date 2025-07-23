@@ -1,698 +1,1563 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Picky Pixels Studio: Empoderando seu negócio com website bonito e eficaz."
+      content="Picky Pixels Studio - Creative Digital Experiences"
     />
     <title>Picky Pixels Studio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="footer.css" />
-    <link rel="stylesheet" href="layout.css" />
-    <script
-      src="https://kit.fontawesome.com/b176a46ae5.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <!-- Inline critical CSS here (expand as needed for above-the-fold styles) -->
+    <style>
+      /* Example: Critical CSS for hero section (expand as needed) */
+      body {
+        margin: 0;
+        font-family: "Syne", sans-serif;
+      }
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      /* Add more above-the-fold styles here */
+    </style>
+    <!-- Preload Google Fonts -->
     <link
       rel="preload"
-      href="fonts/Satoshi-Variable.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+    /></noscript>
+    <!-- Preload main stylesheet and load asynchronously -->
+    <link
+      rel="preload"
+      href="styles.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript><link rel="stylesheet" href="styles.css" /></noscript>
+    <!-- Preload Font Awesome and load asynchronously -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript
+      ><link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    /></noscript>
+    <!-- Preload hero image (if local, update path as needed) -->
+    <link rel="preload" as="image" href="images/logo2.png" />
   </head>
   <body>
-    <header>
-      <div class="top-bar">
-        <div class="top-bar-icons">
-          <a href="mailto:nathielle@pickypixels.studio"
-            ><i class="fas fa-envelope"></i
-          ></a>
-          <a href="https://www.instagram.com/pickypixelsstudio/" target="_blank"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a href="https://github.com/Nathgouvea" target="_blank"
-            ><i class="fab fa-github"></i
-          ></a>
-          <p>|</p>
-          <a href="index.html" class="language-switch">🇧🇷</a>
-          <a href="en.html" class="language-switch">🇬🇧</a>
-        </div>
-      </div>
-      <nav class="stroke" aria-label="Main navigation">
-        <div class="logo"><p>Picky Pixels Studio</p></div>
-        <button class="hamburger-menu" aria-label="Toggle navigation">
-          <span></span>
-        </button>
-        <ul class="navigation-links">
-          <li><a href="#home" class="active-link">Início</a></li>
-          <li><a href="#services">Serviços</a></li>
-          <li><a href="#owner">Sobre</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li>
-            <a
-              href="#contact"
-              class="button-primary contact-btn"
-              #id="contact-btn"
-              >Contato</a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar"></div>
+    </div>
 
-    <section class="hero parallax-background" id="home">
-      <div class="container">
-        <div class="hero-content">
-          <h1>Transforme <span id="typed-element"></span></h1>
-          <p class="fade-in-text">
-            Um site personalizado que reflete a sua visão única. <br />
-            Impulsione seu negócio com um website eficaz e deslumbrante.
-          </p>
-          <a href="#contact" class="button-primary cta-button"
-            >Comece Sua Jornada</a
+    <nav class="main-nav">
+      <div class="nav-brand">
+        <a href="#" class="logo"
+          ><img
+            src="images/logo2.png"
+            alt="Picky Pixels Studio Logo"
+            width="120"
+            height="120"
+        /></a>
+      </div>
+      <div class="nav-links">
+        <a href="#work" class="nav-link" data-translate="nav-work">Portfolio</a>
+        <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+        <a href="#contact" class="nav-link" data-translate="nav-contact"
+          >Contact</a
+        >
+      </div>
+      <div class="nav-cta">
+        <div class="nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <button class="theme-toggle" aria-label="Toggle dark and light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="language-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <div class="mobile-menu-content">
+        <div class="mobile-nav-links">
+          <a href="#work" class="nav-link" data-translate="nav-work"
+            >Portfolio</a
+          >
+          <a href="#about" class="nav-link" data-translate="nav-about">About</a>
+          <a href="#contact" class="nav-link" data-translate="nav-contact"
+            >Contact</a
           >
         </div>
-        <div class="hero-svg">
-          <img
-            src="images/design-illustrator-drawing-with-ipad-01-7.svg"
-            alt="Ilustração de design web"
-            class="animated-svg"
-          />
-        </div>
-      </div>
-    </section>
-
-    <main>
-      <section class="services-section" id="services">
-        <div class="container">
-          <header class="section-header">
-            <h2>Nosso Conhecimento ao Seu Alcance</h2>
-            <p>
-              Do conceito inicial ao polimento final, nossos serviços
-              abrangentes são projetados para dar vida à sua visão digital.
-            </p>
-          </header>
-          <div class="cards-container">
-            <article class="service-card">
-              <i class="fas fa-laptop-code service-icon" aria-hidden="true"></i>
-              <h3>Design e Desenvolvimento Web</h3>
-              <p>
-                Criando sites sob medida com WordPress, nossa equipe é
-                especializada na criação de soluções web estáticas e dinâmicas
-                envolventes que brilham em todos os dispositivos.
-              </p>
-            </article>
-            <article class="service-card">
-              <i
-                class="fas fa-search-dollar service-icon"
-                aria-hidden="true"
-              ></i>
-              <h3>Otimização de SEO</h3>
-              <p>
-                Eleve a presença do seu site nos resultados de busca com nossas
-                estratégias avançadas de SEO, projetadas para melhorar o
-                desempenho e a visibilidade do seu conteúdo.
-              </p>
-            </article>
-            <article class="service-card">
-              <i class="fas fa-globe service-icon" aria-hidden="true"></i>
-              <h3>Páginas de Destino</h3>
-              <p>
-                Converta seus prospects com páginas de destino personalizadas
-                que combinam estética atraente com design funcional, perfeito
-                para suas campanhas de marketing.
-              </p>
-            </article>
-            <article class="service-card">
-              <i
-                class="fas fa-object-ungroup service-icon"
-                aria-hidden="true"
-              ></i>
-              <h3>Design UI/UX</h3>
-              <p>
-                Transforme a experiência dos seus usuários com designs
-                intuitivos e responsivos, elaborados meticulosamente por meio de
-                ferramentas de prototipagem como Figma para garantir a
-                perfeição.
-              </p>
-            </article>
-            <article class="service-card">
-              <i class="fas fa-tools service-icon" aria-hidden="true"></i>
-              <h3>Manutenção de Sites</h3>
-              <p>
-                Mantenha seu site na vanguarda da inovação com nossos serviços
-                de manutenção, garantindo uma experiência moderna e amigável em
-                cada visita.
-              </p>
-            </article>
-            <article class="service-card">
-              <i
-                class="fas fa-chalkboard-teacher service-icon"
-                aria-hidden="true"
-              ></i>
-              <h3>Serviços de Consultoria</h3>
-              <p>
-                Aproveite nossa experiência para navegar pelas complexidades do
-                design web e da estratégia digital, garantindo que sua presença
-                online seja impactante e duradoura.
-              </p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="owner-section" id="owner">
-        <div class="container">
-          <div class="owner-content">
-            <div class="owner-photo-container">
-              <img
-                src="images/Nathielle.jpg"
-                alt="Nathielle Gouvêa, fundadora do Picky Pixels Studio"
-                class="owner-photo"
-              />
-            </div>
-            <div class="owner-message">
-              <h2>Inspirando o Crescimento Juntos</h2>
-              <p>
-                Olá! Eu sou Nathielle Gouvêa, fundadora do Picky Pixels Studio.
-                Minha missão é empoderar empreendedoras através de sites bonitos
-                e eficazes. Como uma pessoa extrovertida e criativa, prospero
-                com conexões humanas e colaboração.
-              </p>
-              <p>
-                O Picky Pixels Studio é uma comunidade onde seus sonhos são
-                nutridos e seu negócio pode brilhar. Vamos criar uma presença
-                online que reflita sua visão e impulsione seu negócio a novos
-                patamares. Juntos, podemos construir um futuro mais brilhante e
-                conectado.
-              </p>
-
-              <a href="#contact" class="button-primary cta-button"
-                >Junte-se à Nossa Comunidade</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="portfolio-section" id="portfolio">
-        <div class="portfolio-header">
-          <h2>Nosso Portfólio</h2>
-          <p>
-            Descubra como transformamos ideias em experiências digitais
-            excepcionais.
-          </p>
-        </div>
-
-        <div class="portfolio-grid">
-          <div class="portfolio-slider">
-            <!-- Slide 1 -->
-            <div class="portfolio-slide">
-              <!-- LivingLeaving -->
-              <article class="portfolio-item">
-                <img
-                  src="images/livingleaving.jpeg"
-                  alt="Website do LivingLeaving"
-                  class="portfolio-image"
-                />
-                <div class="portfolio-content">
-                  <h3 class="portfolio-title">LivingLeaving</h3>
-                  <p class="portfolio-description">
-                    Uma plataforma dinâmica que conecta expatriados e locais,
-                    apresentando uma interface intuitiva para compartilhar
-                    experiências e recursos sobre viver no exterior.
-                  </p>
-                  <a href="#" class="portfolio-link">
-                    Ver Projeto <i class="fas fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-
-              <!-- Fazum Cafezim -->
-              <article class="portfolio-item">
-                <img
-                  src="images/fazumcafezim.jpg"
-                  alt="Website da Fazum Cafezim"
-                  class="portfolio-image"
-                />
-                <div class="portfolio-content">
-                  <h3 class="portfolio-title">Fazum Cafezim</h3>
-                  <p class="portfolio-description">
-                    Um website acolhedor para cafeteria, apresentando produtos
-                    artesanais e um design caloroso que captura a essência da
-                    cultura do café especial.
-                  </p>
-                  <a href="#" class="portfolio-link">
-                    Ver Projeto <i class="fas fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="portfolio-slide">
-              <!-- Isabel Vieira -->
-              <article class="portfolio-item">
-                <img
-                  src="images/isabelvieira.pt_.jpg"
-                  alt="Website da Terapeuta Isabel Vieira"
-                  class="portfolio-image"
-                />
-                <div class="portfolio-content">
-                  <h3 class="portfolio-title">Isabel Vieira Terapeuta</h3>
-                  <p class="portfolio-description">
-                    Uma experiência web serena inspirando tranquilidade e
-                    bem-estar.
-                  </p>
-                  <a href="#" class="portfolio-link">
-                    Ver Projeto <i class="fas fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-
-              <!-- Elegância Boutique -->
-              <article class="portfolio-item">
-                <img
-                  src="images/eleganciaboutique.pt_.jpg"
-                  alt="Website da Elegância Boutique"
-                  class="portfolio-image"
-                />
-                <div class="portfolio-content">
-                  <h3 class="portfolio-title">Elegância Boutique</h3>
-                  <p class="portfolio-description">
-                    Uma loja online elegante e moderna com um visual vibrante
-                    contra um fundo limpo.
-                  </p>
-                  <a href="#" class="portfolio-link">
-                    Ver Projeto <i class="fas fa-arrow-right"></i>
-                  </a>
-                </div>
-              </article>
-            </div>
-          </div>
-
-          <div class="slider-controls">
-            <button class="slider-button prev-button">
-              <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-button next-button">
-              <i class="fas fa-chevron-right"></i>
-            </button>
-          </div>
-
-          <div class="slider-dots">
-            <span class="slider-dot active"></span>
-            <span class="slider-dot"></span>
-          </div>
-        </div>
-      </section>
-
-      <section class="contact-section" id="contact">
-        <div class="contact-container">
-          <div class="contact-header">
-            <h2>Conecte-se Conosco</h2>
-            <p>
-              Desbloqueie todo o potencial de seus projetos digitais com o Picky
-              Pixels Studio.
-            </p>
-          </div>
-
-          <div class="contact-card">
-            <!-- Left side - Contact Form -->
-            <div class="contact-form-section">
-              <form action="https://formspree.io/f/mpwaajew" method="POST">
-                <div class="form-group">
-                  <label for="full-name">Nome Completo</label>
-                  <div class="input-icon">
-                    <i class="fas fa-user"></i>
-                    <input
-                      type="text"
-                      id="full-name"
-                      name="name"
-                      placeholder="Digite seu nome completo"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <div class="input-icon">
-                    <i class="fas fa-envelope"></i>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      placeholder="seunome@exemplo.com"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="phone">Telefone (Opcional)</label>
-                  <div class="input-icon">
-                    <i class="fas fa-phone"></i>
-                    <input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      placeholder="+55 (11) 0000-0000"
-                    />
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="message">Mensagem</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    placeholder="Digite sua mensagem aqui..."
-                    maxlength="500"
-                    required
-                  ></textarea>
-                  <div class="char-count">
-                    <span id="char-count">0</span>/500
-                  </div>
-                </div>
-
-                <button type="submit" class="button-primary">
-                  Enviar Mensagem
-                </button>
-              </form>
-            </div>
-
-            <!-- Right side - Info and SVG -->
-            <div class="contact-info-section">
-              <div class="contact-info-list">
-                <div class="contact-info-item">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="info-content">
-                    <h4>Localização</h4>
-                    <p>Porto, Portugal</p>
-                  </div>
-                </div>
-
-                <div class="contact-info-item">
-                  <i class="fas fa-phone"></i>
-                  <div class="info-content">
-                    <h4>WhatsApp / Telefone</h4>
-                    <p>+351 935185809</p>
-                  </div>
-                </div>
-
-                <div class="contact-info-item">
-                  <i class="fas fa-envelope"></i>
-                  <div class="info-content">
-                    <h4>Email</h4>
-                    <p>nathielle@pickypixels.studio</p>
-                  </div>
-                </div>
-
-                <div class="contact-info-item">
-                  <i class="fas fa-globe"></i>
-                  <div class="info-content">
-                    <h4>Atendimento Internacional</h4>
-                    <p>Disponível para clientes globais</p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="contact-illustration">
-                <img
-                  src="images/Group 1000002753.svg"
-                  alt="Ilustração de contato"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-column">
-          <h3 class="footer-heading">Links Rápidos</h3>
-          <ul class="footer-links">
-            <li>
-              <a href="#home"
-                ><i class="fas fa-home" aria-hidden="true"></i> Início</a
-              >
-            </li>
-            <li>
-              <a href="#services"
-                ><i class="fas fa-cogs" aria-hidden="true"></i> Serviços</a
-              >
-            </li>
-
-            <li>
-              <a href="#about"
-                ><i class="fas fa-info-circle" aria-hidden="true"></i> Sobre
-                Nós</a
-              >
-            </li>
-
-            <li>
-              <a href="#portfolio"
-                ><i class="fas fa-briefcase" aria-hidden="true"></i>
-                Portfólio</a
-              >
-            </li>
-            <li>
-              <a href="#contact"
-                ><i class="fas fa-envelope" aria-hidden="true"></i> Contato</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h3 class="footer-heading">Contate-nos</h3>
-          <p>
-            <i class="fas fa-phone" aria-hidden="true"></i>
-            <a href="tel:+351935185809">+351 935185809</a>
-          </p>
-          <p>
-            <i class="fas fa-envelope" aria-hidden="true"></i>
-            <a href="mailto:nathielle@pickypixels.studio"
-              >nathielle@pickypixels.studio</a
-            >
-          </p>
-        </div>
-        <div class="footer-column">
-          <h3 class="footer-heading">Fale Conosco</h3>
-          <a href="#contact" class="button-secondary footer-cta">Contate-nos</a>
-          <div class="social-media-links">
-            <a
-              href="https://www.instagram.com/pickypixelsstudio/"
-              target="_blank"
-              ><i class="fab fa-instagram" aria-hidden="true"></i
-            ></a>
-            <a href="https://github.com/Nathgouvea" target="_blank"
-              ><i class="fab fa-github" aria-hidden="true"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-line"></div>
-      <div class="footer-bottom">
-        <p>
-          Empoderando sua presença digital com Picky Pixels Studio. © 2024 Picky
-          Pixels Studio. Todos os direitos reservados.
-        </p>
-      </div>
-    </footer>
-
-    <div class="portfolio-modal" id="portfolioModal">
-      <span class="modal-close">&times;</span>
-      <div class="portfolio-modal-content">
-        <img
-          src=""
-          alt="Project Image"
-          class="portfolio-modal-image"
-          id="modalImage"
-        />
-        <div class="portfolio-modal-info">
-          <h3 class="portfolio-modal-title" id="modalTitle"></h3>
-          <p class="portfolio-modal-description" id="modalDescription"></p>
+        <div class="mobile-nav-social nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+            ><i class="fas fa-envelope"></i
+          ></a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
         </div>
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Hamburger menu functionality
-        const hamburgerMenu = document.querySelector(".hamburger-menu");
-        const navigationLinks = document.querySelector(".navigation-links");
+    <main>
+      <section class="hero">
+        <div class="hero-split">
+          <div class="hero-left">
+            <span class="greeting" data-translate="hero-greeting"
+              >👋 Hey there, I'm Nathielle!</span
+            >
+            <h1 class="hero-title">
+              <span class="gradient-text" data-translate="hero-title-1"
+                >Websites</span
+              ><br />
+              <span data-translate="hero-title-2">With Heart</span><br />
+              <span class="outline-text" data-translate="hero-title-3"
+                >And Strategy</span
+              >
+            </h1>
+            <p class="hero-subtitle" data-translate="hero-subtitle">
+              I help creatives and small businesses build digital spaces that
+              feel true to them—beautiful, functional, and full of personality.
+            </p>
+            <div class="hero-cta">
+              <a href="#work" class="btn btn-primary" data-translate="cta-work"
+                >View Our Work</a
+              >
+              <a
+                href="#contact"
+                class="btn btn-outline"
+                data-translate="cta-contact"
+                >Let's Chat</a
+              >
+            </div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-visual">
+              <div class="shape shape-1"></div>
+              <div class="shape shape-2"></div>
+              <div class="shape shape-3"></div>
+              <div class="interactive-area" data-parallax="5"></div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        if (hamburgerMenu) {
-          hamburgerMenu.addEventListener("click", function (e) {
-            e.stopPropagation(); // Prevent click from bubbling
-            this.classList.toggle("open");
-            navigationLinks.classList.toggle("active");
-            document.body.classList.toggle("menu-open");
-          });
-        }
+      <section id="work" class="work" aria-labelledby="work-title">
+        <div class="section-header in-view">
+          <span class="section-label" data-translate="section-work-label"
+            >Our Portfolio</span
+          >
+          <h2
+            class="section-title"
+            id="work-title"
+            data-translate="section-work-title"
+          >
+            Some of Our Favorite Builds
+          </h2>
+          <p class="section-subtitle" data-translate="section-work-subtitle">
+            A glimpse into some of the websites we've built—each one crafted
+            with care to reflect the personality and goals of our clients.
+          </p>
+        </div>
+        <div class="work-slider-container">
+          <div class="work-slider" role="region" aria-label="Project showcase">
+            <div
+              class="work-slide"
+              itemscope
+              itemtype="http://schema.org/CreativeWork"
+            >
+              <div class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="Projects/livingleaving.webp"
+                    alt="LivingLeaving Website"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Portfolio</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">Web Design & Development</span>
+                  <h3>LivingLeaving</h3>
+                  <p>
+                    A sophisticated interior design portfolio showcasing space
+                    transformations with immersive gallery and before-after
+                    comparisons.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://livingleaving.nl"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <article
+                class="work-item"
+                data-category="web"
+                itemscope
+                itemtype="http://schema.org/CreativeWork"
+              >
+                <div class="work-image">
+                  <img
+                    src="Projects/fazumcafezim.webp"
+                    alt="FazUmCafezim Website"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay" aria-label="Technologies used">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">E-commerce</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category" itemprop="genre"
+                    >Web Design & E-commerce</span
+                  >
+                  <h3 itemprop="name">FazUmCafezim</h3>
+                  <p itemprop="description">
+                    An artisanal coffee shop website featuring a warm, inviting
+                    design that reflects the brand's commitment to quality.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://fazumcafezim.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                      itemprop="url"
+                      aria-label="Visit FazUmCafezim website"
+                    >
+                      <i
+                        class="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i>
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </article>
+            </div>
+            <div class="work-slide">
+              <article class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="Projects/stegel.pt_.webp"
+                    alt="Preview of Stegel Nails website showing the homepage with service listings and booking interface"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay" aria-label="Technologies used">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Responsive</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category" itemprop="genre"
+                    >Web Design & Development</span
+                  >
+                  <h3 itemprop="name">Siegel Nails</h3>
+                  <p itemprop="description">
+                    A modern and elegant website for a premium nail salon.
+                    Features include service listings, online booking
+                    integration, and a dynamic gallery showcase.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://stegel.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                      itemprop="url"
+                      aria-label="Visit Stegel Nails website"
+                    >
+                      <i
+                        class="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i>
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </article>
+              <div class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="Projects/isabelvieira.pt_.webp"
+                    alt="Isabel Vieira Website"
+                    width="800"
+                    height="600"
+                  />
+                  <div class="work-overlay">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Booking</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category">Web Design & Development</span>
+                  <h3>Isabel Vieira</h3>
+                  <p>
+                    A personal brand website for a professional therapist with
+                    easy access to services, booking, and valuable resources.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://isabelvieira.pt"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                    >
+                      <i class="fas fa-external-link-alt"></i> Visit Website
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="slider-navigation">
+            <button class="slider-nav prev" aria-label="View previous projects">
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </span>
+              <span class="nav-text">Previous</span>
+            </button>
+            <div
+              class="slider-dots"
+              role="tablist"
+              aria-label="Project slides navigation"
+            >
+              <button
+                class="dot active"
+                role="tab"
+                aria-label="Go to slide 1"
+                aria-selected="true"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+              <button
+                class="dot"
+                role="tab"
+                aria-label="Go to slide 2"
+                aria-selected="false"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+            </div>
+            <button class="slider-nav next" aria-label="View next projects">
+              <span class="nav-text">Next</span>
+              <span class="nav-arrow">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          id="work-slider-all"
+          role="tabpanel"
+          aria-labelledby="work-slider-all"
+          hidden
+        ></div>
+        <div
+          id="work-slider-web"
+          role="tabpanel"
+          aria-labelledby="work-slider-web"
+          hidden
+        ></div>
+        <div
+          id="work-slider-branding"
+          role="tabpanel"
+          aria-labelledby="work-slider-branding"
+          hidden
+        ></div>
+        <div
+          id="work-slider-app"
+          role="tabpanel"
+          aria-labelledby="work-slider-app"
+          hidden
+        ></div>
+      </section>
 
-        // Close mobile menu when clicking a link
-        document.querySelectorAll(".navigation-links a").forEach((link) => {
-          link.addEventListener("click", function () {
-            hamburgerMenu.classList.remove("open");
-            navigationLinks.classList.remove("active");
-            document.body.classList.remove("menu-open");
-          });
-        });
+      <section id="about" class="about">
+        <div class="about-content">
+          <header class="section-header">
+            <span class="section-label">About Us</span>
+            <h2>Let's Build Something Meaningful</h2>
+            <p class="section-description">
+              We create websites that don't just look good—they feel right.
+              Tailored to your brand, your vibe, your goals.
+            </p>
+          </header>
 
-        // Close menu when clicking outside
-        document.addEventListener("click", function (e) {
-          if (
-            !navigationLinks.contains(e.target) &&
-            !hamburgerMenu.contains(e.target)
-          ) {
-            hamburgerMenu.classList.remove("open");
-            navigationLinks.classList.remove("active");
-            document.body.classList.remove("menu-open");
-          }
-        });
+          <div class="owner-content">
+            <div class="owner-info">
+              <div class="owner-photo-wrapper">
+                <img
+                  src="images/Nathielle.jpg"
+                  alt="Nathielle Gouvêa - Founder of Picky Pixels Studio"
+                  class="owner-photo"
+                  loading="lazy"
+                  width="200"
+                  height="200"
+                />
+                <div class="owner-social">
+                  <a
+                    href="https://instagram.com/pickypixelsstudio"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link"
+                    aria-label="Instagram"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://github.com/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link"
+                    aria-label="GitHub"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    class="social-link"
+                    aria-label="LinkedIn"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                  <a
+                    href="mailto:nathielle@pickypixels.studio"
+                    class="social-link"
+                    aria-label="Email Nathielle"
+                  >
+                    <i class="far fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
 
-        // Typed.js initialization for Portuguese
-        const typedElement = document.getElementById("typed-element");
-        if (typedElement) {
-          new Typed("#typed-element", {
-            strings: ["Seus Sonhos em Realidade |"],
-            typeSpeed: 50,
-            backSpeed: 50,
-            showCursor: true,
-            cursorChar: "",
-            loop: false,
-          });
-        }
+              <div class="owner-details">
+                <h3>Nathielle Gouvêa</h3>
+                <span class="owner-role">Founder & Creative Director</span>
+                <div class="owner-quote">
+                  <i class="fas fa-quote-left"></i>
+                  <p>
+                    I'm here to help you show up online with confidence and
+                    authenticity—let's build something that feels right and
+                    works beautifully.
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        // Character count for message input
-        const messageInput = document.getElementById("message");
-        if (messageInput) {
-          messageInput.addEventListener("input", function () {
-            document.getElementById("char-count").textContent =
-              this.value.length;
-          });
-        }
+            <div class="owner-message">
+              <div class="message-content">
+                <p class="highlight-paragraph">
+                  I'm Nathielle—designer, creative, and founder of Picky Pixels.
+                  I turn dreams into websites that feel aligned with who you are
+                  and what you're building.
+                </p>
+                <p>
+                  This studio is a place where small businesses, creatives, and
+                  first-time founders can feel supported. Whether you're
+                  launching something new or refreshing your brand, we'll make
+                  it feel exciting, intentional, and 100% you.
+                </p>
 
-        // Portfolio modal functionality
-        const portfolioModal = document.getElementById("portfolioModal");
-        const modalClose = document.querySelector(".modal-close");
-        const modalImage = document.getElementById("modalImage");
-        const modalTitle = document.getElementById("modalTitle");
-        const modalDescription = document.getElementById("modalDescription");
+                <div class="owner-values">
+                  <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h4>Personal</h4>
+                    <p>Designs that reflect your unique story</p>
+                  </div>
+                  <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Strategic</h4>
+                    <p>Creative solutions with purpose</p>
+                  </div>
+                  <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Collaborative</h4>
+                    <p>Fun and stress-free process</p>
+                  </div>
+                </div>
 
-        // Modal event listeners
-        document.querySelectorAll(".portfolio-link").forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            const portfolioItem = this.closest(".portfolio-item");
-            const image = portfolioItem.querySelector(".portfolio-image").src;
-            const title =
-              portfolioItem.querySelector(".portfolio-title").textContent;
-            const description = portfolioItem.querySelector(
-              ".portfolio-description"
-            ).textContent;
+                <div class="cta-container">
+                  <a href="#contact" class="btn btn-primary">Let's Talk</a>
+                  <a href="#work" class="btn btn-outline">View Our Work</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            modalImage.src = image;
-            modalTitle.textContent = title;
-            modalDescription.textContent = description;
-            portfolioModal.style.display = "block";
-            document.body.style.overflow = "hidden";
-          });
-        });
+      <section
+        class="services-help"
+        style="padding: 5rem 0; background: var(--surface)"
+      >
+        <div
+          class="services-help-content"
+          style="max-width: 1200px; margin: 0 auto; padding: 0 2rem"
+        >
+          <div
+            class="services-grid"
+            style="
+              display: grid;
+              grid-template-columns: 40% 60%;
+              gap: 3rem;
+              align-items: start;
+            "
+          >
+            <!-- Left Column - Title and Description -->
+            <div
+              class="services-header"
+              style="position: sticky; top: 2rem; align-self: flex-start"
+            >
+              <h2
+                style="
+                  font-size: 2.7rem;
+                  color: var(--primary);
+                  margin-bottom: 1.2rem;
+                  line-height: 1.15;
+                  font-weight: 800;
+                  letter-spacing: -1px;
+                "
+              >
+                💡 How Can I Help You?
+              </h2>
+              <p
+                style="
+                  font-size: 1.15rem;
+                  color: var(--text-light);
+                  line-height: 1.7;
+                  margin-bottom: 2.2rem;
+                  max-width: 90%;
+                "
+              >
+                Whether you're just starting out or giving your brand a glow-up,
+                I'm here to help you launch something beautiful, functional, and
+                uniquely yours.
+              </p>
+              <a
+                href="#contact"
+                class="btn btn-primary"
+                style="
+                  display: inline-flex;
+                  align-items: center;
+                  gap: 0.5rem;
+                  padding: 1rem 2rem;
+                  border-radius: 50px;
+                  background: var(--primary);
+                  color: white;
+                  text-decoration: none;
+                  font-weight: 600;
+                  transition: all 0.3s ease;
+                  font-size: 1.1rem;
+                "
+              >
+                Let's Work Together
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
 
-        modalClose?.addEventListener("click", () => {
-          portfolioModal.style.display = "none";
-          document.body.style.overflow = "auto";
-        });
+            <!-- Right Column - Carousel -->
+            <div class="services-carousel-container" style="position: relative">
+              <div
+                class="services-carousel"
+                style="
+                  display: flex;
+                  gap: 2rem;
+                  overflow-x: auto;
+                  scroll-snap-type: x mandatory;
+                  scroll-behavior: smooth;
+                  -webkit-overflow-scrolling: touch;
+                  padding: 0.5rem 0 1rem 0;
+                  scrollbar-width: none;
+                  -ms-overflow-style: none;
+                "
+              >
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    Web Design & Development
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    Custom-built websites—whether with WordPress or hand-coded
+                    from scratch—designed to be fast, responsive, and aligned
+                    with your brand's personality.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-bolt"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    AI-Powered Workflow
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    Using tools like ChatGPT and Cursor, I speed up development,
+                    spark creative ideas, and deliver better results—so we can
+                    focus more on strategy and flow.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-bullseye"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    Landing Pages
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    Convert visitors into clients with sleek, high-impact
+                    landing pages tailored for your campaigns, launches, or
+                    offerings.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-search"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    Smart SEO Basics
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    I use AI-enhanced strategies to help your site show up
+                    better in search results—clean structure, smart keywords,
+                    and content guidance that makes sense.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-eye"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    UI/UX Design
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    Clean, intuitive design focused on clarity and ease—making
+                    sure your visitors feel at home and know exactly what to do.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+                <div
+                  class="service-card"
+                  style="
+                    flex: 0 0 330px;
+                    scroll-snap-align: start;
+                    background: var(--background);
+                    border-radius: 18px;
+                    padding: 2rem 1.5rem;
+                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    position: relative;
+                    overflow: hidden;
+                    border: 1px solid var(--border);
+                    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+                  "
+                >
+                  <div
+                    class="service-icon"
+                    style="
+                      font-size: 2rem;
+                      color: var(--primary);
+                      margin-bottom: 1.2rem;
+                    "
+                  >
+                    <i class="fas fa-comments"></i>
+                  </div>
+                  <h3
+                    class="service-title"
+                    style="
+                      font-size: 1.25rem;
+                      margin-bottom: 0.7rem;
+                      color: var(--text);
+                      font-weight: 700;
+                    "
+                  >
+                    Consulting & Support
+                  </h3>
+                  <p
+                    class="service-desc"
+                    style="
+                      color: var(--text-light);
+                      line-height: 1.6;
+                      font-size: 1rem;
+                    "
+                  >
+                    From initial guidance to ongoing maintenance, I'll help you
+                    navigate the digital landscape. Whether you're just starting
+                    or need ongoing support, I'll keep your site fresh,
+                    functional, and running smoothly.
+                  </p>
+                  <div
+                    class="service-hover"
+                    style="
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      background: linear-gradient(
+                        45deg,
+                        var(--primary),
+                        var(--accent)
+                      );
+                      opacity: 0;
+                      transition: opacity 0.3s ease;
+                      display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      color: white;
+                      transform: translateY(100%);
+                    "
+                  >
+                    <span style="font-weight: 600">Learn More</span>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="carousel-controls"
+                style="
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 1rem;
+                  margin-top: 2rem;
+                "
+              >
+                <button
+                  class="carousel-nav prev"
+                  style="
+                    background: var(--background);
+                    border: 1px solid var(--border);
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                  "
+                >
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <div class="carousel-dots" style="display: flex; gap: 0.5rem">
+                  <button
+                    class="carousel-dot active"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 50%;
+                      background: var(--primary);
+                      border: none;
+                      cursor: pointer;
+                      opacity: 0.5;
+                      transition: opacity 0.3s ease;
+                    "
+                  ></button>
+                  <button
+                    class="carousel-dot"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 50%;
+                      background: var(--primary);
+                      border: none;
+                      cursor: pointer;
+                      opacity: 0.5;
+                      transition: opacity 0.3s ease;
+                    "
+                  ></button>
+                  <button
+                    class="carousel-dot"
+                    style="
+                      width: 10px;
+                      height: 10px;
+                      border-radius: 50%;
+                      background: var(--primary);
+                      border: none;
+                      cursor: pointer;
+                      opacity: 0.5;
+                      transition: opacity 0.3s ease;
+                    "
+                  ></button>
+                </div>
+                <button
+                  class="carousel-nav next"
+                  style="
+                    background: var(--background);
+                    border: 1px solid var(--border);
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                  "
+                >
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
 
-        window.addEventListener("click", (e) => {
-          if (e.target === portfolioModal) {
-            portfolioModal.style.display = "none";
-            document.body.style.overflow = "auto";
-          }
-        });
+          <style>
+            .services-carousel::-webkit-scrollbar {
+              display: none;
+            }
+            .service-card {
+              cursor: pointer;
+            }
+            .service-card:hover {
+              transform: translateY(-5px);
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+            .service-card:hover .service-hover {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            .service-card:hover .service-icon,
+            .service-card:hover .service-title,
+            .service-card:hover .service-desc {
+              color: white;
+            }
+            .carousel-nav:hover {
+              background: var(--primary);
+              color: white;
+            }
+            .carousel-dot.active {
+              opacity: 1;
+            }
+            .btn-primary:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+            @media (max-width: 1024px) {
+              .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+              }
+              .services-header {
+                position: relative;
+                top: 0;
+                text-align: center;
+              }
+              .services-header .btn {
+                margin: 0 auto;
+              }
+            }
+          </style>
 
-        document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape" && portfolioModal.style.display === "block") {
-            portfolioModal.style.display = "none";
-            document.body.style.overflow = "auto";
-          }
-        });
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const carousel = document.querySelector(".services-carousel");
+              const prevBtn = document.querySelector(".carousel-nav.prev");
+              const nextBtn = document.querySelector(".carousel-nav.next");
+              const dots = document.querySelectorAll(".carousel-dot");
+              const cardWidth = 330 + 32; // card width + gap
 
-        // Portfolio click functionality
-        document.querySelectorAll(".portfolio-item").forEach((item) => {
-          item.addEventListener("click", function () {
-            // Remove active class from all items
-            document.querySelectorAll(".portfolio-item").forEach((i) => {
-              i.classList.remove("active");
+              let currentIndex = 0;
+              const maxIndex = Math.floor(
+                (carousel.scrollWidth - carousel.clientWidth) / cardWidth
+              );
+
+              function updateDots() {
+                dots.forEach((dot, index) => {
+                  dot.classList.toggle("active", index === currentIndex);
+                });
+              }
+
+              function scrollToIndex(index) {
+                currentIndex = Math.max(0, Math.min(index, maxIndex));
+                carousel.scrollTo({
+                  left: currentIndex * cardWidth,
+                  behavior: "smooth",
+                });
+                updateDots();
+              }
+
+              prevBtn.addEventListener("click", () =>
+                scrollToIndex(currentIndex - 1)
+              );
+              nextBtn.addEventListener("click", () =>
+                scrollToIndex(currentIndex + 1)
+              );
+
+              dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => scrollToIndex(index));
+              });
+
+              // Update dots on scroll
+              carousel.addEventListener("scroll", () => {
+                currentIndex = Math.round(carousel.scrollLeft / cardWidth);
+                updateDots();
+              });
             });
-            // Add active class to clicked item
-            this.classList.add("active");
-          });
-        });
+          </script>
+        </div>
+      </section>
 
-        // Close overlay when clicking outside
-        document.addEventListener("click", function (e) {
-          if (!e.target.closest(".portfolio-item")) {
-            document.querySelectorAll(".portfolio-item").forEach((item) => {
-              item.classList.remove("active");
-            });
+      <section
+        id="contact"
+        class="contact"
+        itemscope
+        itemtype="http://schema.org/ContactPage"
+      >
+        <div class="contact-container">
+          <div class="contact-header">
+            <span class="contact-label">Ready to Start?</span>
+            <h2 class="contact-title" itemprop="name">
+              Let's Create Something You're Proud Of
+            </h2>
+            <p class="contact-subtitle">
+              Tell me your ideas, your goals, and your vision—I'll help bring it
+              to life with a website that feels just right.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="quick-contact">
+              <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Choose your preferred way to connect:</p>
+              </div>
+
+              <div class="contact-actions">
+                <a
+                  href="mailto:nathielle@pickypixels.studio"
+                  class="action-btn email-btn"
+                >
+                  <i class="far fa-envelope"></i>
+                  <span>nathielle@pickypixels.studio</span>
+                </a>
+                <a
+                  href="https://calendly.com/pickypixels"
+                  target="_blank"
+                  rel="noopener"
+                  class="action-btn calendar-btn"
+                >
+                  <i class="far fa-calendar-check"></i>
+                  <span>Schedule a Call</span>
+                </a>
+              </div>
+
+              <div class="social-connect">
+                <p>Connect with me:</p>
+                <div class="social-links">
+                  <a
+                    href="https://instagram.com/pickypixelsstudio"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow on Instagram"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://github.com/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow on GitHub"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Connect on LinkedIn"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <form
+              class="contact-form"
+              id="contact-form"
+              role="form"
+              action="https://formspree.io/f/mpwaajew"
+              method="POST"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="Your Email"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="service">What do you need help with?</label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>
+                      What do you need help with?
+                    </option>
+                    <option value="webdesign">Web Design & Development</option>
+                    <option value="ai">AI-Powered Workflow</option>
+                    <option value="landing">Landing Pages</option>
+                    <option value="seo">Smart SEO Basics</option>
+                    <option value="uiux">UI/UX Design</option>
+                    <option value="consulting">Consulting & Support</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell me about your project..."
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div
+                class="form-group"
+                style="display: flex; align-items: center; gap: 0.5rem"
+              >
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  style="width: auto"
+                />
+                <label for="privacy" style="font-size: 0.95rem">
+                  I agree to the
+                  <a
+                    href="/privacy-policy.html"
+                    target="_blank"
+                    style="color: var(--primary); text-decoration: underline"
+                    >privacy policy</a
+                  >.
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div
+                id="form-message"
+                style="margin-top: 1rem; font-size: 1rem"
+              ></div>
+            </form>
+            <script>
+              document.addEventListener("DOMContentLoaded", function () {
+                const form = document.getElementById("contact-form");
+                const messageDiv = document.getElementById("form-message");
+                if (form) {
+                  form.addEventListener("submit", async function (e) {
+                    e.preventDefault();
+                    messageDiv.textContent = "";
+                    const formData = new FormData(form);
+                    try {
+                      const response = await fetch(form.action, {
+                        method: "POST",
+                        body: formData,
+                        headers: { Accept: "application/json" },
+                      });
+                      if (response.ok) {
+                        form.reset();
+                        messageDiv.style.color = "green";
+                        messageDiv.textContent =
+                          "Thank you! Your message has been sent.";
+                      } else {
+                        messageDiv.style.color = "red";
+                        messageDiv.textContent =
+                          "Oops! There was a problem sending your message. Please try again.";
+                      }
+                    } catch (error) {
+                      messageDiv.style.color = "red";
+                      messageDiv.textContent =
+                        "Oops! There was a problem sending your message. Please try again.";
+                    }
+                  });
+                }
+              });
+            </script>
+          </div>
+        </div>
+
+        <script type="application/ld+json">
+          {
+            "@context": "http://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Picky Pixels Studio",
+            "description": "Creative digital agency specializing in web design and development",
+            "url": "https://pickypixelsstudio.com",
+            "email": "nathielle@pickypixels.studio",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Portugal"
+            },
+            "areaServed": "Worldwide",
+            "sameAs": [
+              "https://instagram.com/pickypixelsstudio",
+              "https://github.com/nathiellegouvea",
+              "https://linkedin.com/in/nathiellegouvea"
+            ]
           }
-        });
+        </script>
+      </section>
+    </main>
 
-        // Portfolio slider functionality
-        const slider = document.querySelector(".portfolio-slider");
-        const slides = document.querySelectorAll(".portfolio-slide");
-        const prevButton = document.querySelector(".prev-button");
-        const nextButton = document.querySelector(".next-button");
-        const dots = document.querySelectorAll(".slider-dot");
-        let currentSlide = 0;
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">Picky Pixels Studio</div>
+          <p>
+            Helping small brands and bold creatives show up online with heart,
+            clarity, and confidence.
+          </p>
+        </div>
+        <div class="footer-links">
+          <nav class="footer-nav">
+            <a href="#work">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+          <p class="copyright">
+            &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
+            <a
+              href="privacy-policy.html"
+              style="
+                color: var(--primary);
+                text-decoration: underline;
+                font-size: 0.95rem;
+              "
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
 
-        function updateSlider() {
-          slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-          dots.forEach((dot, index) => {
-            dot.classList.toggle("active", index === currentSlide);
-          });
-
-          // Update button states
-          prevButton.style.opacity = currentSlide === 0 ? "0.5" : "1";
-          nextButton.style.opacity =
-            currentSlide === slides.length - 1 ? "0.5" : "1";
-        }
-
-        prevButton.addEventListener("click", () => {
-          if (currentSlide > 0) {
-            currentSlide--;
-            updateSlider();
-          }
-        });
-
-        nextButton.addEventListener("click", () => {
-          if (currentSlide < slides.length - 1) {
-            currentSlide++;
-            updateSlider();
-          }
-        });
-
-        dots.forEach((dot, index) => {
-          dot.addEventListener("click", () => {
-            currentSlide = index;
-            updateSlider();
-          });
-        });
-
-        // Initialize slider
-        updateSlider();
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
