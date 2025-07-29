@@ -22,18 +22,45 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <style>
-      /* Packages-specific styles */
+      /* Packages-specific styles - Friendly Redesign */
       .packages-hero {
-        min-height: 70vh;
-        padding: 6rem 2rem 4rem;
+        min-height: 80vh;
+        padding: 8rem 2rem 6rem;
         display: flex;
         align-items: center;
         background: linear-gradient(
           135deg,
-          var(--surface) 0%,
-          var(--background) 100%
+          #fff9f0 0%,
+          #fff5e6 50%,
+          #fff0f5 100%
         );
         position: relative;
+        overflow: hidden;
+      }
+
+      .packages-hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+            circle at 20% 30%,
+            rgba(255, 94, 50, 0.03) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 70%,
+            rgba(255, 136, 190, 0.04) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(185, 172, 56, 0.02) 0%,
+            transparent 50%
+          );
+        animation: float 20s ease-in-out infinite;
       }
 
       .packages-hero::after {
@@ -43,221 +70,304 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: radial-gradient(
-            circle at 20% 80%,
-            rgba(255, 94, 50, 0.08) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 80% 20%,
-            rgba(255, 136, 190, 0.06) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(185, 172, 56, 0.04) 0%,
-            transparent 50%
-          );
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ff5e32' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         pointer-events: none;
       }
 
       .packages-hero-content {
-        max-width: 1000px;
+        max-width: 900px;
         margin: 0 auto;
         text-align: center;
         position: relative;
-        z-index: 1;
+        z-index: 2;
+      }
+
+      .packages-hero .hero-emoji {
+        font-size: 4rem;
+        margin-bottom: 1.5rem;
+        display: block;
+        animation: bounce 2s ease-in-out infinite;
       }
 
       .packages-hero h1 {
-        font-size: clamp(2.5rem, 5vw, 3.5rem);
-        line-height: 1.2;
-        margin-bottom: 2rem;
+        font-size: clamp(2.8rem, 6vw, 4rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
         color: var(--text);
         font-weight: 700;
+        letter-spacing: -1px;
       }
 
       .packages-hero .gradient-text {
-        color: var(--primary);
+        background: linear-gradient(135deg, var(--primary), var(--title));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         position: relative;
       }
 
-      .packages-hero .gradient-text::after {
-        content: "";
-        position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: var(--primary);
-        border-radius: 1px;
-      }
-
       .packages-hero .hero-tagline {
-        font-size: 1.1rem;
+        font-size: 1.2rem;
         font-weight: 600;
         color: var(--primary);
         margin-bottom: 2rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
+        letter-spacing: 3px;
         opacity: 0.9;
+        position: relative;
+        display: inline-block;
+      }
+
+      .packages-hero .hero-tagline::after {
+        content: "";
+        position: absolute;
+        bottom: -8px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--title));
+        border-radius: 2px;
       }
 
       .packages-hero .hero-description {
-        font-size: 1.1rem;
+        font-size: 1.25rem;
         color: var(--text-light);
         max-width: 700px;
         margin: 0 auto;
-        line-height: 1.7;
+        line-height: 1.8;
         font-weight: 400;
       }
 
-      .packages-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        gap: 2.5rem;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
-
-      .package-card {
-        background: white;
-        border-radius: 12px;
-        padding: 2.5rem 2rem;
-        border: 2px solid rgba(255, 255, 255, 0.2);
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-        transition: all 0.3s ease;
+      .packages-section {
+        padding: 6rem 2rem;
+        background: linear-gradient(135deg, var(--primary) 0%, #ff7a4a 100%);
         position: relative;
+        overflow: hidden;
       }
 
-      .package-card:hover {
-        transform: translateY(-6px);
-        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
-        border-color: var(--primary);
-      }
-
-      .package-card::before {
+      .packages-section::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
-        height: 4px;
-        background: var(--primary);
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
       }
 
-      .package-card:nth-child(1)::before {
-        background: var(--primary);
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
       }
 
-      .package-card:nth-child(2)::before {
-        background: var(--title);
+      .package-card {
+        background: white;
+        border-radius: 20px 20px 16px 16px;
+        overflow: hidden;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
       }
 
-      .package-card:nth-child(3)::before {
-        background: var(--secondary);
+      .package-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
       }
 
       .package-header {
+        padding: 2rem 2rem 1.5rem;
+        position: relative;
         text-align: center;
-        margin-bottom: 2rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid rgba(92, 64, 51, 0.1);
+      }
+
+      .package-card:nth-child(1) .package-header {
+        background: linear-gradient(135deg, #ff88be 0%, #ffb3d1 100%);
+      }
+
+      .package-card:nth-child(2) .package-header {
+        background: linear-gradient(135deg, #b9ac38 0%, #d4c95a 100%);
+      }
+
+      .package-card:nth-child(3) .package-header {
+        background: linear-gradient(135deg, #ff5e32 0%, #ff7a4a 100%);
+      }
+
+      .package-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: white;
+        color: var(--text);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
       .package-icon {
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: var(--primary);
-        opacity: 1;
+        display: block;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
       }
 
       .package-title {
         font-size: 1.4rem;
-        font-weight: 600;
-        color: var(--text);
-        margin-bottom: 0.75rem;
-        letter-spacing: -0.5px;
-      }
-
-      .package-price {
-        font-size: 2.25rem;
         font-weight: 700;
-        color: var(--primary);
-        margin-bottom: 0.75rem;
-        position: relative;
-        display: inline-block;
-      }
-
-      .package-price::after {
-        content: "";
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: var(--primary);
-        border-radius: 2px;
-        opacity: 0.6;
+        color: white;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }
 
       .package-subtitle {
-        color: var(--text-light);
-        font-size: 0.95rem;
-        line-height: 1.5;
-        font-weight: 400;
+        color: rgba(255, 255, 255, 0.9);
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .package-content {
+        padding: 2rem;
+        background: white;
+      }
+
+      .package-pricing {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 2px solid rgba(255, 94, 50, 0.1);
+      }
+
+      .original-price {
+        font-size: 1.2rem;
+        color: #999;
+        text-decoration: line-through;
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .package-price {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary);
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+
+      .offer-text {
+        font-size: 0.85rem;
+        color: #666;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
       }
 
       .package-features {
         list-style: none;
-        margin: 2rem 0;
+        margin: 0 0 2rem 0;
       }
 
       .package-features li {
-        padding: 0.5rem 0;
+        padding: 0.75rem 0;
         color: var(--text);
         position: relative;
-        padding-left: 1.75rem;
+        padding-left: 2rem;
         font-size: 0.95rem;
         line-height: 1.5;
+        display: flex;
+        align-items: center;
       }
 
       .package-features li::before {
-        content: "✓";
+        content: "";
         position: absolute;
         left: 0;
-        top: 0.5rem;
+        top: 0.75rem;
+        width: 8px;
+        height: 8px;
+        background: var(--secondary);
+        border-radius: 50%;
+      }
+
+      .package-cta {
+        text-align: center;
+      }
+
+      .package-btn {
+        background: linear-gradient(135deg, #ff88be 0%, #b9ac38 100%);
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        box-shadow: 0 4px 16px rgba(255, 136, 190, 0.3);
+      }
+
+      .package-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(255, 136, 190, 0.4);
+      }
+
+      .package-btn i {
         font-size: 0.9rem;
-        color: var(--primary);
-        font-weight: bold;
       }
 
       .hosting-info {
         background: linear-gradient(
           135deg,
-          rgba(255, 94, 50, 0.05),
-          rgba(255, 136, 190, 0.03)
+          rgba(255, 94, 50, 0.08),
+          rgba(255, 136, 190, 0.05)
         );
-        border-radius: 8px;
+        border-radius: 12px;
         padding: 1.25rem;
         margin: 1.5rem 0;
         border: 1px solid rgba(255, 94, 50, 0.15);
+        position: relative;
+      }
+
+      .hosting-info::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--primary), var(--title));
       }
 
       .hosting-title {
         font-weight: 600;
         color: var(--text);
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.75rem;
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
         font-size: 0.95rem;
       }
 
+      .hosting-title i {
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
       .hosting-price {
-        font-size: 1.1rem;
-        font-weight: 600;
+        font-size: 1.2rem;
+        font-weight: 700;
         color: var(--primary);
         margin-bottom: 0.75rem;
       }
@@ -268,7 +378,7 @@
       }
 
       .hosting-features li {
-        padding: 0.2rem 0;
+        padding: 0.25rem 0;
         color: var(--text-light);
         font-size: 0.85rem;
         position: relative;
@@ -281,197 +391,322 @@
         left: 0;
         color: var(--primary);
         font-weight: bold;
+        font-size: 1.1rem;
       }
 
       .domain-note {
-        background: rgba(255, 243, 193, 0.3);
-        border-radius: 6px;
+        background: linear-gradient(
+          135deg,
+          rgba(185, 172, 56, 0.1),
+          rgba(255, 243, 193, 0.3)
+        );
+        border-radius: 8px;
         padding: 0.75rem;
         margin: 1rem 0;
         font-size: 0.85rem;
         color: var(--text-light);
-        border-left: 2px solid var(--secondary);
+        border-left: 3px solid var(--secondary);
+      }
+
+      .domain-note strong {
+        color: var(--text);
       }
 
       .addons-section {
-        background: var(--text);
+        background: linear-gradient(135deg, var(--text) 0%, #4a3a2f 100%);
         color: white;
-        padding: 4rem 2rem;
-        margin: 4rem 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .addons-content {
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-
-      .addons-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .addon-item {
-        background: white;
-        border-radius: 8px;
-        padding: 1.25rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        transition: all 0.2s ease;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-      }
-
-      .addon-item:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-        border-color: var(--primary);
-      }
-
-      .addon-name {
-        font-weight: 500;
-        color: var(--text);
-        font-size: 0.95rem;
-      }
-
-      .addon-price {
-        font-weight: 600;
-        color: var(--primary);
-        font-size: 1rem;
-      }
-
-      .cta-section {
-        text-align: center;
-        padding: 5rem 2rem;
-        background: linear-gradient(
-          135deg,
-          var(--surface) 0%,
-          var(--background) 100%
-        );
+        padding: 6rem 2rem;
+        margin: 6rem 0;
         position: relative;
+        overflow: hidden;
       }
 
-      .cta-section::after {
+      .addons-section::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='20' cy='20' r='1'/%3E%3C/g%3E%3C/svg%3E");
+      }
+
+      .addons-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .addons-section .section-header {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .addons-section .section-label {
+        color: var(--accent);
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 1rem;
+        display: block;
+      }
+
+      .addons-section h2 {
+        font-size: 2.8rem;
+        color: white;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .addons-section p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.2rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .addons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        margin-top: 3rem;
+      }
+
+      .addon-item {
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 16px;
+        padding: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        backdrop-filter: blur(10px);
+      }
+
+      .addon-item:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+        border-color: var(--primary);
+        background: white;
+      }
+
+      .addon-name {
+        font-weight: 600;
+        color: var(--text);
+        font-size: 1rem;
+      }
+
+      .addon-price {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 1.1rem;
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 8rem 2rem;
+        background: linear-gradient(
+          135deg,
+          #fff9f0 0%,
+          #fff5e6 50%,
+          #fff0f5 100%
+        );
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-section::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
         background: radial-gradient(
             circle at 30% 70%,
-            rgba(255, 94, 50, 0.06) 0%,
+            rgba(255, 94, 50, 0.04) 0%,
             transparent 50%
           ),
           radial-gradient(
             circle at 70% 30%,
-            rgba(255, 136, 190, 0.04) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            circle at 50% 50%,
-            rgba(185, 172, 56, 0.03) 0%,
+            rgba(255, 136, 190, 0.03) 0%,
             transparent 50%
           );
-        pointer-events: none;
+        animation: float 25s ease-in-out infinite reverse;
       }
 
       .cta-content {
-        max-width: 700px;
+        max-width: 800px;
         margin: 0 auto;
         position: relative;
-        z-index: 1;
+        z-index: 2;
       }
 
       .cta-section h2 {
-        font-size: clamp(1.8rem, 4vw, 2.5rem);
-        margin-bottom: 1.5rem;
+        font-size: clamp(2.2rem, 5vw, 3rem);
+        margin-bottom: 2rem;
         color: var(--text);
-        font-weight: 600;
+        font-weight: 700;
       }
 
       .cta-section p {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: var(--text-light);
-        margin-bottom: 2rem;
-        line-height: 1.6;
+        margin-bottom: 3rem;
+        line-height: 1.7;
       }
 
       .cta-buttons {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
         justify-content: center;
         flex-wrap: wrap;
       }
 
       .cta-buttons .btn {
-        padding: 0.875rem 1.75rem;
-        font-size: 1rem;
-        font-weight: 500;
-        border-radius: 6px;
-        transition: all 0.2s ease;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
         text-decoration: none;
         display: inline-flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 0.75rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-buttons .btn::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(255, 255, 255, 0.2),
+          transparent
+        );
+        transition: left 0.5s ease;
+      }
+
+      .cta-buttons .btn:hover::before {
+        left: 100%;
       }
 
       .cta-buttons .btn-primary {
-        background: var(--primary);
+        background: linear-gradient(135deg, var(--primary), var(--title));
         color: white;
         border: none;
-        box-shadow: 0 2px 8px rgba(255, 94, 50, 0.2);
+        box-shadow: 0 8px 24px rgba(255, 94, 50, 0.3);
       }
 
       .cta-buttons .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(255, 94, 50, 0.3);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(255, 94, 50, 0.4);
       }
 
       .cta-buttons .btn-outline {
         background: transparent;
         color: var(--text);
-        border: 1px solid rgba(92, 64, 51, 0.2);
+        border: 2px solid rgba(92, 64, 51, 0.2);
+        backdrop-filter: blur(10px);
       }
 
       .cta-buttons .btn-outline:hover {
         background: var(--primary);
         color: white;
         border-color: var(--primary);
-        transform: translateY(-2px);
+        transform: translateY(-4px);
+        box-shadow: 0 8px 24px rgba(255, 94, 50, 0.3);
       }
 
       .pricing-note {
-        background: var(--surface);
-        border-radius: 12px;
-        padding: 2rem;
-        margin: 3rem 0;
-        border: 1px solid rgba(92, 64, 51, 0.1);
+        background: white;
+        border-radius: 20px;
+        padding: 3rem;
+        margin: 6rem 2rem;
+        border: 2px solid rgba(255, 94, 50, 0.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .pricing-note::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(
+          90deg,
+          var(--primary),
+          var(--title),
+          var(--secondary)
+        );
       }
 
       .pricing-note h3 {
         color: var(--text);
-        margin-bottom: 1rem;
-        font-size: 1.25rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.5rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
       }
 
       .pricing-note p {
         color: var(--text-light);
-        line-height: 1.6;
+        line-height: 1.8;
+        font-size: 1.1rem;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateY(0);
+        }
+        40% {
+          transform: translateY(-10px);
+        }
+        60% {
+          transform: translateY(-5px);
+        }
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        33% {
+          transform: translateY(-20px) rotate(1deg);
+        }
+        66% {
+          transform: translateY(10px) rotate(-1deg);
+        }
       }
 
       @media (max-width: 768px) {
         .packages-grid {
           grid-template-columns: 1fr;
-          gap: 1.5rem;
+          gap: 2rem;
         }
 
         .package-card {
-          padding: 2rem 1.5rem;
+          padding: 2.5rem 2rem;
         }
 
         .addons-grid {
@@ -479,7 +714,33 @@
         }
 
         .packages-hero {
-          padding: 6rem 1rem 3rem;
+          padding: 6rem 1rem 4rem;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+          max-width: 300px;
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .packages-hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .package-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .pricing-note {
+          margin: 4rem 1rem;
+          padding: 2rem;
         }
       }
     </style>
@@ -581,146 +842,121 @@
     <main>
       <section class="packages-hero">
         <div class="packages-hero-content">
-          <h1><span class="gradient-text">Custom Website Packages</span></h1>
-          <div class="hero-tagline">Ready to Bring Your Vision Online?</div>
+          <span class="hero-emoji">💫</span>
+          <h1>
+            Let's Create Something
+            <span class="gradient-text">Beautiful Together</span>
+          </h1>
+          <div class="hero-tagline">Website Packages That Feel Like Home</div>
           <div class="hero-description">
-            For creatives, conscious brands, and small businesses who want a
-            beautiful online presence without the overwhelm. Whether you need a
-            simple one-page site or a fully functional online shop, I've created
-            flexible, ready-to-go packages to match your needs and budget. Clean
-            design, clear structure, and personal support, delivered with love.
+            Hey there! I'm Nathielle, and I believe every creative soul deserves
+            a website that feels as unique and special as they are. Whether
+            you're just starting out or ready to take your business to the next
+            level, I've got packages designed with love, care, and a whole lot
+            of personality. No cookie-cutter designs here – just beautiful,
+            functional websites that tell your story.
           </div>
         </div>
       </section>
 
-      <section
-        class="packages-section"
-        style="padding: 4rem 2rem; background: var(--text); color: white"
-      >
+      <section class="packages-section">
         <div class="packages-grid">
           <!-- One-Page Starter -->
           <div class="package-card">
             <div class="package-header">
-              <div class="package-icon">🌈</div>
+              <div class="package-badge">Most Popular</div>
+              <span class="package-icon">🌈</span>
               <h3 class="package-title">One-Page Starter</h3>
-              <div class="package-price">Starting at €250</div>
-              <p class="package-subtitle">
-                A beautiful scrollable site to introduce yourself or your work.
-              </p>
+              <p class="package-subtitle">1 Page + Contact Form</p>
             </div>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem">
-              This package is ideal for artists, personal brands, or events
-              seeking a simple yet elegant online presence.
-            </p>
-            <ul class="package-features">
-              <li>1-page layout (homepage, portfolio, or event)</li>
-              <li>Image gallery or hero section</li>
-              <li>Contact form (email or WhatsApp)</li>
-              <li>Social media links</li>
-              <li>SEO-friendly and mobile-ready</li>
-              <li>1 revision after the first preview</li>
-            </ul>
-            <div class="hosting-info">
-              <div class="hosting-title">
-                <i class="fas fa-server"></i>
-                Hosting Plan
+            <div class="package-content">
+              <div class="package-pricing">
+                <span class="original-price">€350</span>
+                <div class="package-price">€250</div>
+                <div class="offer-text">Limited time offer</div>
               </div>
-              <div class="hosting-price">€15/month</div>
-              <ul class="hosting-features">
-                <li>Secure hosting with SSL</li>
-                <li>Contact form delivery</li>
-                <li>Basic tech support</li>
+              <ul class="package-features">
+                <li>Responsive Design</li>
+                <li>Mobile Optimized</li>
+                <li>SEO Ready</li>
+                <li>Contact Form</li>
+                <li>Social Media Links</li>
               </ul>
-            </div>
-            <div class="domain-note">
-              <strong>🔗 Domain not included.</strong><br />
-              You can purchase your domain separately, or I can help you set it
-              up!
+              <div class="package-cta">
+                <a
+                  href="mailto:nathielle@pickypixels.studio"
+                  class="package-btn"
+                >
+                  Claim This Deal
+                  <i class="fas fa-bolt"></i>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Creative Pro Site -->
           <div class="package-card">
             <div class="package-header">
-              <div class="package-icon">✨</div>
+              <div class="package-badge">Best Value</div>
+              <span class="package-icon">✨</span>
               <h3 class="package-title">Creative Pro Site</h3>
-              <div class="package-price">Starting at €450</div>
-              <p class="package-subtitle">
-                A complete website with multiple pages to showcase your work and
-                services.
-              </p>
+              <p class="package-subtitle">5 Pages + Gallery</p>
             </div>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem">
-              Perfect for small businesses, coaches, or creatives ready to
-              expand their presence online.
-            </p>
-            <ul class="package-features">
-              <li>Up to 4 pages (Home, About, Services, Contact)</li>
-              <li>Gallery or featured projects</li>
-              <li>Contact form with auto-reply</li>
-              <li>SEO & mobile optimization</li>
-              <li>2 revisions included</li>
-            </ul>
-            <div class="hosting-info">
-              <div class="hosting-title">
-                <i class="fas fa-server"></i>
-                Hosting Plan
+            <div class="package-content">
+              <div class="package-pricing">
+                <span class="original-price">€650</span>
+                <div class="package-price">€450</div>
+                <div class="offer-text">Limited time offer</div>
               </div>
-              <div class="hosting-price">€20/month</div>
-              <ul class="hosting-features">
-                <li>Hosting with SSL</li>
-                <li>Contact form delivery</li>
-                <li>Instagram feed integration (via Artframe)</li>
-                <li>Basic tech support</li>
+              <ul class="package-features">
+                <li>Portfolio Gallery</li>
+                <li>About Page</li>
+                <li>Services Page</li>
+                <li>Blog Setup</li>
+                <li>Analytics Setup</li>
               </ul>
-            </div>
-            <div class="domain-note">
-              <strong>🔗 Domain not included.</strong><br />
-              You can purchase your domain separately, or I can help you set it
-              up!
+              <div class="package-cta">
+                <a
+                  href="mailto:nathielle@pickypixels.studio"
+                  class="package-btn"
+                >
+                  Claim This Deal
+                  <i class="fas fa-bolt"></i>
+                </a>
+              </div>
             </div>
           </div>
 
           <!-- Soulful Shop -->
           <div class="package-card">
             <div class="package-header">
-              <div class="package-icon">🛒</div>
+              <div class="package-badge">Premium</div>
+              <span class="package-icon">🛒</span>
               <h3 class="package-title">Soulful Shop</h3>
-              <div class="package-price">Starting at €950</div>
-              <p class="package-subtitle">
-                A custom online store built to match your brand and connect with
-                your audience.
-              </p>
+              <p class="package-subtitle">E-commerce Ready</p>
             </div>
-            <p style="color: var(--text-light); margin-bottom: 1.5rem">
-              Ideal for product-based brands ready to launch or grow their
-              online business.
-            </p>
-            <ul class="package-features">
-              <li>Up to 10 products</li>
-              <li>Shopping cart with payments</li>
-              <li>Shipping setup (flat rate or Melhor Envio)</li>
-              <li>Contact and policy pages</li>
-              <li>Fully mobile-responsive and SEO-friendly</li>
-              <li>2 revisions included</li>
-            </ul>
-            <div class="hosting-info">
-              <div class="hosting-title">
-                <i class="fas fa-server"></i>
-                Hosting Plan
+            <div class="package-content">
+              <div class="package-pricing">
+                <span class="original-price">€1500</span>
+                <div class="package-price">€950</div>
+                <div class="offer-text">Limited time offer</div>
               </div>
-              <div class="hosting-price">€25/month</div>
-              <ul class="hosting-features">
-                <li>Hosting with SSL</li>
-                <li>Contact form</li>
-                <li>Instagram feed integration (via Artframe)</li>
-                <li>Basic tech support</li>
+              <ul class="package-features">
+                <li>Product Catalog</li>
+                <li>Shopping Cart</li>
+                <li>Payment Integration</li>
+                <li>Admin Panel</li>
+                <li>Inventory Management</li>
               </ul>
-            </div>
-            <div class="domain-note">
-              <strong>🔗 Domain not included.</strong><br />
-              You can purchase your domain separately, or I can help you set it
-              up!
+              <div class="package-cta">
+                <a
+                  href="mailto:nathielle@pickypixels.studio"
+                  class="package-btn"
+                >
+                  Claim This Deal
+                  <i class="fas fa-bolt"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -728,15 +964,12 @@
 
       <section class="addons-section">
         <div class="addons-content">
-          <div class="section-header" style="text-align: center">
-            <span class="section-label" style="color: var(--accent)"
-              >Add-Ons</span
-            >
-            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem">
-              🧩 Customize Your Package
-            </h2>
-            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem">
-              Need something extra? Add these features to any package.
+          <div class="section-header">
+            <span class="section-label">Customize Your Experience</span>
+            <h2>🧩 Need Something Extra?</h2>
+            <p>
+              These add-ons can be added to any package to make your website
+              even more special and tailored to your needs.
             </p>
           </div>
           <div class="addons-grid">
@@ -760,43 +993,30 @@
         </div>
       </section>
 
-      <section
-        class="pricing-note"
-        style="
-          margin: 4rem 2rem;
-          background: var(--surface);
-          padding: 3rem 2rem;
-          border-radius: 12px;
-          border: 1px solid rgba(92, 64, 51, 0.1);
-        "
-      >
-        <div style="max-width: 800px; margin: 0 auto; text-align: center">
-          <h3
-            style="color: var(--text); margin-bottom: 1rem; font-size: 1.3rem"
-          >
-            📝 Note on Pricing
+      <section class="pricing-note">
+        <div style="max-width: 800px; margin: 0 auto">
+          <h3>
+            <span style="font-size: 1.5rem">💝</span>
+            A Note About Pricing
           </h3>
-          <p
-            style="
-              color: var(--text-light);
-              line-height: 1.6;
-              font-size: 1.1rem;
-            "
-          >
-            Prices listed above are starting points reflecting common requests.
-            If your project has unique features or extra complexity, I'll
-            provide a personalized quote after we chat. Simple, transparent, and
-            tailored to you.
+          <p>
+            The prices you see are starting points based on common requests.
+            Every project is unique, and I believe in transparent, fair pricing.
+            If your project has special features or extra complexity, I'll
+            provide a personalized quote after we chat. Simple, honest, and
+            tailored just for you.
           </p>
         </div>
       </section>
 
       <section class="cta-section">
         <div class="cta-content">
-          <h2>💬 Not Sure Which One to Pick?</h2>
+          <h2>💬 Not Sure Which Package Fits You Best?</h2>
           <p>
-            Send me a quick message or book a free 20-minute call.<br />
-            We'll find the best package or create a custom plan just for you.
+            That's totally okay! Let's have a chat and figure out what's perfect
+            for you.<br />
+            I'm here to help you make the best choice for your dreams and
+            budget.
           </p>
           <div class="cta-buttons">
             <a
@@ -804,7 +1024,7 @@
               class="btn btn-primary"
             >
               <i class="fas fa-envelope"></i>
-              Send Message
+              Send Me a Message
             </a>
             <a
               href="https://calendly.com/pickypixels"
@@ -813,7 +1033,7 @@
               class="btn btn-outline"
             >
               <i class="fas fa-calendar-check"></i>
-              Book Free Call
+              Book a Free 20-Min Call
             </a>
           </div>
         </div>
