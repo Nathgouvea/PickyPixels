@@ -677,3 +677,49 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// Simple image overlay
+function initImageOverlay() {
+  const overlay = document.getElementById("image-overlay");
+  const overlayImage = document.getElementById("overlay-image");
+  const overlayClose = document.getElementById("overlay-close");
+  const portfolioImages = document.querySelectorAll(".portfolio-image");
+
+  // Click image to open
+  portfolioImages.forEach((image) => {
+    image.addEventListener("click", (e) => {
+      e.preventDefault();
+      overlayImage.src = image.src;
+      overlayImage.alt = image.alt;
+      overlay.classList.add("show");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  // Click anywhere to close
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+
+  // Click close button to close
+  overlayClose.addEventListener("click", () => {
+    overlay.classList.remove("show");
+    document.body.style.overflow = "";
+  });
+
+  // Close with Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlay.classList.contains("show")) {
+      overlay.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+}
+
+// Initialize when DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  initImageOverlay();
+});

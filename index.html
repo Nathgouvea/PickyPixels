@@ -241,6 +241,56 @@
               itemscope
               itemtype="http://schema.org/CreativeWork"
             >
+              <article class="work-item" data-category="web">
+                <div class="work-image">
+                  <img
+                    src="Projects/Gabriella-Tattoo.webp"
+                    alt="Gabriella Tattoo Website - Professional tattoo artist portfolio and booking platform"
+                    loading="lazy"
+                    width="800"
+                    height="600"
+                    class="portfolio-image"
+                    data-title="Gabriella Tattoo"
+                    data-description="A professional tattoo artist portfolio website featuring a stunning gallery of work and artist information. The design showcases the artistic talent while providing an easy way for clients to explore styles and view the portfolio."
+                  />
+                  <div class="work-overlay" aria-label="Technologies used">
+                    <div class="tech-stack" role="list">
+                      <span role="listitem">HTML</span>
+                      <span role="listitem">CSS</span>
+                      <span role="listitem">JavaScript</span>
+                      <span role="listitem">Portfolio</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="work-content">
+                  <span class="work-category" itemprop="genre"
+                    >Web Design & Portfolio</span
+                  >
+                  <h3 itemprop="name">Gabriella Tattoo</h3>
+                  <p itemprop="description">
+                    A professional tattoo artist portfolio website featuring a
+                    stunning gallery of work and artist information. The design
+                    showcases the artistic talent while providing an easy way
+                    for clients to explore styles and view the portfolio.
+                  </p>
+                  <div class="work-links">
+                    <a
+                      href="https://www.gabriellatattoo.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="work-link"
+                      itemprop="url"
+                      aria-label="Visit Gabriella Tattoo website"
+                    >
+                      <i
+                        class="fas fa-external-link-alt"
+                        aria-hidden="true"
+                      ></i>
+                      Visit Website
+                    </a>
+                  </div>
+                </div>
+              </article>
               <div class="work-item" data-category="web">
                 <div class="work-image">
                   <img
@@ -248,6 +298,9 @@
                     alt="LivingLeaving Website"
                     width="800"
                     height="600"
+                    class="portfolio-image"
+                    data-title="LivingLeaving"
+                    data-description="A sophisticated interior design portfolio showcasing space transformations with immersive gallery and before-after comparisons."
                   />
                   <div class="work-overlay">
                     <div class="tech-stack" role="list">
@@ -278,6 +331,8 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="work-slide">
               <article
                 class="work-item"
                 data-category="web"
@@ -291,6 +346,9 @@
                     loading="lazy"
                     width="800"
                     height="600"
+                    class="portfolio-image"
+                    data-title="FazUmCafezim"
+                    data-description="An artisanal coffee shop website featuring a warm, inviting design that reflects the brand's commitment to quality."
                   />
                   <div class="work-overlay" aria-label="Technologies used">
                     <div class="tech-stack" role="list">
@@ -328,8 +386,6 @@
                   </div>
                 </div>
               </article>
-            </div>
-            <div class="work-slide">
               <article class="work-item" data-category="web">
                 <div class="work-image">
                   <img
@@ -338,6 +394,9 @@
                     loading="lazy"
                     width="800"
                     height="600"
+                    class="portfolio-image"
+                    data-title="Stégel Nails"
+                    data-description="A modern and elegant website for a premium nail salon. Features include service listings, online booking integration, and a dynamic gallery showcase."
                   />
                   <div class="work-overlay" aria-label="Technologies used">
                     <div class="tech-stack" role="list">
@@ -352,30 +411,17 @@
                   <span class="work-category" itemprop="genre"
                     >Web Design & Development</span
                   >
-                  <h3 itemprop="name">Siegel Nails</h3>
+                  <h3 itemprop="name">Stégel Nails</h3>
                   <p itemprop="description">
                     A modern and elegant website for a premium nail salon.
                     Features include service listings, online booking
                     integration, and a dynamic gallery showcase.
                   </p>
-                  <div class="work-links">
-                    <a
-                      href="https://stegel.pt"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                      itemprop="url"
-                      aria-label="Visit Stegel Nails website"
-                    >
-                      <i
-                        class="fas fa-external-link-alt"
-                        aria-hidden="true"
-                      ></i>
-                      Visit Website
-                    </a>
-                  </div>
+                  <div class="work-links"></div>
                 </div>
               </article>
+            </div>
+            <div class="work-slide">
               <div class="work-item" data-category="web">
                 <div class="work-image">
                   <img
@@ -383,6 +429,9 @@
                     alt="Isabel Vieira Website"
                     width="800"
                     height="600"
+                    class="portfolio-image"
+                    data-title="Isabel Vieira"
+                    data-description="A personal brand website for a professional therapist with easy access to services, booking, and valuable resources."
                   />
                   <div class="work-overlay">
                     <div class="tech-stack" role="list">
@@ -400,16 +449,7 @@
                     A personal brand website for a professional therapist with
                     easy access to services, booking, and valuable resources.
                   </p>
-                  <div class="work-links">
-                    <a
-                      href="https://isabelvieira.pt"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Visit Website
-                    </a>
-                  </div>
+                  <div class="work-links"></div>
                 </div>
               </div>
             </div>
@@ -438,6 +478,14 @@
                 class="dot"
                 role="tab"
                 aria-label="Go to slide 2"
+                aria-selected="false"
+              >
+                <span class="dot-indicator"></span>
+              </button>
+              <button
+                class="dot"
+                role="tab"
+                aria-label="Go to slide 3"
                 aria-selected="false"
               >
                 <span class="dot-indicator"></span>
@@ -1019,7 +1067,14 @@
     <footer class="footer">
       <div class="footer-content">
         <div class="footer-brand">
-          <div class="logo">Picky Pixels Studio</div>
+          <div class="logo">
+            <img
+              src="images/logo2.png"
+              alt="Picky Pixels Studio Logo"
+              width="120"
+              height="120"
+            />
+          </div>
           <p>
             Helping small brands and bold creatives show up online with heart,
             clarity, and confidence.
@@ -1031,6 +1086,38 @@
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
           </nav>
+          <div class="footer-social">
+            <a
+              href="https://instagram.com/pickypixelsstudio"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow on Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="mailto:nathielle@pickypixels.studio"
+              aria-label="Send email"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="https://github.com/nathiellegouvea"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow on GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/nathiellegouvea"
+              target="_blank"
+              rel="noopener"
+              aria-label="Connect on LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
           <p class="copyright">
             &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
             <a
@@ -1046,6 +1133,18 @@
         </div>
       </div>
     </footer>
+
+    <!-- Simple Image Overlay -->
+    <div class="image-overlay" id="image-overlay">
+      <button
+        class="overlay-close"
+        id="overlay-close"
+        aria-label="Close image overlay"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <img class="overlay-image" id="overlay-image" alt="Portfolio image" />
+    </div>
 
     <script src="script.js"></script>
   </body>

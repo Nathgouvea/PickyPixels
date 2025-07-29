@@ -259,6 +259,8 @@ body {
   margin: 0 auto;
   overflow: hidden;
   padding: 0 var(--spacing-lg);
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .work-slider {
@@ -267,6 +269,7 @@ body {
   width: 100%;
   will-change: transform;
   touch-action: pan-y pinch-zoom;
+  position: relative;
 }
 
 .work-slide {
@@ -274,8 +277,10 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: var(--spacing-lg);
   min-width: 100%;
-  padding: 0 var(--spacing-sm);
+  width: 100%;
+  padding: 0 var(--spacing-md);
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .work-item {
@@ -290,8 +295,10 @@ body {
   display: flex;
   flex-direction: column;
   max-width: 450px;
+  width: 100%;
   margin: 0 auto;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
 }
 
 .work-image {
@@ -476,13 +483,15 @@ body {
   }
 
   .work-item {
-    max-width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .work-slide {
     padding: 0;
+    margin-right: var(--spacing-md);
   }
 
   .slider-nav {
@@ -504,17 +513,56 @@ body {
 
 @media (max-width: 480px) {
   .work-slider-container {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    overflow: hidden;
   }
   .work-slide {
     padding: 0;
     grid-template-columns: 1fr;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
+    min-width: 100%;
+    width: 100%;
+    margin-right: var(--spacing-md);
+    box-sizing: border-box;
   }
   .work-item {
-    max-width: 100%;
-    margin: 0 0 1.5rem 0;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 1.5rem auto;
     box-sizing: border-box;
+  }
+  .work-image {
+    max-height: 180px;
+  }
+  .work-image img {
+    object-fit: cover;
+    object-position: center;
+  }
+  .work-content {
+    padding: var(--spacing-sm);
+  }
+  .work-content h3 {
+    font-size: 1.1rem;
+  }
+  .work-content p {
+    font-size: 0.85rem;
+  }
+  .slider-navigation {
+    margin-top: 2rem;
+    gap: 1rem;
+  }
+  .slider-nav {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  .slider-dots {
+    margin: 0 1rem;
+  }
+  .dot {
+    width: 2rem;
+  }
+  .dot.active {
+    width: 2.5rem;
   }
 }
 
@@ -1260,7 +1308,7 @@ body {
 /* Footer */
 .footer {
   background: var(--surface);
-  padding: 6rem 0 3rem;
+  padding: 2rem 0 3rem;
   position: relative;
   overflow: hidden;
   border-top: 1px solid rgba(92, 64, 51, 0.1);
@@ -1298,15 +1346,15 @@ body {
 }
 
 .footer-brand .logo {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--text);
-  text-decoration: none;
-  letter-spacing: -1px;
-  background: linear-gradient(135deg, var(--primary), var(--title));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: flex;
+  align-items: center;
+}
+
+.footer-brand .logo img {
+  height: 150px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.1));
 }
 
 .footer-brand p {
@@ -1315,11 +1363,41 @@ body {
   font-size: 1.1rem;
 }
 
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: 1rem;
+}
+
+.footer-social a {
+  color: var(--text);
+  font-size: 1.2rem;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+.footer-social a:hover {
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.footer-social i {
+  font-size: 1.1rem;
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: flex-end;
+  padding-top: 40px;
 }
 
 .footer-nav {
@@ -1744,10 +1822,9 @@ body {
 /* Language Switcher Improved Styles */
 .language-switch {
   display: flex;
-  gap: 0.25rem;
   background: var(--surface);
   border-radius: 999px;
-  padding: 0.15rem 0.25rem;
+  padding: 0.15rem 0.1rem;
   box-shadow: 0 1px 4px rgba(92, 64, 51, 0.04);
   align-items: center;
   border: 1px solid rgba(92, 64, 51, 0.08);
@@ -2287,5 +2364,150 @@ html[lang="pt-BR"] .hero-title {
 @media (min-width: 900px) {
   html[lang="pt-BR"] .hero-title {
     font-size: 4rem;
+  }
+}
+
+/* Simple Image Overlay */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-overlay.show {
+  display: flex;
+}
+
+.overlay-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--text);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overlay-close:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+.overlay-image {
+  max-width: 60%;
+  max-height: 70vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Responsive adjustments for balanced image size */
+@media (max-width: 768px) {
+  .overlay-image {
+    max-width: 90%;
+    max-height: 85vh;
+    object-fit: contain;
+  }
+
+  .overlay-close {
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-image {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .overlay-close {
+    top: 0.25rem;
+    right: 0.25rem;
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Portfolio image cursor */
+.portfolio-image {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-image:hover {
+  transform: scale(1.02);
+}
+
+/* Portfolio image zoom indicator */
+
+.work-image::after {
+  content: "\f00e";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.work-image:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Mobile zoom indicator adjustments */
+@media (max-width: 768px) {
+  .work-image::after {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-image::after {
+    width: 28px;
+    height: 28px;
+    font-size: 0.7rem;
+    top: 0.25rem;
+    right: 0.25rem;
   }
 }
