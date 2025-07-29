@@ -54,33 +54,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// Theme Toggle
-const themeToggle = document.querySelector(".theme-toggle");
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-function setTheme(theme) {
-  document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem("theme", theme);
-}
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    const currentTheme = document.documentElement.getAttribute("data-theme");
-    const newTheme = currentTheme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    themeToggle.querySelector("i").className =
-      newTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
-  });
-
-  // Set initial theme
-  const savedTheme =
-    localStorage.getItem("theme") ||
-    (prefersDarkScheme.matches ? "dark" : "light");
-  setTheme(savedTheme);
-  themeToggle.querySelector("i").className =
-    savedTheme === "dark" ? "fas fa-sun" : "fas fa-moon";
-}
-
 // Language Switcher
 const langButtons = document.querySelectorAll(".lang-btn");
 let currentLang = document.documentElement.lang.startsWith("pt") ? "pt" : "en";

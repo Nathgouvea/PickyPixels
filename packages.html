@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Custom Website Packages - Beautiful, functional websites for creatives and small businesses"
+    />
+    <title>Custom Website Packages - Picky Pixels Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <style>
+      /* Packages-specific styles */
+      .packages-hero {
+        min-height: 70vh;
+        padding: 6rem 2rem 4rem;
+        display: flex;
+        align-items: center;
+        background: linear-gradient(
+          135deg,
+          var(--surface) 0%,
+          var(--background) 100%
+        );
+        position: relative;
+      }
+
+      .packages-hero::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 20% 80%,
+            rgba(255, 94, 50, 0.08) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            rgba(255, 136, 190, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(185, 172, 56, 0.04) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .packages-hero-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .packages-hero h1 {
+        font-size: clamp(2.5rem, 5vw, 3.5rem);
+        line-height: 1.2;
+        margin-bottom: 2rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .packages-hero .gradient-text {
+        color: var(--primary);
+        position: relative;
+      }
+
+      .packages-hero .gradient-text::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 1px;
+      }
+
+      .packages-hero .hero-tagline {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 2rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.9;
+      }
+
+      .packages-hero .hero-description {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.7;
+        font-weight: 400;
+      }
+
+      .packages-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 2.5rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .package-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2.5rem 2rem;
+        border: 2px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .package-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+        border-color: var(--primary);
+      }
+
+      .package-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary);
+      }
+
+      .package-card:nth-child(1)::before {
+        background: var(--primary);
+      }
+
+      .package-card:nth-child(2)::before {
+        background: var(--title);
+      }
+
+      .package-card:nth-child(3)::before {
+        background: var(--secondary);
+      }
+
+      .package-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid rgba(92, 64, 51, 0.1);
+      }
+
+      .package-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary);
+        opacity: 1;
+      }
+
+      .package-title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.5px;
+      }
+
+      .package-price {
+        font-size: 2.25rem;
+        font-weight: 700;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+        position: relative;
+        display: inline-block;
+      }
+
+      .package-price::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--primary);
+        border-radius: 2px;
+        opacity: 0.6;
+      }
+
+      .package-subtitle {
+        color: var(--text-light);
+        font-size: 0.95rem;
+        line-height: 1.5;
+        font-weight: 400;
+      }
+
+      .package-features {
+        list-style: none;
+        margin: 2rem 0;
+      }
+
+      .package-features li {
+        padding: 0.5rem 0;
+        color: var(--text);
+        position: relative;
+        padding-left: 1.75rem;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      .package-features li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .hosting-info {
+        background: linear-gradient(
+          135deg,
+          rgba(255, 94, 50, 0.05),
+          rgba(255, 136, 190, 0.03)
+        );
+        border-radius: 8px;
+        padding: 1.25rem;
+        margin: 1.5rem 0;
+        border: 1px solid rgba(255, 94, 50, 0.15);
+      }
+
+      .hosting-title {
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.95rem;
+      }
+
+      .hosting-price {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--primary);
+        margin-bottom: 0.75rem;
+      }
+
+      .hosting-features {
+        list-style: none;
+        margin: 0;
+      }
+
+      .hosting-features li {
+        padding: 0.2rem 0;
+        color: var(--text-light);
+        font-size: 0.85rem;
+        position: relative;
+        padding-left: 1.25rem;
+      }
+
+      .hosting-features li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--primary);
+        font-weight: bold;
+      }
+
+      .domain-note {
+        background: rgba(255, 243, 193, 0.3);
+        border-radius: 6px;
+        padding: 0.75rem;
+        margin: 1rem 0;
+        font-size: 0.85rem;
+        color: var(--text-light);
+        border-left: 2px solid var(--secondary);
+      }
+
+      .addons-section {
+        background: var(--text);
+        color: white;
+        padding: 4rem 2rem;
+        margin: 4rem 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .addons-content {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .addons-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .addon-item {
+        background: white;
+        border-radius: 8px;
+        padding: 1.25rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.2s ease;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+
+      .addon-item:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary);
+      }
+
+      .addon-name {
+        font-weight: 500;
+        color: var(--text);
+        font-size: 0.95rem;
+      }
+
+      .addon-price {
+        font-weight: 600;
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      .cta-section {
+        text-align: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(
+          135deg,
+          var(--surface) 0%,
+          var(--background) 100%
+        );
+        position: relative;
+      }
+
+      .cta-section::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+            circle at 30% 70%,
+            rgba(255, 94, 50, 0.06) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 70% 30%,
+            rgba(255, 136, 190, 0.04) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            circle at 50% 50%,
+            rgba(185, 172, 56, 0.03) 0%,
+            transparent 50%
+          );
+        pointer-events: none;
+      }
+
+      .cta-content {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .cta-section h2 {
+        font-size: clamp(1.8rem, 4vw, 2.5rem);
+        margin-bottom: 1.5rem;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .cta-section p {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .cta-buttons .btn {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+        font-weight: 500;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .cta-buttons .btn-primary {
+        background: var(--primary);
+        color: white;
+        border: none;
+        box-shadow: 0 2px 8px rgba(255, 94, 50, 0.2);
+      }
+
+      .cta-buttons .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 16px rgba(255, 94, 50, 0.3);
+      }
+
+      .cta-buttons .btn-outline {
+        background: transparent;
+        color: var(--text);
+        border: 1px solid rgba(92, 64, 51, 0.2);
+      }
+
+      .cta-buttons .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+        transform: translateY(-2px);
+      }
+
+      .pricing-note {
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 2rem;
+        margin: 3rem 0;
+        border: 1px solid rgba(92, 64, 51, 0.1);
+      }
+
+      .pricing-note h3 {
+        color: var(--text);
+        margin-bottom: 1rem;
+        font-size: 1.25rem;
+      }
+
+      .pricing-note p {
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      @media (max-width: 768px) {
+        .packages-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .package-card {
+          padding: 2rem 1.5rem;
+        }
+
+        .addons-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .packages-hero {
+          padding: 6rem 1rem 3rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="main-nav">
+      <div class="nav-brand">
+        <a href="index.html" class="logo">
+          <img
+            src="images/logo2.png"
+            alt="Picky Pixels Studio Logo"
+            width="120"
+            height="120"
+          />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="index.html#work" class="nav-link">Portfolio</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <div class="nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+
+        <div class="language-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="mobile-menu">
+      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <div class="mobile-menu-content">
+        <div class="mobile-nav-links">
+          <a href="index.html#work" class="nav-link">Portfolio</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-social nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section class="packages-hero">
+        <div class="packages-hero-content">
+          <h1><span class="gradient-text">Custom Website Packages</span></h1>
+          <div class="hero-tagline">Ready to Bring Your Vision Online?</div>
+          <div class="hero-description">
+            For creatives, conscious brands, and small businesses who want a
+            beautiful online presence without the overwhelm. Whether you need a
+            simple one-page site or a fully functional online shop, I've created
+            flexible, ready-to-go packages to match your needs and budget. Clean
+            design, clear structure, and personal support, delivered with love.
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="packages-section"
+        style="padding: 4rem 2rem; background: var(--text); color: white"
+      >
+        <div class="packages-grid">
+          <!-- One-Page Starter -->
+          <div class="package-card">
+            <div class="package-header">
+              <div class="package-icon">🌈</div>
+              <h3 class="package-title">One-Page Starter</h3>
+              <div class="package-price">Starting at €250</div>
+              <p class="package-subtitle">
+                A beautiful scrollable site to introduce yourself or your work.
+              </p>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem">
+              This package is ideal for artists, personal brands, or events
+              seeking a simple yet elegant online presence.
+            </p>
+            <ul class="package-features">
+              <li>1-page layout (homepage, portfolio, or event)</li>
+              <li>Image gallery or hero section</li>
+              <li>Contact form (email or WhatsApp)</li>
+              <li>Social media links</li>
+              <li>SEO-friendly and mobile-ready</li>
+              <li>1 revision after the first preview</li>
+            </ul>
+            <div class="hosting-info">
+              <div class="hosting-title">
+                <i class="fas fa-server"></i>
+                Hosting Plan
+              </div>
+              <div class="hosting-price">€15/month</div>
+              <ul class="hosting-features">
+                <li>Secure hosting with SSL</li>
+                <li>Contact form delivery</li>
+                <li>Basic tech support</li>
+              </ul>
+            </div>
+            <div class="domain-note">
+              <strong>🔗 Domain not included.</strong><br />
+              You can purchase your domain separately, or I can help you set it
+              up!
+            </div>
+          </div>
+
+          <!-- Creative Pro Site -->
+          <div class="package-card">
+            <div class="package-header">
+              <div class="package-icon">✨</div>
+              <h3 class="package-title">Creative Pro Site</h3>
+              <div class="package-price">Starting at €450</div>
+              <p class="package-subtitle">
+                A complete website with multiple pages to showcase your work and
+                services.
+              </p>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem">
+              Perfect for small businesses, coaches, or creatives ready to
+              expand their presence online.
+            </p>
+            <ul class="package-features">
+              <li>Up to 4 pages (Home, About, Services, Contact)</li>
+              <li>Gallery or featured projects</li>
+              <li>Contact form with auto-reply</li>
+              <li>SEO & mobile optimization</li>
+              <li>2 revisions included</li>
+            </ul>
+            <div class="hosting-info">
+              <div class="hosting-title">
+                <i class="fas fa-server"></i>
+                Hosting Plan
+              </div>
+              <div class="hosting-price">€20/month</div>
+              <ul class="hosting-features">
+                <li>Hosting with SSL</li>
+                <li>Contact form delivery</li>
+                <li>Instagram feed integration (via Artframe)</li>
+                <li>Basic tech support</li>
+              </ul>
+            </div>
+            <div class="domain-note">
+              <strong>🔗 Domain not included.</strong><br />
+              You can purchase your domain separately, or I can help you set it
+              up!
+            </div>
+          </div>
+
+          <!-- Soulful Shop -->
+          <div class="package-card">
+            <div class="package-header">
+              <div class="package-icon">🛒</div>
+              <h3 class="package-title">Soulful Shop</h3>
+              <div class="package-price">Starting at €950</div>
+              <p class="package-subtitle">
+                A custom online store built to match your brand and connect with
+                your audience.
+              </p>
+            </div>
+            <p style="color: var(--text-light); margin-bottom: 1.5rem">
+              Ideal for product-based brands ready to launch or grow their
+              online business.
+            </p>
+            <ul class="package-features">
+              <li>Up to 10 products</li>
+              <li>Shopping cart with payments</li>
+              <li>Shipping setup (flat rate or Melhor Envio)</li>
+              <li>Contact and policy pages</li>
+              <li>Fully mobile-responsive and SEO-friendly</li>
+              <li>2 revisions included</li>
+            </ul>
+            <div class="hosting-info">
+              <div class="hosting-title">
+                <i class="fas fa-server"></i>
+                Hosting Plan
+              </div>
+              <div class="hosting-price">€25/month</div>
+              <ul class="hosting-features">
+                <li>Hosting with SSL</li>
+                <li>Contact form</li>
+                <li>Instagram feed integration (via Artframe)</li>
+                <li>Basic tech support</li>
+              </ul>
+            </div>
+            <div class="domain-note">
+              <strong>🔗 Domain not included.</strong><br />
+              You can purchase your domain separately, or I can help you set it
+              up!
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="addons-section">
+        <div class="addons-content">
+          <div class="section-header" style="text-align: center">
+            <span class="section-label" style="color: var(--accent)"
+              >Add-Ons</span
+            >
+            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1rem">
+              🧩 Customize Your Package
+            </h2>
+            <p style="color: rgba(255, 255, 255, 0.8); font-size: 1.1rem">
+              Need something extra? Add these features to any package.
+            </p>
+          </div>
+          <div class="addons-grid">
+            <div class="addon-item">
+              <span class="addon-name">Extra page</span>
+              <span class="addon-price">+€60/page</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Extra revision round</span>
+              <span class="addon-price">+€40</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Blog setup</span>
+              <span class="addon-price">+€80</span>
+            </div>
+            <div class="addon-item">
+              <span class="addon-name">Rush delivery (under 5 days)</span>
+              <span class="addon-price">+€100</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="pricing-note"
+        style="
+          margin: 4rem 2rem;
+          background: var(--surface);
+          padding: 3rem 2rem;
+          border-radius: 12px;
+          border: 1px solid rgba(92, 64, 51, 0.1);
+        "
+      >
+        <div style="max-width: 800px; margin: 0 auto; text-align: center">
+          <h3
+            style="color: var(--text); margin-bottom: 1rem; font-size: 1.3rem"
+          >
+            📝 Note on Pricing
+          </h3>
+          <p
+            style="
+              color: var(--text-light);
+              line-height: 1.6;
+              font-size: 1.1rem;
+            "
+          >
+            Prices listed above are starting points reflecting common requests.
+            If your project has unique features or extra complexity, I'll
+            provide a personalized quote after we chat. Simple, transparent, and
+            tailored to you.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta-section">
+        <div class="cta-content">
+          <h2>💬 Not Sure Which One to Pick?</h2>
+          <p>
+            Send me a quick message or book a free 20-minute call.<br />
+            We'll find the best package or create a custom plan just for you.
+          </p>
+          <div class="cta-buttons">
+            <a
+              href="mailto:nathielle@pickypixels.studio"
+              class="btn btn-primary"
+            >
+              <i class="fas fa-envelope"></i>
+              Send Message
+            </a>
+            <a
+              href="https://calendly.com/pickypixels"
+              target="_blank"
+              rel="noopener"
+              class="btn btn-outline"
+            >
+              <i class="fas fa-calendar-check"></i>
+              Book Free Call
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">Picky Pixels Studio</div>
+          <p>
+            Helping small brands and bold creatives show up online with heart,
+            clarity, and confidence.
+          </p>
+        </div>
+        <div class="footer-links">
+          <nav class="footer-nav">
+            <a href="index.html#work">Portfolio</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+          <p class="copyright">
+            &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
+            <a
+              href="privacy-policy.html"
+              style="
+                color: var(--primary);
+                text-decoration: underline;
+                font-size: 0.95rem;
+              "
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
