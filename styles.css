@@ -536,7 +536,7 @@ body {
   }
   .work-image img {
     object-fit: cover;
-    object-position: center;
+    object-position: top;
   }
   .work-content {
     padding: var(--spacing-sm);
