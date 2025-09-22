@@ -278,7 +278,7 @@ body {
   gap: var(--spacing-lg);
   min-width: 100%;
   width: 100%;
-  padding: 0 var(--spacing-md);
+  padding: 0;
   flex-shrink: 0;
   box-sizing: border-box;
 }
