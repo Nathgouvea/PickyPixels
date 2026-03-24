@@ -1,0 +1,758 @@
+/* ============================================
+   Pages CSS - Services & Portfolio pages
+   ============================================ */
+
+/* Page Hero */
+.page-hero {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 160px var(--spacing-md) var(--spacing-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  opacity: 0.08;
+  filter: blur(80px);
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--secondary));
+  opacity: 0.06;
+  filter: blur(60px);
+}
+
+.page-hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-title {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.page-hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================
+   Services Page
+   ============================================ */
+
+/* Services Category Section */
+.services-category {
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.services-category-alt {
+  background: var(--surface);
+}
+
+.services-category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.category-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Services Grid */
+.services-grid-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.service-card-full {
+  display: flex;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: 18px;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  transition: var(--transition);
+  transition-property: transform, box-shadow;
+}
+
+.service-card-full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(92, 64, 51, 0.1);
+}
+
+.services-category-alt .service-card-full {
+  background: var(--background);
+}
+
+.service-icon-full {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255, 94, 50, 0.1), rgba(255, 209, 217, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.service-card-content h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.service-card-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.service-detail {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  background: rgba(255, 94, 50, 0.08);
+  color: var(--primary);
+}
+
+.location-badge {
+  background: rgba(185, 172, 56, 0.12);
+  color: var(--secondary);
+}
+
+.location-badge i {
+  font-size: 0.75rem;
+}
+
+/* Services Note */
+.services-note {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 94, 50, 0.05);
+  border-radius: 12px;
+  border-left: 3px solid var(--primary);
+}
+
+.services-note p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.services-note i {
+  color: var(--primary);
+  margin-right: 0.25rem;
+}
+
+/* Services CTA */
+.services-cta {
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+}
+
+.services-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.services-cta p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.services-cta .cta-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Portfolio Page
+   ============================================ */
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Portfolio Filters */
+.portfolio-filters {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: 100px;
+  border: 2px solid rgba(92, 64, 51, 0.15);
+  background: transparent;
+  color: var(--text);
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.portfolio-item {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  transition: var(--transition);
+  transition-property: transform, box-shadow;
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(92, 64, 51, 0.12);
+}
+
+.portfolio-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-sm);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay .tech-stack {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-overlay .tech-stack span {
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: 100px;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.portfolio-content {
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+}
+
+.portfolio-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-category-badge.web {
+  background: rgba(255, 94, 50, 0.1);
+  color: var(--primary);
+}
+
+.portfolio-category-badge.marketing {
+  background: rgba(185, 172, 56, 0.15);
+  color: var(--secondary);
+}
+
+.portfolio-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.portfolio-link:hover {
+  gap: 0.6rem;
+}
+
+.portfolio-link i {
+  font-size: 0.75rem;
+}
+
+/* Coming Soon placeholder */
+.portfolio-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(185, 172, 56, 0.08), rgba(255, 209, 217, 0.15));
+  aspect-ratio: 4/3;
+}
+
+.coming-soon-content {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.coming-soon-content i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  opacity: 0.4;
+}
+
+.coming-soon-content span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Portfolio Empty State */
+.portfolio-empty {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Portfolio Contact */
+.portfolio-contact {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--surface);
+}
+
+.portfolio-contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-contact-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-contact-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-contact-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.portfolio-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+/* ============================================
+   Homepage Services Overview (updated)
+   ============================================ */
+
+.services-overview-categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.service-category-preview {
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: 18px;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  transition: var(--transition);
+}
+
+.service-category-preview:hover {
+  box-shadow: 0 8px 32px rgba(92, 64, 51, 0.08);
+}
+
+.category-preview-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-preview-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.category-preview-icon.marketing {
+  background: linear-gradient(135deg, rgba(185, 172, 56, 0.15), rgba(185, 172, 56, 0.05));
+  color: var(--secondary);
+}
+
+.category-preview-icon.webdesign {
+  background: linear-gradient(135deg, rgba(255, 94, 50, 0.1), rgba(255, 209, 217, 0.2));
+  color: var(--primary);
+}
+
+.category-preview-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.category-services-list {
+  list-style: none;
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-services-list li {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-services-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.category-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.category-see-all:hover {
+  gap: 0.6rem;
+}
+
+/* ============================================
+   About - Team Grid
+   ============================================ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-lg);
+  margin-top: 3rem;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member .owner-photo-wrapper {
+  max-height: 400px;
+}
+
+.team-member .owner-photo {
+  height: 400px;
+}
+
+.team-message {
+  margin-top: var(--spacing-lg);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-message .message-content {
+  text-align: center;
+}
+
+.team-message .highlight-paragraph {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-message .message-content > p {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.team-message .owner-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.team-message .cta-container {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    gap: var(--spacing-md);
+  }
+
+  .team-message .owner-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Work Section - See All Button */
+.work-see-all {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+/* Active nav link on inner pages */
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 50vh;
+    padding: 140px var(--spacing-sm) var(--spacing-md);
+  }
+
+  .page-hero-title {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .page-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .services-category {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .services-grid-full {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card-full {
+    padding: var(--spacing-sm);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portfolio-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-overview-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    min-height: 45vh;
+    padding: 120px var(--spacing-xs) var(--spacing-md);
+  }
+
+  .category-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-item {
+    border-radius: 14px;
+  }
+
+  .service-card-full {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

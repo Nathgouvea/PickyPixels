@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Picky Pixels Studio Portfolio - Web Design & Marketing projects for creatives and small businesses."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://pickypixels.studio/portfolio" />
+    <meta
+      property="og:title"
+      content="Our Portfolio - Picky Pixels Studio"
+    />
+    <meta
+      property="og:description"
+      content="Explore our web design and marketing projects -each one crafted with care to reflect the personality and goals of our clients."
+    />
+    <meta
+      property="og:image"
+      content="https://pickypixels.studio/images/logo2.png"
+    />
+    <meta property="twitter:card" content="summary_large_image" />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JKRYFKT1B4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-JKRYFKT1B4");
+    </script>
+    <title>Our Portfolio - Picky Pixels Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="scroll-progress">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <nav class="main-nav">
+      <div class="nav-brand">
+        <a href="index.html" class="logo">
+          <img
+            src="images/logo2.png"
+            alt="Picky Pixels Studio Logo"
+            width="120"
+            height="120"
+          />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="portfolio.html" class="nav-link active">Portfolio</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html#about" class="nav-link">About</a>
+        <a href="index.html#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-cta">
+        <div class="nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          >
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <div class="language-switch">
+          <button class="lang-btn active" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="pt">PT</button>
+        </div>
+        <button class="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+    <div class="mobile-menu">
+      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <div class="mobile-menu-content">
+        <div class="mobile-nav-links">
+          <a href="portfolio.html" class="nav-link active">Portfolio</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="index.html#about" class="nav-link">About</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </div>
+        <div class="mobile-nav-social nav-social">
+          <a
+            href="https://github.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="GitHub"
+          ><i class="fab fa-github"></i></a>
+          <a
+            href="mailto:nathielle@pickypixels.studio"
+            class="nav-social-link"
+            aria-label="Email Nathielle"
+          ><i class="fas fa-envelope"></i></a>
+          <a
+            href="https://instagram.com/pickypixels"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="nav-social-link"
+            aria-label="Instagram"
+          ><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <!-- Page Hero -->
+      <section class="page-hero">
+        <div class="page-hero-content">
+          <span class="section-label">Our Portfolio</span>
+          <h1 class="page-hero-title">
+            Work We're <span class="gradient-text">Proud</span> Of
+          </h1>
+          <p class="page-hero-subtitle">
+            A collection of projects we've built with heart -each one crafted to reflect the personality and goals of our clients.
+          </p>
+        </div>
+      </section>
+
+      <!-- Portfolio Filter & Grid -->
+      <section class="portfolio-section">
+        <div class="portfolio-container">
+          <!-- Category Filters -->
+          <div class="portfolio-filters" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+            <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button>
+            <button class="filter-btn" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
+          </div>
+
+          <!-- Portfolio Grid -->
+          <div class="portfolio-grid">
+            <!-- Web Design Projects -->
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/Turmeric-Pakistani-Indian Restaurant-Porto-Portugal.webp"
+                  alt="Turmeric Restaurant Website - Pakistani Indian Restaurant in Porto, Portugal"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">Restaurant</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>Turmeric Restaurant</h3>
+                <p>A modern restaurant website for Pakistani Indian cuisine in Porto, Portugal. Features menu showcase, location information, and online reservation system.</p>
+                <a
+                  href="https://turmeric.restaurant"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="portfolio-link"
+                  aria-label="Visit Turmeric Restaurant website"
+                >
+                  Visit Website <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/Gabriella-Tattoo.webp"
+                  alt="Gabriella Tattoo Website - Professional tattoo artist portfolio"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">Portfolio</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>Gabriella Tattoo</h3>
+                <p>A professional tattoo artist portfolio showcasing stunning gallery of work. The design highlights artistic talent while providing an easy way for clients to explore styles.</p>
+                <a
+                  href="https://www.gabriellatattoo.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="portfolio-link"
+                  aria-label="Visit Gabriella Tattoo website"
+                >
+                  Visit Website <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/livingleaving.webp"
+                  alt="LivingLeaving Interior Design Website"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">Portfolio</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>LivingLeaving</h3>
+                <p>A sophisticated interior design portfolio showcasing space transformations with immersive gallery and before-after comparisons.</p>
+                <a
+                  href="https://livingleaving.nl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="portfolio-link"
+                  aria-label="Visit LivingLeaving website"
+                >
+                  Visit Website <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/FazUmCafezim.jpeg"
+                  alt="FazUmCafezim Coffee Shop Website"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">E-commerce</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>FazUmCafezim</h3>
+                <p>An artisanal coffee shop website featuring a warm, inviting design that reflects the brand's commitment to quality.</p>
+                <a
+                  href="https://fazumcafezim.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="portfolio-link"
+                  aria-label="Visit FazUmCafezim website"
+                >
+                  Visit Website <i class="fas fa-external-link-alt"></i>
+                </a>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/stegel.pt_.webp"
+                  alt="Stegel Nails premium nail salon website"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">Responsive</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>Stegel Nails</h3>
+                <p>A modern and elegant website for a premium nail salon. Features include service listings, online booking integration, and a dynamic gallery showcase.</p>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="web">
+              <div class="portfolio-image">
+                <img
+                  src="Projects/isabelvieira.pt_.webp"
+                  alt="Isabel Vieira professional therapist website"
+                  loading="lazy"
+                  width="800"
+                  height="600"
+                />
+                <div class="portfolio-overlay">
+                  <div class="tech-stack" role="list">
+                    <span role="listitem">HTML</span>
+                    <span role="listitem">CSS</span>
+                    <span role="listitem">JavaScript</span>
+                    <span role="listitem">Booking</span>
+                  </div>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge web">Web Design</span>
+                <h3>Isabel Vieira</h3>
+                <p>A personal brand website for a professional therapist with easy access to services, booking, and valuable resources.</p>
+              </div>
+            </article>
+
+            <!-- Marketing Projects (placeholder - to be filled with real projects) -->
+            <article class="portfolio-item" data-category="marketing">
+              <div class="portfolio-image portfolio-coming-soon">
+                <div class="coming-soon-content">
+                  <i class="fas fa-bullhorn"></i>
+                  <span>Marketing projects coming soon</span>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <span class="portfolio-category-badge marketing">Marketing</span>
+                <h3>Coming Soon</h3>
+                <p>We're adding our marketing portfolio -social media campaigns, brand strategies, and content creation work. Stay tuned!</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- No results message -->
+          <div class="portfolio-empty" hidden>
+            <p>No projects found in this category yet. Check back soon!</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="portfolio-contact">
+        <div class="portfolio-contact-container">
+          <div class="portfolio-contact-header">
+            <h2>Like What You See?</h2>
+            <p>Let's create something amazing together. Tell us about your project and we'll get back to you.</p>
+          </div>
+
+          <div class="portfolio-contact-grid">
+            <div class="quick-contact">
+              <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Choose your preferred way to connect:</p>
+              </div>
+              <div class="contact-actions">
+                <a
+                  href="mailto:nathielle@pickypixels.studio"
+                  class="action-btn email-btn"
+                >
+                  <i class="far fa-envelope"></i>
+                  <span>nathielle@pickypixels.studio</span>
+                </a>
+                <a
+                  href="https://calendly.com/nathielle-pickypixels/30min"
+                  target="_blank"
+                  rel="noopener"
+                  class="action-btn calendar-btn"
+                >
+                  <i class="far fa-calendar-check"></i>
+                  <span>Schedule a Call</span>
+                </a>
+              </div>
+              <div class="social-connect">
+                <p>Connect with us:</p>
+                <div class="social-links">
+                  <a
+                    href="https://instagram.com/pickypixelsstudio"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow on Instagram"
+                  >
+                    <i class="fab fa-instagram"></i>
+                  </a>
+                  <a
+                    href="https://github.com/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Follow on GitHub"
+                  >
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a
+                    href="https://linkedin.com/in/nathiellegouvea"
+                    target="_blank"
+                    rel="noopener"
+                    aria-label="Connect on LinkedIn"
+                  >
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <form
+              class="contact-form"
+              id="contact-form"
+              role="form"
+              action="https://formspree.io/f/mpwaajew"
+              method="POST"
+            >
+              <div class="form-row">
+                <div class="form-group">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    placeholder="Your Name"
+                  />
+                </div>
+                <div class="form-group">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    placeholder="Your Email"
+                  />
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="service">What do you need help with?</label>
+                  <select id="service" name="service" required>
+                    <option value="" disabled selected>What do you need help with?</option>
+                    <optgroup label="Marketing">
+                      <option value="social-media">Social Media Management</option>
+                      <option value="content-creation">Graphic Content Creation</option>
+                      <option value="video">Video Creation & Editing</option>
+                      <option value="photography">Photography Sessions</option>
+                      <option value="copywriting">Copywriting</option>
+                      <option value="brand-strategy">Brand Strategic Planning</option>
+                      <option value="email-marketing">Email Marketing & Newsletters</option>
+                      <option value="paid-traffic">Paid Traffic Management</option>
+                      <option value="marketing-consultancy">Marketing Consultancy</option>
+                    </optgroup>
+                    <optgroup label="Web Design & Development">
+                      <option value="landing-page">Landing Page</option>
+                      <option value="website">Website Development</option>
+                      <option value="ecommerce">E-Commerce</option>
+                      <option value="seo">SEO</option>
+                      <option value="maintenance">Website Maintenance</option>
+                      <option value="consulting">Web Consulting & Support</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Tell us about your project..."
+                  rows="3"
+                ></textarea>
+              </div>
+
+              <div
+                class="form-group"
+                style="display: flex; align-items: center; gap: 0.5rem"
+              >
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  required
+                  style="width: auto"
+                />
+                <label for="privacy" style="font-size: 0.95rem">
+                  I agree to the
+                  <a
+                    href="/privacy-policy.html"
+                    target="_blank"
+                    style="color: var(--primary); text-decoration: underline"
+                    >privacy policy</a
+                  >.
+                </label>
+              </div>
+
+              <button type="submit" class="submit-btn">
+                <span>Send Message</span>
+                <i class="fas fa-paper-plane"></i>
+              </button>
+              <div
+                id="form-message"
+                style="margin-top: 1rem; font-size: 1rem"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <div class="logo">
+            <img
+              src="images/logo2.png"
+              alt="Picky Pixels Studio Logo"
+              width="120"
+              height="120"
+            />
+          </div>
+          <p>
+            Helping small brands and bold creatives show up online with heart,
+            clarity, and confidence.
+          </p>
+        </div>
+        <div class="footer-links">
+          <nav class="footer-nav">
+            <a href="portfolio.html">Portfolio</a>
+            <a href="services.html">Services</a>
+            <a href="index.html#about">About</a>
+            <a href="index.html#contact">Contact</a>
+          </nav>
+          <div class="footer-social">
+            <a
+              href="https://instagram.com/pickypixelsstudio"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow on Instagram"
+            >
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a
+              href="mailto:nathielle@pickypixels.studio"
+              aria-label="Send email"
+            >
+              <i class="fas fa-envelope"></i>
+            </a>
+            <a
+              href="https://github.com/nathiellegouvea"
+              target="_blank"
+              rel="noopener"
+              aria-label="Follow on GitHub"
+            >
+              <i class="fab fa-github"></i>
+            </a>
+            <a
+              href="https://linkedin.com/in/nathiellegouvea"
+              target="_blank"
+              rel="noopener"
+              aria-label="Connect on LinkedIn"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+          <p class="copyright">
+            &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
+            <a
+              href="privacy-policy.html"
+              style="
+                color: var(--primary);
+                text-decoration: underline;
+                font-size: 0.95rem;
+              "
+              >Privacy Policy</a
+            >
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Image Overlay -->
+    <div class="image-overlay" id="image-overlay">
+      <button
+        class="overlay-close"
+        id="overlay-close"
+        aria-label="Close image overlay"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <img class="overlay-image" id="overlay-image" alt="Portfolio image" />
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Portfolio filter functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        const emptyMessage = document.querySelector(".portfolio-empty");
+
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const filter = this.dataset.filter;
+
+            // Update active button
+            filterBtns.forEach((b) => {
+              b.classList.remove("active");
+              b.setAttribute("aria-selected", "false");
+            });
+            this.classList.add("active");
+            this.setAttribute("aria-selected", "true");
+
+            // Filter items
+            let visibleCount = 0;
+            portfolioItems.forEach((item) => {
+              if (filter === "all" || item.dataset.category === filter) {
+                item.style.display = "";
+                item.style.animation = "fadeInUp 0.4s ease forwards";
+                visibleCount++;
+              } else {
+                item.style.display = "none";
+              }
+            });
+
+            // Show empty message if no items
+            if (emptyMessage) {
+              emptyMessage.hidden = visibleCount > 0;
+            }
+          });
+        });
+
+        // Contact form handling
+        const form = document.getElementById("contact-form");
+        const messageDiv = document.getElementById("form-message");
+        if (form) {
+          form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            messageDiv.textContent = "";
+            const formData = new FormData(form);
+            try {
+              const response = await fetch(form.action, {
+                method: "POST",
+                body: formData,
+                headers: { Accept: "application/json" },
+              });
+              if (response.ok) {
+                form.reset();
+                messageDiv.style.color = "green";
+                messageDiv.textContent =
+                  "Thank you! Your message has been sent.";
+              } else {
+                messageDiv.style.color = "red";
+                messageDiv.textContent =
+                  "Oops! There was a problem sending your message. Please try again.";
+              }
+            } catch (error) {
+              messageDiv.style.color = "red";
+              messageDiv.textContent =
+                "Oops! There was a problem sending your message. Please try again.";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
