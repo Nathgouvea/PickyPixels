@@ -47,11 +47,21 @@
 }
 
 .page-hero-title {
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   line-height: 1.1;
-  color: var(--text);
+  color: #2d1f1a;
+  text-shadow: 0 2px 8px #fff9f0;
   margin-bottom: var(--spacing-sm);
+  font-family: "Syne", sans-serif;
+}
+
+.page-hero-title .gradient-text {
+  text-shadow: none;
+}
+
+.page-hero-title .outline-text {
+  text-shadow: none;
 }
 
 .page-hero-subtitle {
@@ -318,7 +328,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top center;
   transition: transform 0.4s ease;
+}
+
+.portfolio-image img.center-center {
+  object-position: center center;
 }
 
 .portfolio-item:hover .portfolio-image img {
@@ -606,6 +621,46 @@
   height: 400px;
 }
 
+/* Team Photo Hover Overlay */
+.owner-social-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: rgba(45, 31, 26, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.owner-photo-wrapper:hover .owner-social-hover {
+  opacity: 1;
+}
+
+.owner-social-hover .social-link {
+  color: white;
+  font-size: 1.6rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  opacity: 1;
+}
+
+.owner-social-hover .social-link:hover {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
 .team-message {
   margin-top: var(--spacing-lg);
   max-width: 750px;
@@ -657,6 +712,13 @@
   }
 }
 
+/* Homepage Portfolio Grid */
+.home-portfolio-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
 /* Work Section - See All Button */
 .work-see-all {
   text-align: center;
@@ -696,7 +758,7 @@
   }
 
   .page-hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
   }
 
   .page-hero-subtitle {
