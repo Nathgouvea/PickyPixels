@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Picky Pixels Studio Portfolio - Web Design & Marketing projects for creatives and small businesses."
+      content="Selected work by Picky Pixels Studio across web design, marketing, branding, and digital product execution."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pickypixels.studio/portfolio" />
     <meta
       property="og:title"
-      content="Our Portfolio - Picky Pixels Studio"
+      content="Our Work - Picky Pixels Studio"
     />
     <meta
       property="og:description"
-      content="Explore our web design and marketing projects -each one crafted with care to reflect the personality and goals of our clients."
+      content="Explore selected work across websites, campaigns, and brand systems built with craft, clarity, and strategic intent."
     />
     <meta
       property="og:image"
@@ -35,15 +35,17 @@
       gtag("js", new Date());
       gtag("config", "G-JKRYFKT1B4");
     </script>
-    <title>Our Portfolio - Picky Pixels Studio</title>
+    <title>Our Work - Picky Pixels Studio</title>
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="alternate" hreflang="en" href="https://pickypixels.studio/portfolio.html" />
+    <link rel="alternate" hreflang="pt" href="https://pickypixels.studio/portfolio.pt.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pickypixels.studio/portfolio.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -62,16 +64,17 @@
           <img
             src="images/logo2.png"
             alt="Picky Pixels Studio Logo"
-            width="120"
-            height="120"
+            width="64"
+            height="64"
           />
         </a>
       </div>
       <div class="nav-links">
-        <a href="portfolio.html" class="nav-link active">Portfolio</a>
-        <a href="services.html" class="nav-link">Services</a>
-        <a href="index.html#about" class="nav-link">About</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html" class="nav-link" data-translate="nav-home">Home</a>
+        <a href="portfolio.html" class="nav-link active" data-translate="nav-work">Portfolio</a>
+        <a href="services.html" class="nav-link" data-translate="nav-services">Services</a>
+        <a href="studio.html" class="nav-link" data-translate="nav-about">About</a>
+        <a href="contact.html" class="nav-link nav-link-cta" data-translate="nav-contact">Contact</a>
       </div>
       <div class="nav-cta">
         <div class="nav-social">
@@ -85,14 +88,14 @@
             <i class="fab fa-whatsapp"></i>
           </a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
             aria-label="Email"
           >
             <i class="fas fa-envelope"></i>
           </a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -114,10 +117,11 @@
       <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
       <div class="mobile-menu-content">
         <div class="mobile-nav-links">
-          <a href="portfolio.html" class="nav-link active">Portfolio</a>
-          <a href="services.html" class="nav-link">Services</a>
-          <a href="index.html#about" class="nav-link">About</a>
-          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="index.html" class="nav-link" data-translate="nav-home">Home</a>
+          <a href="portfolio.html" class="nav-link active" data-translate="nav-work">Portfolio</a>
+          <a href="services.html" class="nav-link" data-translate="nav-services">Services</a>
+          <a href="studio.html" class="nav-link" data-translate="nav-about">About</a>
+          <a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a>
         </div>
         <div class="mobile-nav-social nav-social">
           <a
@@ -128,12 +132,12 @@
             aria-label="WhatsApp"
           ><i class="fab fa-whatsapp"></i></a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
             aria-label="Email"
           ><i class="fas fa-envelope"></i></a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -147,13 +151,13 @@
       <!-- Page Hero -->
       <section class="page-hero">
         <div class="page-hero-content">
-          <span class="section-label">Our Portfolio</span>
+          <span class="section-label" data-translate="page-work-label">Selected Work</span>
           <h1 class="hero-title">
-            Work We're<br />
-            <span class="gradient-text">Proud</span> Of
+            <span data-translate="page-work-title-1">Work We're</span><br />
+            <span data-translate="page-work-title-2">Proud</span> <span data-translate="page-work-title-3">Of</span>
           </h1>
-          <p class="page-hero-subtitle">
-            A collection of projects we've built with heart -each one crafted to reflect the personality and goals of our clients.
+          <p class="page-hero-subtitle" data-translate="page-work-subtitle">
+            A collection of projects we've built with heart — each one crafted to reflect the personality and goals of our clients.
           </p>
         </div>
       </section>
@@ -163,251 +167,157 @@
         <div class="portfolio-container">
           <!-- Category Filters -->
           <div class="portfolio-filters" role="tablist" aria-label="Filter projects by category">
-            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
-            <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button>
-            <button class="filter-btn" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
+            <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" data-translate="page-filter-all">All</button>
+            <button class="filter-btn" data-filter="web" role="tab" aria-selected="false" data-translate="filter-web">Web Design</button>
+            <button class="filter-btn" data-filter="marketing" role="tab" aria-selected="false" data-translate="filter-marketing">Marketing</button>
           </div>
 
           <!-- Portfolio Grid -->
           <div class="portfolio-grid">
             <!-- Web Design Projects -->
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="turmeric">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /Turmeric-Pakistani-Indian Restaurant-Porto-Portugal.webp" alt="Turmeric Restaurant Website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>Turmeric Restaurant</h3>
-                <p>A modern restaurant website for Pakistani Indian cuisine in Porto, Portugal. Features menu showcase, location information, and online reservation system.</p>
-                <a href="https://turmeric.restaurant" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
-              </div>
+                <p data-translate="page-portfolio-turmeric-desc">A modern restaurant website for Pakistani Indian cuisine in Porto, Portugal. Features menu showcase, location information, and online reservation system.</p></div>
             </article>
 
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="gabriella">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /Gabriella-Tattoo.webp" alt="Gabriella Tattoo Website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>Gabriella Tattoo</h3>
-                <p>A professional tattoo artist portfolio showcasing stunning gallery of work and providing an easy way for clients to explore styles.</p>
-                <a href="https://www.gabriellatattoo.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
-              </div>
+                <p data-translate="page-portfolio-gabriella-desc">A professional tattoo artist portfolio showcasing stunning gallery of work and providing an easy way for clients to explore styles.</p></div>
             </article>
 
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="livingleaving">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /livingleaving.webp" alt="LivingLeaving Interior Design Website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>LivingLeaving</h3>
-                <p>A sophisticated interior design portfolio showcasing space transformations with immersive gallery and before-after comparisons.</p>
-                <a href="https://livingleaving.nl" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
-              </div>
+                <p data-translate="page-portfolio-livingleaving-desc">A sophisticated interior design portfolio showcasing space transformations with immersive gallery and before-after comparisons.</p></div>
             </article>
 
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="fazumcafezim">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /FazUmCafezim.jpeg" alt="FazUmCafezim Coffee Shop Website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>FazUmCafezim</h3>
-                <p>An artisanal coffee shop website featuring a warm, inviting design that reflects the brand's commitment to quality.</p>
-                <a href="https://fazumcafezim.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visit Website <i class="fas fa-external-link-alt"></i></a>
-              </div>
+                <p data-translate="page-portfolio-cafezim-desc">An artisanal coffee shop website featuring a warm, inviting design that reflects the brand's commitment to quality.</p></div>
             </article>
 
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="stegel">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /stegel.pt_.webp" alt="Stegel Nails premium nail salon website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>Stegel Nails</h3>
-                <p>A modern and elegant website for a premium nail salon with service listings and online booking integration.</p>
+                <p data-translate="page-portfolio-stegel-desc">A modern and elegant website for a premium nail salon with service listings and online booking integration.</p>
               </div>
             </article>
 
-            <article class="portfolio-item" data-category="web">
+            <article class="portfolio-item portfolio-item-clickable" data-category="web" data-project-id="isabelvieira">
               <div class="portfolio-image">
                 <img src="Projects/Portfolio-Web /isabelvieira.pt_.webp" alt="Isabel Vieira professional therapist website" loading="lazy" width="800" height="600" />
                 <div class="portfolio-overlay"><div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div></div>
               </div>
               <div class="portfolio-content">
-                <span class="portfolio-category-badge web">Web Design</span>
+                <span class="portfolio-category-badge web" data-translate="badge-web">Web Design</span>
                 <h3>Isabel Vieira</h3>
-                <p>A personal brand website for a professional therapist with easy access to services, booking, and valuable resources.</p>
+                <p data-translate="page-portfolio-isabel-desc">A personal brand website for a professional therapist with easy access to services, booking, and valuable resources.</p>
               </div>
             </article>
 
-            <!-- Marketing Projects -->
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/CYNERGIA.png" alt="Grupo Cynergia - Website design for energy consulting" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Web Design</span><span>Branding</span><span>Strategy</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Grupo Cynergia - Website</h3>
-                <p>Complete web presence design for an energy consulting company with services showcase and brand identity.</p>
-              </div>
-            </article>
+          </div>
 
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Mesa de trabajo 1.png" alt="Grupo Cynergia brand identity logo" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Branding</span><span>Logo</span><span>Identity</span></div></div>
+          <!-- Marketing Projects - Grouped by Company -->
+          <div class="company-groups-grid" data-category="marketing">
+            <div class="company-card" data-company="cynergia">
+              <div class="company-card-cover">
+                <img src="Projects/Portfolio-Marketing/CYNERGIA.png" alt="Grupo Cynergia" loading="lazy" />
+                <span class="company-badge" data-translate="company-cynergia-badge">6 projects</span>
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Cynergia - Brand Identity</h3>
-                <p>Brand identity and logo design for Grupo Cynergia energy consulting.</p>
+              <div class="company-card-info">
+                <span class="portfolio-category-badge marketing" data-translate="badge-marketing">Marketing</span>
+                <h3>Grupo Cynergia</h3>
+                <p data-translate="company-cynergia-desc">Energy consulting</p>
+                <div class="company-tags"><span>Web Design</span><span>Branding</span><span>Social Media</span></div>
               </div>
-            </article>
+            </div>
 
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Calendario Cynergia (Energia) - post 1.png" alt="Cynergia social media content" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>Content</span><span>Calendar</span></div></div>
+            <div class="company-card" data-company="scriptai">
+              <div class="company-card-cover">
+                <img src="Projects/Portfolio-Marketing/Neuronex-Anuncio-IA.png" alt="Scriptai" loading="lazy" />
+                <span class="company-badge" data-translate="company-scriptai-badge">8 projects</span>
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Cynergia - Social Media</h3>
-                <p>Editorial calendar and social media content strategy for energy consulting brand.</p>
+              <div class="company-card-info">
+                <span class="portfolio-category-badge marketing" data-translate="badge-marketing">Marketing</span>
+                <h3>Scriptai</h3>
+                <p data-translate="company-scriptai-desc">AI business solutions</p>
+                <div class="company-tags"><span>Social Media</span><span>Ads</span><span>Print</span><span>CRM</span></div>
               </div>
-            </article>
+            </div>
 
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Simulação.png" alt="Cynergia credit simulation landing page" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>UI Design</span><span>Landing Page</span><span>Finance</span></div></div>
+            <div class="company-card" data-company="mmf">
+              <div class="company-card-cover">
+                <img src="Projects/Portfolio-Marketing/4.png" alt="Meet My Friends Portugal" loading="lazy" />
+                <span class="company-badge" data-translate="company-mmf-badge">1 project</span>
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Cynergia - Landing Page</h3>
-                <p>Credit simulation landing page design for financial services.</p>
+              <div class="company-card-info">
+                <span class="portfolio-category-badge marketing" data-translate="badge-marketing">Marketing</span>
+                <h3>Meet My Friends Portugal</h3>
+                <p data-translate="company-mmf-desc">Events & community</p>
+                <div class="company-tags"><span>Social Media</span><span>Events</span></div>
               </div>
-            </article>
+            </div>
+          </div>
 
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Contacte-nos.png" alt="Cynergia contact page design" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>UI Design</span><span>Web</span><span>Contact</span></div></div>
+          <!-- Project modal — used by Web Design (single image + Visit Website) and Marketing (carousel) -->
+          <div class="company-modal" id="company-modal" role="dialog" aria-modal="true" aria-labelledby="company-modal-title">
+            <div class="company-modal-backdrop"></div>
+            <div class="company-modal-content">
+              <div class="company-modal-header">
+                <h3 id="company-modal-title"></h3>
+                <button class="company-modal-close" aria-label="Close"><i class="fas fa-times"></i></button>
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Cynergia - Contact Page</h3>
-                <p>Contact page design as part of the complete Cynergia web presence.</p>
+              <p id="company-modal-description" class="company-modal-description"></p>
+              <div class="company-carousel">
+                <button class="carousel-btn carousel-prev" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="carousel-viewport">
+                  <img id="carousel-image" src="" alt="" />
+                  <h4 id="carousel-caption"></h4>
+                </div>
+                <button class="carousel-btn carousel-next" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
               </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Sobre nós.png" alt="Cynergia about page design" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>UI Design</span><span>Web</span><span>About</span></div></div>
+              <div class="carousel-dots" id="carousel-dots"></div>
+              <div class="carousel-thumbnails" id="carousel-thumbnails"></div>
+              <div class="company-modal-actions">
+                <a id="company-modal-visit" href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                  <span>Visit Website</span> <i class="fas fa-external-link-alt"></i>
+                </a>
               </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Cynergia - About Page</h3>
-                <p>About page design showcasing the company mission and team.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Neuronex-Anuncio-IA.png" alt="Scriptai Neuronex AI ad campaign" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>Ads</span><span>AI</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Scriptai - Neuronex AI Ad</h3>
-                <p>Social media ad creative for AI-powered business solutions.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Prancheta 1.png" alt="Scriptai Neuronex product showcase" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>Design</span><span>Tech</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Scriptai - Product Showcase</h3>
-                <p>Product showcase post for AI automation services.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Flyer A3 Soluções v2.png" alt="Scriptai solutions flyer" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Graphic Design</span><span>Flyer</span><span>Print</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Scriptai - Solutions Flyer</h3>
-                <p>Promotional flyer showcasing the full range of business solutions.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Bitrix24-dia-5-v3_01.png" alt="Bitrix24 CRM social media campaign" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>CRM</span><span>Campaign</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Bitrix24 - Social Campaign</h3>
-                <p>Social media campaign content for CRM and project management platform.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/4.png" class="center-center" alt="Event promotion social media post" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>Events</span><span>Design</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Event Promotion</h3>
-                <p>Social media content and event promotion for hospitality clients.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/dia-6.png" alt="Social media content campaign" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Social Media</span><span>Content</span><span>Strategy</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Social Media Content</h3>
-                <p>Ongoing social media content creation and management.</p>
-              </div>
-            </article>
-
-            <article class="portfolio-item" data-category="marketing">
-              <div class="portfolio-image">
-                <img src="Projects/Portfolio-Marketing/Mudança de conta - Stories.png" alt="Instagram stories design" loading="lazy" width="800" height="600" />
-                <div class="portfolio-overlay"><div class="tech-stack"><span>Stories</span><span>Instagram</span><span>Design</span></div></div>
-              </div>
-              <div class="portfolio-content">
-                <span class="portfolio-category-badge marketing">Marketing</span>
-                <h3>Instagram Stories</h3>
-                <p>Branded Instagram stories design for social media engagement.</p>
-              </div>
-            </article>
+            </div>
+          </div>
           </div>
 
           <!-- No results message -->
           <div class="portfolio-empty" hidden>
-            <p>No projects found in this category yet. Check back soon!</p>
+            <p data-translate="portfolio-empty-msg">No projects found in this category yet. Check back soon!</p>
           </div>
         </div>
       </section>
@@ -416,23 +326,23 @@
       <section class="portfolio-contact">
         <div class="portfolio-contact-container">
           <div class="portfolio-contact-header">
-            <h2>Like What You See?</h2>
-            <p>Let's create something amazing together. Tell us about your project and we'll get back to you.</p>
+            <h2 data-translate="page-contact-title">Like What You See?</h2>
+            <p data-translate="page-contact-subtitle">Let's create something amazing together. Tell us about your project and we'll get back to you.</p>
           </div>
 
           <div class="portfolio-contact-grid">
             <div class="quick-contact">
               <div class="contact-info">
-                <h3>Get in Touch</h3>
-                <p>Choose your preferred way to connect:</p>
+                <h3 data-translate="contact-get-in-touch">Get in Touch</h3>
+                <p data-translate="contact-choose">Choose your preferred way to connect:</p>
               </div>
               <div class="contact-actions">
                 <a
-                  href="mailto:nathielle@pickypixels.studio"
+                  href="mailto:hello@pickypixels.studio"
                   class="action-btn email-btn"
                 >
                   <i class="far fa-envelope"></i>
-                  <span>nathielle@pickypixels.studio</span>
+                  <span>hello@pickypixels.studio</span>
                 </a>
                 <a
                   href="https://calendly.com/nathielle-pickypixels/30min"
@@ -441,11 +351,11 @@
                   class="action-btn calendar-btn"
                 >
                   <i class="far fa-calendar-check"></i>
-                  <span>Schedule a Call</span>
+                  <span data-translate="contact-schedule">Book a Free Call</span>
                 </a>
               </div>
               <div class="social-connect">
-                <p>Connect with us:</p>
+                <p data-translate="contact-connect">Connect with us:</p>
                 <div class="social-links">
                   <a
                     href="https://instagram.com/pickypixelsstudio"
@@ -476,6 +386,7 @@
             >
               <div class="form-row">
                 <div class="form-group">
+                  <label for="name" class="sr-only" data-translate="form-name">Your Name</label>
                   <input
                     type="text"
                     id="name"
@@ -483,9 +394,11 @@
                     required
                     autocomplete="name"
                     placeholder="Your Name"
+                    data-translate-placeholder="form-name"
                   />
                 </div>
                 <div class="form-group">
+                  <label for="email" class="sr-only" data-translate="form-email">Your Email</label>
                   <input
                     type="email"
                     id="email"
@@ -493,37 +406,30 @@
                     required
                     autocomplete="email"
                     placeholder="Your Email"
+                    data-translate-placeholder="form-email"
                   />
                 </div>
               </div>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="service">What do you need help with?</label>
-                  <select id="service" name="service" required>
-                    <option value="" disabled selected>What do you need help with?</option>
-                    <optgroup label="Marketing">
-                      <option value="social-media">Social Media Management</option>
-                      <option value="content-creation">Graphic Content Creation</option>
-                      <option value="video">Video Creation & Editing</option>
-                      <option value="photography">Photography Sessions</option>
-                      <option value="copywriting">Copywriting</option>
-                      <option value="brand-strategy">Brand Strategic Planning</option>
-                      <option value="email-marketing">Email Marketing & Newsletters</option>
-                      <option value="paid-traffic">Paid Traffic Management</option>
-                      <option value="marketing-consultancy">Marketing Consultancy</option>
-                    </optgroup>
-                    <optgroup label="Web Design & Development">
-                      <option value="landing-page">Landing Page</option>
-                      <option value="website">Website Development</option>
-                      <option value="ecommerce">E-Commerce</option>
-                      <option value="seo">SEO</option>
-                      <option value="maintenance">Website Maintenance</option>
-                      <option value="consulting">Web Consulting & Support</option>
-                    </optgroup>
-                  </select>
-                </div>
-              </div>
+              <fieldset class="form-chips" role="radiogroup" aria-required="true">
+                <legend class="form-chips-legend" data-translate="form-service-label">What do you need help with?</legend>
+                <label class="chip">
+                  <input type="radio" name="service" value="marketing" required />
+                  <span data-translate="chip-marketing">Marketing</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="service" value="web" />
+                  <span data-translate="chip-web">Web</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="service" value="software" />
+                  <span data-translate="chip-software">Software & Mobile</span>
+                </label>
+                <label class="chip">
+                  <input type="radio" name="service" value="not-sure" />
+                  <span data-translate="chip-not-sure">Not sure yet</span>
+                </label>
+              </fieldset>
 
               <div class="form-group">
                 <textarea
@@ -531,6 +437,7 @@
                   name="message"
                   required
                   placeholder="Tell us about your project..."
+                  data-translate-placeholder="form-message"
                   rows="3"
                 ></textarea>
               </div>
@@ -547,18 +454,18 @@
                   style="width: auto; margin: 0; flex-shrink: 0"
                 />
                 <label for="privacy" style="font-size: 0.95rem; line-height: 1.2; margin: 0">
-                  I agree to the
+                  <span data-translate="form-privacy">I agree to the</span>
                   <a
                     href="/privacy-policy.html"
                     target="_blank"
                     style="color: var(--primary); text-decoration: underline"
-                    >privacy policy</a
+                    ><span data-translate="form-privacy-link">privacy policy</span></a
                   >.
                 </label>
               </div>
 
               <button type="submit" class="submit-btn">
-                <span>Send Message</span>
+                <span data-translate="form-submit">Send Message</span>
                 <i class="fas fa-paper-plane"></i>
               </button>
               <div
@@ -578,21 +485,21 @@
             <img
               src="images/logo2.png"
               alt="Picky Pixels Studio Logo"
-              width="120"
-              height="120"
+              width="64"
+              height="64"
             />
           </div>
-          <p>
+          <p data-translate="footer-desc">
             Helping small brands and bold creatives show up online with heart,
             clarity, and confidence.
           </p>
         </div>
         <div class="footer-links">
           <nav class="footer-nav">
-            <a href="portfolio.html">Portfolio</a>
-            <a href="services.html">Services</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="portfolio.html" data-translate="footer-work">Portfolio</a>
+            <a href="services.html" data-translate="footer-services">Services</a>
+            <a href="studio.html" data-translate="footer-studio">About</a>
+            <a href="contact.html" data-translate="footer-contact">Contact</a>
           </nav>
           <div class="footer-social">
             <a
@@ -604,7 +511,7 @@
               <i class="fab fa-instagram"></i>
             </a>
             <a
-              href="mailto:nathielle@pickypixels.studio"
+              href="mailto:hello@pickypixels.studio"
               aria-label="Send email"
             >
               <i class="fas fa-envelope"></i>
@@ -619,7 +526,7 @@
             </a>
           </div>
           <p class="copyright">
-            &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
+            &copy; 2026 Picky Pixels Studio. All rights reserved.<br />
             <a
               href="privacy-policy.html"
               style="
@@ -646,85 +553,6 @@
       <img class="overlay-image" id="overlay-image" alt="Portfolio image" />
     </div>
 
-    <script src="script.js"></script>
-    <script>
-      // Portfolio filter functionality
-      document.addEventListener("DOMContentLoaded", function () {
-        const filterBtns = document.querySelectorAll(".filter-btn");
-        const portfolioItems = document.querySelectorAll(".portfolio-item");
-        const emptyMessage = document.querySelector(".portfolio-empty");
-
-        function applyFilter(filter) {
-          filterBtns.forEach((b) => {
-            b.classList.remove("active");
-            b.setAttribute("aria-selected", "false");
-            if (b.dataset.filter === filter) {
-              b.classList.add("active");
-              b.setAttribute("aria-selected", "true");
-            }
-          });
-
-          let visibleCount = 0;
-          portfolioItems.forEach((item) => {
-            if (filter === "all" || item.dataset.category === filter) {
-              item.style.display = "";
-              item.style.animation = "fadeInUp 0.4s ease forwards";
-              visibleCount++;
-            } else {
-              item.style.display = "none";
-            }
-          });
-
-          if (emptyMessage) {
-            emptyMessage.hidden = visibleCount > 0;
-          }
-        }
-
-        filterBtns.forEach((btn) => {
-          btn.addEventListener("click", function () {
-            applyFilter(this.dataset.filter);
-          });
-        });
-
-        // Auto-apply filter from URL parameter (e.g. ?filter=marketing)
-        const urlParams = new URLSearchParams(window.location.search);
-        const initialFilter = urlParams.get("filter");
-        if (initialFilter && ["web", "marketing"].includes(initialFilter)) {
-          applyFilter(initialFilter);
-        }
-
-        // Contact form handling
-        const form = document.getElementById("contact-form");
-        const messageDiv = document.getElementById("form-message");
-        if (form) {
-          form.addEventListener("submit", async function (e) {
-            e.preventDefault();
-            messageDiv.textContent = "";
-            const formData = new FormData(form);
-            try {
-              const response = await fetch(form.action, {
-                method: "POST",
-                body: formData,
-                headers: { Accept: "application/json" },
-              });
-              if (response.ok) {
-                form.reset();
-                messageDiv.style.color = "green";
-                messageDiv.textContent =
-                  "Thank you! Your message has been sent.";
-              } else {
-                messageDiv.style.color = "red";
-                messageDiv.textContent =
-                  "Oops! There was a problem sending your message. Please try again.";
-              }
-            } catch (error) {
-              messageDiv.style.color = "red";
-              messageDiv.textContent =
-                "Oops! There was a problem sending your message. Please try again.";
-            }
-          });
-        }
-      });
-    </script>
+    <script src="script.js?v=1778683087"></script>
   </body>
 </html>

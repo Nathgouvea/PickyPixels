@@ -39,11 +39,13 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="pages.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="alternate" hreflang="en" href="https://pickypixels.studio/services.html" />
+    <link rel="alternate" hreflang="pt" href="https://pickypixels.studio/services.pt.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pickypixels.studio/services.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -62,16 +64,17 @@
           <img
             src="images/logo2.png"
             alt="Picky Pixels Studio Logo"
-            width="120"
-            height="120"
+            width="64"
+            height="64"
           />
         </a>
       </div>
       <div class="nav-links">
-        <a href="index.html#work" class="nav-link">Portfolio</a>
-        <a href="services.html" class="nav-link active">Services</a>
-        <a href="index.html#about" class="nav-link">About</a>
-        <a href="index.html#contact" class="nav-link">Contact</a>
+        <a href="index.html" class="nav-link" data-translate="nav-home">Home</a>
+        <a href="portfolio.html" class="nav-link" data-translate="nav-work">Portfolio</a>
+        <a href="services.html" class="nav-link active" data-translate="nav-services">Services</a>
+        <a href="studio.html" class="nav-link" data-translate="nav-about">About</a>
+        <a href="contact.html" class="nav-link nav-link-cta" data-translate="nav-contact">Contact</a>
       </div>
       <div class="nav-cta">
         <div class="nav-social">
@@ -85,14 +88,14 @@
             <i class="fab fa-whatsapp"></i>
           </a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
             aria-label="Email"
           >
             <i class="fas fa-envelope"></i>
           </a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -114,10 +117,11 @@
       <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
       <div class="mobile-menu-content">
         <div class="mobile-nav-links">
-          <a href="index.html#work" class="nav-link">Portfolio</a>
-          <a href="services.html" class="nav-link active">Services</a>
-          <a href="index.html#about" class="nav-link">About</a>
-          <a href="index.html#contact" class="nav-link">Contact</a>
+          <a href="index.html" class="nav-link" data-translate="nav-home">Home</a>
+          <a href="portfolio.html" class="nav-link" data-translate="nav-work">Portfolio</a>
+          <a href="services.html" class="nav-link active" data-translate="nav-services">Services</a>
+          <a href="studio.html" class="nav-link" data-translate="nav-about">About</a>
+          <a href="contact.html" class="nav-link" data-translate="nav-contact">Contact</a>
         </div>
         <div class="mobile-nav-social nav-social">
           <a
@@ -128,12 +132,12 @@
             aria-label="WhatsApp"
           ><i class="fab fa-whatsapp"></i></a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
             aria-label="Email"
           ><i class="fas fa-envelope"></i></a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -147,264 +151,171 @@
       <!-- Page Hero -->
       <section class="page-hero">
         <div class="page-hero-content">
-          <span class="section-label">What We Do</span>
+          <span class="section-label" data-translate="svc-page-label">What We Do</span>
           <h1 class="hero-title">
-            <span class="gradient-text">Creative</span> Services<br />
-            For Your <span class="outline-text">Brand</span>
+            <span data-translate="svc-page-title-1">Creative</span> <span data-translate="svc-page-title-2">Services</span><br />
+            <span data-translate="svc-page-title-3">For Your</span> <span class="outline-text" data-translate="svc-page-title-4">Brand</span>
           </h1>
-          <p class="page-hero-subtitle">
-            From building your online presence to managing your brand's voice across platforms -we've got you covered with marketing, design, and web solutions tailored to your goals.
+          <p class="page-hero-subtitle" data-translate="svc-page-subtitle">
+            From building your online presence to managing your brand's voice across platforms — we've got you covered with marketing, design, and web solutions tailored to your goals.
           </p>
         </div>
       </section>
 
-      <!-- Marketing Services -->
+      <!-- Marketing & Social Media -->
       <section id="marketing" class="services-category">
         <div class="services-category-container">
           <header class="category-header">
             <span class="category-icon"><i class="fas fa-bullhorn"></i></span>
-            <h2>Marketing & Social Media</h2>
-            <p>Strategic marketing solutions to grow your brand's presence and engage your audience across every platform.</p>
+            <h2 data-translate="svc-cat-marketing-title">Marketing & Social Media</h2>
+            <p data-translate="svc-cat-marketing-desc"><span>Strategic marketing that grows audience, presence, and revenue — not just impressions.</span></p>
           </header>
 
           <div class="services-grid-full">
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-mobile-screen"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-mobile-screen"></i></div>
               <div class="service-card-content">
-                <h3>Social Media Management</h3>
-                <p>We manage your social media presence across platforms -creating, scheduling, and optimizing content to keep your audience engaged and your brand consistent.</p>
-                <span class="service-detail">Per platform, per month</span>
+                <h3 data-translate="svc-social-title">Social Media Management</h3>
+                <p data-translate="svc-social-desc"><span>Editorial calendar, content production, scheduling, community replies, and a monthly performance report. One person owns the channel end-to-end so the brand stays consistent.</span></p>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-palette"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-camera"></i></div>
               <div class="service-card-content">
-                <h3>Graphic Content Creation</h3>
-                <p>Eye-catching visual content for your social media, campaigns, and brand materials -designed to stand out and tell your story.</p>
+                <h3 data-translate="svc-content-title">Content Production</h3>
+                <p data-translate="svc-content-desc"><span>Photo, video, and graphic content shot or designed in-house. Single sessions or monthly batch days that keep the feed stocked for weeks.</span></p>
+                <span class="service-detail location-badge"><i class="fas fa-map-marker-alt"></i> <span data-translate="svc-content-detail">In-person shoots available in Porto District</span></span>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-video"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-ad"></i></div>
               <div class="service-card-content">
-                <h3>Video Creation & Editing</h3>
-                <p>From concept to final cut -engaging video content for social media, ads, and brand storytelling that captures attention.</p>
+                <h3 data-translate="svc-acquisition-title">Paid Acquisition & Email</h3>
+                <p data-translate="svc-acquisition-desc"><span>Meta and Google ad campaigns with weekly optimization, plus email and newsletter flows that warm leads up to a real conversation.</span></p>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-camera"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-pen-nib"></i></div>
               <div class="service-card-content">
-                <h3>Photography Sessions</h3>
-                <p>Professional photography to elevate your brand -product shots, lifestyle imagery, and content creation sessions.</p>
-                <span class="service-detail location-badge"><i class="fas fa-map-marker-alt"></i> Available in Porto District only</span>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-pen-nib"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Copywriting</h3>
-                <p>Compelling copy that speaks your brand's language -from social media captions to website text that connects and converts.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-chess"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Brand Strategic Planning</h3>
-                <p>Define your brand's positioning, messaging, and visual identity with a clear strategy that guides every touchpoint.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-calendar-alt"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Editorial Calendar</h3>
-                <p>A structured content plan aligned with your goals and key dates -so you always know what to post and when.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Monthly Reports</h3>
-                <p>Clear, actionable insights on your marketing performance -so you can see what's working and where to improve.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-comments"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Consultancy</h3>
-                <p>Expert guidance for your marketing and digital strategy -whether you need a one-time session or ongoing support.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-envelope-open-text"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Email Marketing & Newsletters</h3>
-                <p>Reach your audience directly with beautifully crafted emails and newsletters that nurture relationships and drive action.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-ad"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Paid Traffic Management</h3>
-                <p>Strategic ad campaigns across platforms -optimized to reach the right audience and maximize your return on investment.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-boxes-stacked"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Batch Content Production</h3>
-                <p>Efficient, high-volume content creation sessions -photos, videos, and graphics produced in batches to keep your feed stocked.</p>
-                <span class="service-detail location-badge"><i class="fas fa-map-marker-alt"></i> Available in Porto District only</span>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-champagne-glasses"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Event Coverage</h3>
-                <p>Capture the energy and highlights of your events with professional photography, videography, and real-time social media content.</p>
-                <span class="service-detail location-badge"><i class="fas fa-map-marker-alt"></i> Available in Porto District only</span>
+                <h3 data-translate="svc-brandvoice-title">Brand & Copy Strategy</h3>
+                <p data-translate="svc-brandvoice-desc"><span>Positioning, messaging hierarchy, tone of voice, and the practical copy that shows up across the site, ads, and emails. Includes ongoing advisory when you need a second pair of eyes.</span></p>
               </div>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Web Design & Development Services -->
+      <!-- Web Design & Development -->
       <section id="webdesign" class="services-category services-category-alt">
         <div class="services-category-container">
           <header class="category-header">
             <span class="category-icon"><i class="fas fa-laptop-code"></i></span>
-            <h2>Web Design & Development</h2>
-            <p>Custom-built websites and digital solutions that look beautiful, work flawlessly, and grow with your business.</p>
+            <h2 data-translate="svc-cat-web-title">Web Design & Development</h2>
+            <p data-translate="svc-cat-web-desc"><span>Sites and stores designed for the brand, built clean, and made to last past launch day.</span></p>
           </header>
 
           <div class="services-grid-full">
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-bullseye"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-code"></i></div>
               <div class="service-card-content">
-                <h3>Landing Pages</h3>
-                <p>High-converting, single-focus pages designed to capture leads, promote launches, or showcase your offerings.</p>
+                <h3 data-translate="svc-website-title">Custom Websites</h3>
+                <p data-translate="svc-website-desc"><span>Multi-page sites and landing pages designed around the brand and built with hand-written front-end. From a single-page launcher to a content-rich site with CMS.</span></p>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-code"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-shopping-cart"></i></div>
               <div class="service-card-content">
-                <h3>Website Development</h3>
-                <p>Full website design and development -from multi-page sites to custom platforms, built with clean code and your brand identity.</p>
+                <h3 data-translate="svc-ecommerce-title">E-Commerce</h3>
+                <p data-translate="svc-ecommerce-desc"><span>Online stores from product page to checkout — Shopify, WooCommerce, or custom — with the inventory, shipping, and payment integrations your business actually needs.</span></p>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-search"></i></div>
               <div class="service-card-content">
-                <h3>E-Commerce</h3>
-                <p>Online stores built to sell -beautiful product pages, secure checkout, and a seamless shopping experience for your customers.</p>
+                <h3 data-translate="svc-seo-title">SEO & Analytics</h3>
+                <p data-translate="svc-seo-desc"><span>On-page SEO, structured data, sitemap, and Google Analytics 4 set up properly from day one. Quarterly health checks for sites that need to keep ranking.</span></p>
               </div>
             </article>
 
             <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-search"></i>
-              </div>
+              <div class="service-icon-full"><i class="fas fa-wrench"></i></div>
               <div class="service-card-content">
-                <h3>SEO</h3>
-                <p>Search engine optimization to help your website rank higher -smart structure, keywords, and content strategies that bring organic traffic.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-wpforms"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Form Setup</h3>
-                <p>Contact forms, booking forms, surveys, and more -set up and integrated so you never miss a lead or inquiry.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-wrench"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Website Revision & Maintenance</h3>
-                <p>Keep your website fresh, secure, and up to date with ongoing maintenance, content updates, and performance improvements.</p>
-              </div>
-            </article>
-
-            <article class="service-card-full">
-              <div class="service-icon-full">
-                <i class="fas fa-chart-bar"></i>
-              </div>
-              <div class="service-card-content">
-                <h3>Google Analytics Setup</h3>
-                <p>Track your website's performance with Google Analytics -set up, configured, and ready to give you insights on your visitors.</p>
+                <h3 data-translate="svc-maint-title">Maintenance & Integrations</h3>
+                <p data-translate="svc-maint-desc"><span>Ongoing updates, security patches, content edits, form connections, third-party widgets — the work that keeps a launched site healthy without an in-house dev.</span></p>
               </div>
             </article>
           </div>
 
           <div class="services-note">
-            <p><i class="fas fa-info-circle"></i> Hosting and domain registration are not included in our web packages and are available as add-ons.</p>
+            <p><i class="fas fa-info-circle"></i> <span data-translate="svc-hosting-note">Hosting and domain registration are billed separately, so you keep full ownership and can move the site any time.</span></p>
           </div>
         </div>
       </section>
 
+      <!-- Software & Mobile Development -->
+      <section id="software" class="services-category">
+        <div class="services-category-container">
+          <header class="category-header">
+            <span class="category-icon"><i class="fas fa-microchip"></i></span>
+            <h2 data-translate="svc-cat-software-title">Software & Mobile Development</h2>
+            <p data-translate="svc-cat-software-desc"><span>Custom software for operations the off-the-shelf tools can't quite cover.</span></p>
+          </header>
+
+          <div class="services-grid-full">
+            <article class="service-card-full">
+              <div class="service-icon-full"><i class="fas fa-mobile-screen-button"></i></div>
+              <div class="service-card-content">
+                <h3 data-translate="svc-mobile-title">Mobile Apps</h3>
+                <p data-translate="svc-mobile-desc"><span>iOS and Android apps built with React Native or native stacks — from a connected MVP to a polished production app, including the App Store submission.</span></p>
+              </div>
+            </article>
+
+            <article class="service-card-full">
+              <div class="service-icon-full"><i class="fas fa-gears"></i></div>
+              <div class="service-card-content">
+                <h3 data-translate="svc-automation-title">Custom Software & Automation</h3>
+                <p data-translate="svc-automation-desc"><span>Internal tools, CRMs, ERPs, and workflow automations that replace spreadsheets and Zapier chains with a system designed for how the business actually runs.</span></p>
+              </div>
+            </article>
+
+            <article class="service-card-full">
+              <div class="service-icon-full"><i class="fas fa-plug"></i></div>
+              <div class="service-card-content">
+                <h3 data-translate="svc-api-title">APIs & Integrations</h3>
+                <p data-translate="svc-api-desc"><span>Payment gateways, booking and scheduling, CRM sync, third-party services — plus custom APIs designed and documented for clients who will plug other vendors into them.</span></p>
+              </div>
+            </article>
+
+            <article class="service-card-full">
+              <div class="service-icon-full"><i class="fas fa-database"></i></div>
+              <div class="service-card-content">
+                <h3 data-translate="svc-infra-title">Database & Cloud</h3>
+                <p data-translate="svc-infra-desc"><span>Backend architecture, hosting setup, CI/CD pipelines, and monitoring on AWS or comparable. Built for the load you have today and the one you'll have in 18 months.</span></p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
       <!-- CTA Section -->
       <section class="services-cta">
         <div class="services-cta-content">
-          <h2>Not Sure What You Need?</h2>
-          <p>Let's chat about your goals and figure out the best plan together. No pressure, no jargon -just a friendly conversation.</p>
+          <h2 data-translate="svc-cta-title">Not Sure What You Need?</h2>
+          <p data-translate="svc-cta-desc"><span>Let's chat about your goals and figure out the best plan together. No pressure, no jargon — just a friendly conversation.</span></p>
           <div class="cta-buttons">
             <a
               href="https://calendly.com/nathielle-pickypixels/30min"
               target="_blank"
               rel="noopener"
               class="btn btn-primary"
-            >Book a Free Call <i class="fas fa-arrow-right"></i></a>
-            <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+            ><span data-translate="svc-cta-call">Book a Free Call</span> <i class="fas fa-arrow-right"></i></a>
+            <a href="contact.html" class="btn btn-outline" data-translate="svc-cta-message">Send a Message</a>
           </div>
         </div>
       </section>
@@ -417,21 +328,21 @@
             <img
               src="images/logo2.png"
               alt="Picky Pixels Studio Logo"
-              width="120"
-              height="120"
+              width="64"
+              height="64"
             />
           </div>
-          <p>
+          <p data-translate="footer-desc"><span>
             Helping small brands and bold creatives show up online with heart,
             clarity, and confidence.
-          </p>
+          </span></p>
         </div>
         <div class="footer-links">
           <nav class="footer-nav">
-            <a href="index.html#work">Portfolio</a>
-            <a href="services.html">Services</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#contact">Contact</a>
+            <a href="portfolio.html" data-translate="footer-work">Portfolio</a>
+            <a href="services.html" data-translate="footer-services">Services</a>
+            <a href="studio.html" data-translate="footer-studio">About</a>
+            <a href="contact.html" data-translate="footer-contact">Contact</a>
           </nav>
           <div class="footer-social">
             <a
@@ -443,7 +354,7 @@
               <i class="fab fa-instagram"></i>
             </a>
             <a
-              href="mailto:nathielle@pickypixels.studio"
+              href="mailto:hello@pickypixels.studio"
               aria-label="Send email"
             >
               <i class="fas fa-envelope"></i>
@@ -458,7 +369,7 @@
             </a>
           </div>
           <p class="copyright">
-            &copy; 2024 Picky Pixels Studio. All rights reserved.<br />
+            &copy; 2026 Picky Pixels Studio. All rights reserved.<br />
             <a
               href="privacy-policy.html"
               style="
@@ -473,6 +384,49 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=1778683087"></script>
+    <script>
+      (function () {
+        function distributeColumns() {
+          document.querySelectorAll(".services-grid-full").forEach(function (grid) {
+            var existingCols = grid.querySelectorAll(".services-column");
+            var cards = [];
+            if (existingCols.length) {
+              existingCols.forEach(function (col) {
+                Array.from(col.children).forEach(function (card) {
+                  cards.push(card);
+                });
+                col.remove();
+              });
+            } else {
+              cards = Array.from(grid.children);
+            }
+
+            var w = window.innerWidth;
+            var colCount = w > 768 ? 3 : w > 480 ? 2 : 1;
+
+            var columns = [];
+            for (var i = 0; i < colCount; i++) {
+              var col = document.createElement("div");
+              col.className = "services-column";
+              columns.push(col);
+              grid.appendChild(col);
+            }
+
+            cards.forEach(function (card, i) {
+              columns[i % colCount].appendChild(card);
+            });
+          });
+        }
+
+        distributeColumns();
+
+        var resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(distributeColumns, 250);
+        });
+      })();
+    </script>
   </body>
 </html>

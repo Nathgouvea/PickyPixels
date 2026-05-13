@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Criação de sites autênticos e estratégicos para marcas criativas. Descubra como a Picky Pixels Studio pode dar vida à sua presença digital."
+      content="Picky Pixels Studio - Marketing, Web Design & Desenvolvimento de Software para Criativos e Pequenas Empresas"
     />
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://pickypixels.studio" />
     <meta
       property="og:title"
-      content="Picky Pixels Studio - Sites que Conectam com Estratégia"
+      content="Picky Pixels Studio - Marketing, Design & Desenvolvimento com Alma"
     />
     <meta
       property="og:description"
-      content="Crio experiências digitais para marcas criativas que querem mais do que só um site  - querem conexão, clareza e presença."
+      content="Ajudamos criativos e pequenas empresas a crescer online - de sites incríveis e apps a marketing estratégico que conecta e converte."
     />
     <meta
       property="og:image"
@@ -31,11 +31,11 @@
     <meta property="twitter:url" content="https://pickypixels.studio" />
     <meta
       property="twitter:title"
-      content="Picky Pixels Studio - Sites que Conectam com Estratégia"
+      content="Picky Pixels Studio - Marketing, Design & Desenvolvimento com Alma"
     />
     <meta
       property="twitter:description"
-      content="Crio experiências digitais para marcas criativas que querem mais do que só um site  - querem conexão, clareza e presença."
+      content="Ajudamos criativos e pequenas empresas a crescer online - de sites incríveis e apps a marketing estratégico que conecta e converte."
     />
     <meta
       property="twitter:image"
@@ -55,14 +55,17 @@
 
       gtag("config", "G-JKRYFKT1B4");
     </script>
-    <title>Sites com Propósito | Picky Pixels Studio</title>
+    <title>Picky Pixels Studio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="pages.css" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="alternate" hreflang="en" href="https://pickypixels.studio/index.html" />
+    <link rel="alternate" hreflang="pt" href="https://pickypixels.studio/index.pt.html" />
+    <link rel="alternate" hreflang="x-default" href="https://pickypixels.studio/index.html" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400..800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -82,19 +85,25 @@
       .hero-title {
         font-size: 2.5rem;
       }
+      #heartCanvas {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 32px;
+      }
     </style>
     <link
       rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400..800&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript>
-      <link
+    <noscript
+      ><link
         rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap"
-      />
-    </noscript>
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@400..800&display=swap"
+    /></noscript>
     <link
       rel="preload"
       href="styles.css"
@@ -108,17 +117,14 @@
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
     />
-    <noscript>
-      <link
+    <noscript
+      ><link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      />
-    </noscript>
+    /></noscript>
     <link rel="preload" as="image" href="images/logo2.png" />
   </head>
   <body>
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
     <div class="scroll-progress">
       <div class="scroll-progress-bar"></div>
     </div>
@@ -129,23 +135,20 @@
           href="#"
           class="logo"
           onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
-        >
-          <img
+          ><img
             src="images/logo2.png"
             alt="Logo Picky Pixels Studio"
-            width="120"
-            height="120"
-          />
-        </a>
+            width="64"
+            height="64"
+        /></a>
       </div>
       <div class="nav-links">
-        <a href="#work" class="nav-link" data-translate="nav-work">Portfólio</a>
-        <a href="#about" class="nav-link" data-translate="nav-about">Sobre</a>
-        <a href="#packages" class="nav-link" data-translate="nav-packages"
-          >Preços</a
-        >
-        <a href="#contact" class="nav-link" data-translate="nav-contact"
-          >Contato</a
+        <a href="index.pt.html" class="nav-link active" data-translate="nav-home">Início</a>
+        <a href="portfolio.pt.html" class="nav-link" data-translate="nav-work">Trabalhos</a>
+        <a href="services.pt.html" class="nav-link">Serviços</a>
+        <a href="studio.pt.html" class="nav-link" data-translate="nav-about">Sobre</a>
+        <a href="contact.pt.html" class="nav-link nav-link-cta" data-translate="nav-contact"
+          >Contacto</a
         >
       </div>
       <div class="nav-cta">
@@ -160,14 +163,14 @@
             <i class="fab fa-whatsapp"></i>
           </a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
             aria-label="Email"
           >
             <i class="fas fa-envelope"></i>
           </a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -176,28 +179,28 @@
             <i class="fab fa-instagram"></i>
           </a>
         </div>
+
         <div class="language-switch">
           <button class="lang-btn" data-lang="en">EN</button>
           <button class="lang-btn active" data-lang="pt">PT</button>
         </div>
-        <button class="hamburger" aria-label="Open menu">
+        <button class="hamburger" aria-label="Abrir menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </nav>
     <div class="mobile-menu">
-      <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+      <button class="close-mobile-menu" aria-label="Fechar menu">&times;</button>
       <div class="mobile-menu-content">
         <div class="mobile-nav-links">
-          <a href="#work" class="nav-link" data-translate="nav-work"
+          <a href="index.pt.html" class="nav-link active" data-translate="nav-home">Início</a>
+          <a href="portfolio.pt.html" class="nav-link" data-translate="nav-work"
             >Trabalhos</a
           >
-          <a href="#about" class="nav-link" data-translate="nav-about">Sobre</a>
-          <a href="#packages" class="nav-link" data-translate="nav-packages"
-            >Preços</a
-          >
-          <a href="#contact" class="nav-link" data-translate="nav-contact"
-            >Contato</a
+          <a href="services.pt.html" class="nav-link">Serviços</a>
+          <a href="studio.pt.html" class="nav-link" data-translate="nav-about">Sobre</a>
+          <a href="contact.pt.html" class="nav-link" data-translate="nav-contact"
+            >Contacto</a
           >
         </div>
         <div class="mobile-nav-social nav-social">
@@ -210,13 +213,13 @@
             ><i class="fab fa-whatsapp"></i
           ></a>
           <a
-            href="mailto:nathielle@pickypixels.studio"
+            href="mailto:hello@pickypixels.studio"
             class="nav-social-link"
-            aria-label="Email Nathielle"
+            aria-label="Email"
             ><i class="fas fa-envelope"></i
           ></a>
           <a
-            href="https://instagram.com/pickypixels"
+            href="https://instagram.com/pickypixelsstudio"
             target="_blank"
             rel="noopener noreferrer"
             class="nav-social-link"
@@ -229,733 +232,284 @@
 
     <main>
       <section class="hero">
-        <div class="hero-split">
+        <div class="hero-split-brands">
           <div class="hero-left">
-            <span class="greeting">👋 Oi! Eu sou a Nathielle</span>
+            <span class="greeting" data-translate="hero-greeting">Oi! Somos a Picky Pixels!</span>
             <h1 class="hero-title">
-              <span class="gradient-text">Sites</span><br />
-              <span>que Conectam</span><br />
-              <span class="outline-text">com Estratégia</span>
+              <span class="gradient-text" data-translate="hero-title-1">Marketing,</span><br />
+              <span data-translate="hero-title-2">Design & Dev</span><br />
+              <span class="outline-text" data-translate="hero-title-3">com Alma</span>
             </h1>
-            <p class="hero-subtitle">
-              Crio experiências digitais para marcas criativas que querem mais
-              do que só um site  - querem conexão, clareza e presença.
+            <p class="hero-subtitle" data-translate="hero-subtitle">
+              Ajudamos criativos e pequenas empresas a crescer online — de sites incríveis e apps a marketing estratégico que conecta e converte.
             </p>
             <div class="hero-cta">
-              <a href="#work" class="btn btn-primary">Ver Projetos</a>
-              <a href="#contact" class="btn btn-outline">Vamos Conversar</a>
+              <a href="portfolio.pt.html" class="btn btn-primary" data-translate="cta-work">Ver Projetos</a>
+              <a href="contact.pt.html" class="btn btn-outline" data-translate="cta-contact">Vamos Conversar</a>
             </div>
           </div>
-          <div class="hero-right">
-            <div class="hero-visual">
-              <div class="shape shape-1"></div>
-              <div class="shape shape-2"></div>
-              <div class="shape shape-3"></div>
-              <div class="interactive-area" data-parallax="5"></div>
+          <aside class="hero-brands" aria-label="Marcas que entregámos">
+            <p class="hero-brands-eyebrow" data-translate="hero-brands-eyebrow">Marcas que entregámos — 9</p>
+            <ul class="hero-brands-list">
+              <li><a href="portfolio.pt.html"><span>Turmeric Restaurant</span><small>Restaurante · Porto</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Gabriella Tattoo</span><small>Marca pessoal</small></a></li>
+              <li><a href="portfolio.pt.html"><span>LivingLeaving</span><small>Design de interiores</small></a></li>
+              <li><a href="portfolio.pt.html"><span>FazUmCafezim</span><small>Café</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Stegel Nails</span><small>Beleza</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Isabel Vieira</span><small>Terapeuta</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Grupo Cynergia</span><small>Consultoria energética</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Scriptai</span><small>Soluções de IA</small></a></li>
+              <li><a href="portfolio.pt.html"><span>Meet My Friends PT</span><small>Eventos</small></a></li>
+            </ul>
+            <a href="portfolio.pt.html" class="hero-brands-cta" data-translate="hero-brands-cta">Ver trabalho completo →</a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="services-help">
+        <div class="services-help-content">
+          <div class="services-grid">
+            <!-- Left Column - Title and Description -->
+            <div class="services-header">
+              <h2>Como Podemos te Ajudar?</h2>
+              <p>
+                De construir seu site a desenvolver apps personalizados - oferecemos serviços de marketing, design e desenvolvimento sob medida para criativos e pequenas empresas.
+              </p>
+              <a href="services.pt.html" class="btn btn-primary">
+                Ver Todos os Serviços
+                <i class="fas fa-arrow-right"></i>
+              </a>
+            </div>
+
+            <!-- Right Column - Three Category Previews -->
+            <div class="services-overview-categories">
+              <div class="service-category-preview">
+                <div class="category-preview-header">
+                  <span class="category-preview-icon marketing">
+                    <i class="fas fa-bullhorn"></i>
+                  </span>
+                  <h3>Marketing</h3>
+                </div>
+                <ul class="category-services-list">
+                  <li>Gestão de Redes Sociais</li>
+                  <li>Criação de Conteúdo Gráfico</li>
+                  <li>Criação & Edição de Vídeo</li>
+                  <li>Planejamento Estratégico de Marca</li>
+                  <li>Gestão de Tráfego Pago</li>
+                  <li>Email Marketing & Newsletters</li>
+                </ul>
+                <a href="services.pt.html#marketing" class="category-see-all">
+                  Ver todos os serviços de marketing <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="service-category-preview">
+                <div class="category-preview-header">
+                  <span class="category-preview-icon webdesign">
+                    <i class="fas fa-laptop-code"></i>
+                  </span>
+                  <h3>Web Design</h3>
+                </div>
+                <ul class="category-services-list">
+                  <li>Desenvolvimento de Sites</li>
+                  <li>Landing Pages</li>
+                  <li>E-Commerce</li>
+                  <li>SEO</li>
+                  <li>Manutenção de Sites</li>
+                  <li>Configuração do Google Analytics</li>
+                </ul>
+                <a href="services.pt.html#webdesign" class="category-see-all">
+                  Ver todos os serviços web <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+
+              <div class="service-category-preview">
+                <div class="category-preview-header">
+                  <span class="category-preview-icon webdesign">
+                    <i class="fas fa-microchip"></i>
+                  </span>
+                  <h3>Software & Mobile</h3>
+                </div>
+                <ul class="category-services-list">
+                  <li>Desenvolvimento de Apps Mobile</li>
+                  <li>Integração de APIs</li>
+                  <li>Sistemas de Agendamento & Reservas</li>
+                  <li>Sistemas de Gestão</li>
+                  <li>Automação & Workflows</li>
+                  <li>Deploy em Nuvem</li>
+                </ul>
+                <a href="services.pt.html#software" class="category-see-all">
+                  Ver todos os serviços de software <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-mission">
+        <div class="about-mission-inner">
+          <div class="about-mission-intro">
+            <span class="section-label" data-translate="about-label">No que acreditamos</span>
+            <h2 data-translate="about-title">Um estúdio com critério, não só mãos.</h2>
+            <p class="section-description" data-translate="about-desc">
+              Trabalhamos com pequenos negócios, criativos e fundadores em início. O briefing nem sempre é o trabalho — às vezes o trabalho é definir o briefing. Estamos aqui para os dois.
+            </p>
+          </div>
+          <ul class="about-principles">
+            <li>
+              <span class="principle-num">01</span>
+              <h3 data-translate="principle-taste-title">Critério visual</h3>
+              <p data-translate="principle-taste-desc">Escolhas visuais fortes que parecem intencionais, não genéricas. O próprio site já deve ser a prova.</p>
+            </li>
+            <li>
+              <span class="principle-num">02</span>
+              <h3 data-translate="principle-systems-title">Pensamento sistêmico</h3>
+              <p data-translate="principle-systems-desc">Cada página, bloco e interação tem um papel claro. Desenhamos para escalar, não só para lançar.</p>
+            </li>
+            <li>
+              <span class="principle-num">03</span>
+              <h3 data-translate="principle-execution-title">Qualidade de execução</h3>
+              <p data-translate="principle-execution-desc">Front-end limpo, UX sólida, entrega sustentável. Para a marca crescer sem precisar de nós na sala.</p>
+            </li>
+          </ul>
+          <a href="studio.pt.html" class="btn btn-outline about-mission-cta" data-translate="about-cta">Conhecer a equipa →</a>
         </div>
       </section>
 
       <section id="work" class="work" aria-labelledby="work-title">
         <div class="section-header in-view">
-          <span class="section-label">Portfólio</span>
-          <h2 class="section-title" id="work-title">
-            Projetos que Contam Histórias
+          <span class="section-label" data-translate="section-work-label"
+            >Trabalhos Selecionados</span
+          >
+          <h2
+            class="section-title"
+            id="work-title"
+            data-translate="section-work-title"
+          >
+            Alguns dos Nossos Projetos Favoritos
           </h2>
-          <p class="section-subtitle">
-            Cada site aqui foi feito com propósito: traduzir a essência da marca
-            em uma experiência digital memorável.
+          <p class="section-subtitle" data-translate="section-work-subtitle">
+            Um vislumbre de alguns dos projetos que criamos - de sites a campanhas de marketing, cada um feito com cuidado para refletir os objetivos dos nossos clientes.
           </p>
         </div>
-        <div class="work-slider-container">
-          <div
-            class="work-slider"
-            role="region"
-            aria-label="Mostra de projetos"
-          >
-            <div class="work-slide">
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/Turmeric-Pakistani-Indian Restaurant-Porto-Portugal.webp"
-                    alt="Website Turmeric Restaurant - Restaurante Indiano Paquistanês no Porto, Portugal"
-                    loading="lazy"
-                    width="800"
-                    height="600"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">Restaurante</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category">Design Web & Restaurante</span>
-                  <h3>Turmeric Restaurant</h3>
-                  <p>
-                    Um website moderno para restaurante de culinária indiana
-                    paquistanesa no Porto, Portugal. Inclui showcase do menu,
-                    informações de localização e sistema de reservas online
-                    projetado para refletir os sabores autênticos e a
-                    hospitalidade calorosa do restaurante.
-                  </p>
-                  <div class="work-links">
-                    <a
-                      href="https://turmeric.restaurant"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Visitar Website
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/Gabriella-Tattoo.webp"
-                    alt="Website Gabriella Tattoo - Portfólio profissional de tatuadora e plataforma de agendamento"
-                    loading="lazy"
-                    width="800"
-                    height="600"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">Portfólio</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category">Design Web & Portfólio</span>
-                  <h3>Gabriella Tattoo</h3>
-                  <p>
-                    Um portfólio profissional de tatuadora com uma galeria
-                    deslumbrante de trabalhos e informações da artista. O design
-                    destaca o talento artístico enquanto oferece uma forma fácil
-                    para os clientes explorarem estilos e visualizarem o
-                    portfólio.
-                  </p>
-                  <div class="work-links">
-                    <a
-                      href="https://www.gabriellatattoo.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Visitar Website
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="work-slide">
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/livingleaving.webp"
-                    alt="Website LivingLeaving"
-                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">Portfólio</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category"
-                    >Design & Desenvolvimento Web</span
-                  >
-                  <h3>LivingLeaving</h3>
-                  <p>
-                    Um sofisticado portfólio de design de interiores mostrando
-                    transformações de espaços com galeria imersiva e comparações
-                    antes-depois.
-                  </p>
-                  <div class="work-links">
-                    <a
-                      href="https://livingleaving.nl"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Visitar Website
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/FazUmCafezim.jpeg"
-                    alt="Website FazUmCafezim"
-                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">E-commerce</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category"
-                    >Design & Desenvolvimento Web</span
-                  >
-                  <h3>FazUmCafezim</h3>
-                  <p>
-                    Uma loja online elegante para uma marca de café artesanal,
-                    com foco em experiência de compra intuitiva e storytelling
-                    da marca.
-                  </p>
-                  <div class="work-links">
-                    <a
-                      href="https://fazumcafezim.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      class="work-link"
-                    >
-                      <i class="fas fa-external-link-alt"></i> Visitar Website
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="work-slide">
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/stegel.pt_.webp"
-                    alt="Website Stegel"
-                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">Responsivo</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category"
-                    >Design & Desenvolvimento Web</span
-                  >
-                  <h3>Stégel</h3>
-                  <p>
-                    Website moderno e elegante para um salão de unhas premium.
-                    Inclui listagem de serviços, integração de agendamento
-                    online e galeria dinâmica.
-                  </p>
-                  <div class="work-links"></div>
-                </div>
-              </div>
-              <div class="work-item" data-category="web">
-                <div class="work-image">
-                  <img
-                    src="Projects/isabelvieira.pt_.webp"
-                    alt="Website Isabel Vieira"
-                    onerror="this.style.border='2px solid red';this.parentNode.innerHTML='<div style=\'color:red;text-align:center;padding:2em\'>Imagem não encontrada</div>';"
-                  />
-                  <div class="work-overlay">
-                    <div class="tech-stack" role="list">
-                      <span role="listitem">HTML</span>
-                      <span role="listitem">CSS</span>
-                      <span role="listitem">JavaScript</span>
-                      <span role="listitem">Agendamento</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="work-content">
-                  <span class="work-category"
-                    >Design & Desenvolvimento Web</span
-                  >
-                  <h3>Isabel Vieira</h3>
-                  <p>
-                    Website de marca pessoal para uma terapeuta profissional com
-                    fácil acesso a serviços, agendamento e recursos valiosos.
-                  </p>
-                  <div class="work-links"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="slider-navigation">
-            <button
-              class="slider-nav prev"
-              aria-label="Ver projetos anteriores"
-            >
-              <span class="nav-arrow">
-                <i class="fas fa-chevron-left" aria-hidden="true"></i>
-              </span>
-              <span class="nav-text">Anterior</span>
-            </button>
-            <div
-              class="slider-dots"
-              role="tablist"
-              aria-label="Navegação dos slides de projetos"
-            >
-              <button
-                class="dot active"
-                role="tab"
-                aria-label="Ir para o slide 1"
-                aria-selected="true"
-              >
-                <span class="dot-indicator"></span>
-              </button>
-              <button
-                class="dot"
-                role="tab"
-                aria-label="Ir para o slide 2"
-                aria-selected="false"
-              >
-                <span class="dot-indicator"></span>
-              </button>
-              <button
-                class="dot"
-                role="tab"
-                aria-label="Ir para o slide 3"
-                aria-selected="false"
-              >
-                <span class="dot-indicator"></span>
-              </button>
-            </div>
-            <button class="slider-nav next" aria-label="Ver próximos projetos">
-              <span class="nav-text">Próximo</span>
-              <span class="nav-arrow">
-                <i class="fas fa-chevron-right" aria-hidden="true"></i>
-              </span>
-            </button>
-          </div>
+        <!-- Filter Tabs -->
+        <div class="portfolio-filters" role="tablist" aria-label="Filtrar projetos por categoria">
+          <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+          <button class="filter-btn" data-filter="web" role="tab" aria-selected="false">Web Design</button>
+          <button class="filter-btn" data-filter="marketing" role="tab" aria-selected="false">Marketing</button>
         </div>
+
+        <!-- Portfolio Grid -->
+        <div class="portfolio-grid home-portfolio-grid">
+          <!-- Web Design Projects -->
+          <article class="portfolio-item" data-category="web">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Web /Turmeric-Pakistani-Indian Restaurant-Porto-Portugal.webp" alt="Website Turmeric Restaurant" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge web">Web Design</span>
+              <h3>Turmeric Restaurant</h3>
+              <p>Um website moderno para restaurante de culinária indiana paquistanesa no Porto, Portugal.</p>
+              <a href="https://turmeric.restaurant" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar Website <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="web">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Web /Gabriella-Tattoo.webp" alt="Website Gabriella Tattoo" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge web">Web Design</span>
+              <h3>Gabriella Tattoo</h3>
+              <p>Um portfolio profissional de tatuadora com galeria deslumbrante de trabalhos.</p>
+              <a href="https://www.gabriellatattoo.com" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar Website <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="web">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Web /livingleaving.webp" alt="Website LivingLeaving Design de Interiores" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge web">Web Design</span>
+              <h3>LivingLeaving</h3>
+              <p>Um sofisticado portfolio de design de interiores com galeria imersiva e comparações antes-depois.</p>
+              <a href="https://livingleaving.nl" target="_blank" rel="noopener noreferrer" class="portfolio-link">Visitar Website <i class="fas fa-external-link-alt"></i></a>
+            </div>
+          </article>
+
+          <!-- Marketing Projects -->
+          <article class="portfolio-item" data-category="marketing">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Marketing/CYNERGIA.png" alt="Grupo Cynergia - Website design para empresa de consultoria energetica" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>Web Design</span><span>Branding</span><span>Estratégia</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge marketing">Marketing</span>
+              <h3>Grupo Cynergia</h3>
+              <p>Identidade de marca completa e presenca web para empresa de consultoria energetica.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="marketing">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Marketing/Neuronex-Anuncio-IA.png" alt="Scriptai Neuronex - Campanha de redes sociais para soluções de IA" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>Redes Sociais</span><span>Anuncios</span><span>Design</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge marketing">Marketing</span>
+              <h3>Scriptai - Neuronex</h3>
+              <p>Campanhas de redes sociais e criativos de anuncios para empresa de soluções de IA.</p>
+            </div>
+          </article>
+
+          <article class="portfolio-item" data-category="marketing">
+            <div class="portfolio-image">
+              <img src="Projects/Portfolio-Marketing/Flyer A3 Soluções v2.png" alt="Design de flyer de soluções Scriptai" loading="lazy" width="800" height="600" />
+              <div class="portfolio-overlay">
+                <div class="tech-stack"><span>Design Grafico</span><span>Flyer</span><span>Impresso</span></div>
+              </div>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-category-badge marketing">Marketing</span>
+              <h3>Scriptai - Flyer de Soluções</h3>
+              <p>Design de flyer promocional apresentando gama completa de soluções empresariais.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="work-see-all">
+          <a id="portfolio-link" href="portfolio.pt.html" class="btn btn-outline">
+            Ver Todos os Trabalhos <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
       </section>
 
-      <section id="about" class="about">
-        <div class="about-content">
-          <header class="section-header">
-            <span class="section-label">Sobre</span>
-            <h2>Design com Intenção</h2>
-            <p class="section-description">
-              Aqui, design não é só visual. É sobre criar algo que tenha a ver
-              com você e que funcione de verdade para o seu negócio.
-            </p>
-          </header>
-
-          <div class="owner-content">
-            <div class="owner-info">
-              <div class="owner-photo-wrapper">
-                <img
-                  src="images/Nathielle.jpg"
-                  alt="Nathielle Gouvêa - Fundadora da Picky Pixels Studio"
-                  class="owner-photo"
-                  loading="lazy"
-                  width="200"
-                  height="200"
-                />
-                <div class="owner-social">
-                  <a
-                    href="https://instagram.com/pickypixelsstudio"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link"
-                    aria-label="Instagram"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    href="https://github.com/Nathgouvea"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link"
-                    aria-label="GitHub"
-                  >
-                    <i class="fab fa-github"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/nathiellegouvea/"
-                    target="_blank"
-                    rel="noopener"
-                    class="social-link"
-                    aria-label="LinkedIn"
-                  >
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
-                  <a
-                    href="mailto:nathielle@pickypixels.studio"
-                    class="social-link"
-                    aria-label="Email Nathielle"
-                  >
-                    <i class="far fa-envelope"></i>
-                  </a>
-                </div>
-              </div>
-
-              <div class="owner-details">
-                <h3>Nathielle Gouvêa</h3>
-                <span class="owner-role">Fundadora & Diretora Criativa</span>
-                <div class="owner-quote">
-                  <i class="fas fa-quote-left"></i>
-                  <p>
-                    Estou aqui para ajudar você a se mostrar online com
-                    confiança e autenticidade -vamos construir algo que se sinta
-                    certo e funcione perfeitamente.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="owner-message">
-              <div class="message-content">
-                <p class="highlight-paragraph">
-                  Sou Nathielle, designer e fundadora da Picky Pixels. Meu
-                  objetivo é traduzir sua identidade em um site que tenha
-                  propósito e te ajude a crescer.
-                </p>
-                <p>
-                  Este estúdio é um lugar onde pequenas empresas, criativos e
-                  fundadores de primeira viagem podem se sentir apoiados. Seja
-                  lançando algo novo ou renovando sua marca, vamos fazer com que
-                  se sinta emocionante, intencional e 100% você.
-                </p>
-
-                <div class="owner-values">
-                  <div class="value-item">
-                    <i class="fas fa-heart"></i>
-                    <h4>Pessoal</h4>
-                    <p>Designs que refletem sua história única</p>
-                  </div>
-                  <div class="value-item">
-                    <i class="fas fa-lightbulb"></i>
-                    <h4>Estratégico</h4>
-                    <p>Soluções criativas com propósito</p>
-                  </div>
-                  <div class="value-item">
-                    <i class="fas fa-handshake"></i>
-                    <h4>Colaborativo</h4>
-                    <p>Processo divertido e sem estresse</p>
-                  </div>
-                </div>
-
-                <div class="cta-container">
-                  <a href="#contact" class="btn btn-primary">Vamos Conversar</a>
-                  <a href="#work" class="btn btn-outline"
-                    >Ver Nossos Trabalhos</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="packages" class="packages">
-        <div class="packages-container">
-          <div class="packages-header">
-            <span class="packages-label">Preços de Sites</span>
-            <h2 class="packages-title">Pronto para Trazer Sua Visão Online?</h2>
-            <p class="packages-subtitle">
-              Para criativos, marcas conscientes e pequenas empresas que querem
-              uma presença online bonita sem complicação.
-            </p>
-          </div>
-
-          <div class="packages-grid">
-            <div class="package-card starter">
-              <div class="package-card-top">
-                <div class="package-badge">Mais Popular</div>
-                <div class="package-icon">
-                  <i class="fas fa-gift"></i>
-                </div>
-              </div>
-              <div class="package-card-bottom">
-                <h3 class="package-name">Starter de Uma Página</h3>
-                <p class="package-description">1 Página + Formulário</p>
-                <div class="package-price">
-                  <span class="price">A partir de €250</span>
-                </div>
-                <ul class="package-features">
-                  <li>
-                    ✅ Layout de 1 página (página inicial, portfólio ou página
-                    de evento)
-                  </li>
-                  <li>✅ Design totalmente responsivo para mobile</li>
-                  <li>✅ Estrutura otimizada para SEO</li>
-                  <li>✅ Galeria de imagens ou seção hero</li>
-                  <li>✅ Formulário de contato (email ou WhatsApp)</li>
-                  <li>✅ Links para redes sociais</li>
-                  <li>✅ 1 revisão após a primeira visualização</li>
-                </ul>
-                <div class="hosting-info">
-                  <h4>Hospedagem: €15/mês</h4>
-                  <ul>
-                    <li>• Hospedagem segura com certificado SSL</li>
-                    <li>• Entrega de formulário de contato</li>
-                    <li>• Suporte técnico básico</li>
-                  </ul>
-                  <p class="domain-note">🔗 Domínio não incluído</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="package-card pro">
-              <div class="package-card-top">
-                <div class="package-badge">Melhor Valor</div>
-                <div class="package-icon">
-                  <i class="fas fa-gift"></i>
-                </div>
-              </div>
-              <div class="package-card-bottom">
-                <h3 class="package-name">Site Pro Criativo</h3>
-                <p class="package-description">4 Páginas + Galeria</p>
-                <div class="package-price">
-                  <span class="price">A partir de €475</span>
-                </div>
-                <ul class="package-features">
-                  <li>
-                    ✅ Até 4 páginas personalizadas (Início, Sobre, Serviços,
-                    Contato)
-                  </li>
-                  <li>✅ Design totalmente responsivo para mobile</li>
-                  <li>✅ Estrutura otimizada para SEO</li>
-                  <li>✅ Galeria de portfólio ou projetos em destaque</li>
-                  <li>✅ Formulário de contato com resposta automática</li>
-                  <li>✅ Links para redes sociais</li>
-                  <li>✅ 2 revisões após a primeira visualização</li>
-                </ul>
-                <div class="hosting-info">
-                  <h4>Hospedagem: €20/mês</h4>
-                  <ul>
-                    <li>• Hospedagem segura com certificado SSL</li>
-                    <li>• Entrega de formulário de contato</li>
-                    <li>• Integração com feed do Instagram (via Artframe)</li>
-                    <li>• Suporte técnico básico</li>
-                  </ul>
-                  <p class="domain-note">🔗 Domínio não incluído</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="package-card shop">
-              <div class="package-card-top">
-                <div class="package-badge">Premium</div>
-                <div class="package-icon">
-                  <i class="fas fa-gift"></i>
-                </div>
-              </div>
-              <div class="package-card-bottom">
-                <h3 class="package-name">Loja Autêntica</h3>
-                <p class="package-description">E-commerce Pronto</p>
-                <div class="package-price">
-                  <span class="price">A partir de €950</span>
-                </div>
-                <ul class="package-features">
-                  <li>✅ Design de vitrine personalizado</li>
-                  <li>✅ Design totalmente responsivo para mobile</li>
-                  <li>✅ Estrutura otimizada para SEO</li>
-                  <li>✅ Até 10 produtos</li>
-                  <li>
-                    ✅ Carrinho de compras e configuração de pagamento seguro
-                  </li>
-                  <li>✅ Configuração de envio (Taxa fixa ou Melhor Envio)</li>
-                  <li>✅ Páginas de contato e políticas</li>
-                  <li>✅ Links para redes sociais</li>
-                  <li>✅ 2 revisões após a primeira visualização</li>
-                </ul>
-                <div class="hosting-info">
-                  <h4>Hospedagem: €25/mês</h4>
-                  <ul>
-                    <li>• Hospedagem segura com certificado SSL</li>
-                    <li>• Entrega de formulário de contato</li>
-                    <li>• Integração com feed do Instagram (via Artframe)</li>
-                    <li>• Suporte técnico básico</li>
-                  </ul>
-                  <p class="domain-note">🔗 Domínio não incluído</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="packages-cta">
-            <div class="cta-text">
-              <h3>Não Tem Certeza Qual Escolher?</h3>
-              <p>
-                Me envie uma mensagem rápida ou agende uma chamada gratuita de
-                30 minutos.
-              </p>
-            </div>
-            <div class="cta-buttons">
-              <a
-                href="https://calendly.com/nathielle-pickypixels/30min"
-                target="_blank"
-                rel="noopener"
-                class="btn btn-primary"
-                >Agendar Chamada Gratuita</a
-              >
-              <a
-                href="mailto:nathielle@pickypixels.studio"
-                class="btn btn-outline"
-                >Enviar Mensagem</a
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        class="contact"
-        itemscope
-        itemtype="http://schema.org/ContactPage"
-      >
-        <div class="contact-container">
-          <div class="contact-header">
-            <span class="contact-label">Vamos tirar sua ideia do papel?</span>
-            <h2 class="contact-title" itemprop="name">
-              Seu novo site começa com uma conversa
-            </h2>
-            <p class="contact-subtitle">
-              Me conte onde você quer chegar  - eu te ajudo a traçar esse caminho
-              no digital.
-            </p>
-          </div>
-
-          <div class="contact-grid">
-            <div class="quick-contact">
-              <div class="contact-info">
-                <h3>Entre em Contato</h3>
-                <p>Escolha sua forma preferida de conexão:</p>
-              </div>
-
-              <div class="contact-actions">
-                <a
-                  href="mailto:nathielle@pickypixels.studio"
-                  class="action-btn email-btn"
-                >
-                  <i class="far fa-envelope"></i>
-                  <span>nathielle@pickypixels.studio</span>
-                </a>
-                <a
-                  href="https://calendly.com/nathielle-pickypixels/30min"
-                  target="_blank"
-                  rel="noopener"
-                  class="action-btn calendar-btn"
-                >
-                  <i class="far fa-calendar-check"></i>
-                  <span>Agendar uma Chamada</span>
-                </a>
-              </div>
-
-              <div class="social-connect">
-                <p>Conecte-se comigo:</p>
-                <div class="social-links">
-                  <a
-                    href="https://instagram.com/pickypixelsstudio"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="Seguir no Instagram"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    href="https://wa.me/351961698157"
-                    target="_blank"
-                    rel="noopener"
-                    aria-label="WhatsApp"
-                  >
-                    <i class="fab fa-whatsapp"></i>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <form
-              class="contact-form"
-              id="contact-form"
-              role="form"
-              action="https://formspree.io/f/mpwaajew"
-              method="POST"
-            >
-              <div class="form-row">
-                <div class="form-group">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    autocomplete="name"
-                    placeholder="Seu Nome"
-                  />
-                </div>
-                <div class="form-group">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    autocomplete="email"
-                    placeholder="Seu Email"
-                  />
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="service">Com o que você precisa de ajuda?</label>
-                  <select id="service" name="service" required>
-                    <option value="" disabled selected>
-                      Com o que você precisa de ajuda?
-                    </option>
-                    <option value="webdesign">
-                      Design e Desenvolvimento de Sites
-                    </option>
-                    <option value="ai">Fluxo de Trabalho com IA</option>
-                    <option value="landing">Landing Pages</option>
-                    <option value="seo">SEO Inteligente</option>
-                    <option value="uiux">Design UI/UX</option>
-                    <option value="consulting">Consultoria e Suporte</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Me conte sobre seu projeto..."
-                  rows="3"
-                ></textarea>
-              </div>
-
-              <div class="form-group">
-                <input type="checkbox" id="privacy" name="privacy" required />
-                <label for="privacy">
-                  Eu concordo com a
-                  <a href="/privacy-policy.pt.html" target="_blank"
-                    >política de privacidade</a
-                  >.
-                </label>
-              </div>
-
-              <button type="submit" class="submit-btn">
-                <span>Enviar Mensagem</span>
-                <i class="fas fa-paper-plane"></i>
-              </button>
-            </form>
+      <section id="contact" class="contact-teaser" itemscope itemtype="http://schema.org/ContactPage">
+        <div class="contact-teaser-inner">
+          <span class="section-label" data-translate="contact-label">Pronto para começar?</span>
+          <h2 data-translate="contact-title">Vamos criar algo do qual te orgulhes.</h2>
+          <p data-translate="contact-subtitle">
+            Conta-nos sobre o teu projeto, ou agenda uma chamada gratuita de 30 minutos. Sem pressão, sem jargão — uma conversa simples.
+          </p>
+          <div class="contact-teaser-actions">
+            <a href="https://calendly.com/nathielle-pickypixels/30min" target="_blank" rel="noopener" class="btn btn-primary" data-translate="contact-schedule">Agendar Chamada Gratuita</a>
+            <a href="contact.pt.html" class="btn btn-outline" data-translate="contact-message">Enviar Mensagem</a>
           </div>
         </div>
       </section>
@@ -967,22 +521,22 @@
           <div class="logo">
             <img
               src="images/logo2.png"
-              alt="Picky Pixels Studio Logo"
-              width="120"
-              height="120"
+              alt="Logo Picky Pixels Studio"
+              width="64"
+              height="64"
             />
           </div>
           <p>
-            Design com essência e intenção para marcas que querem se destacar
-            com autenticidade e presença online.
+            Ajudando pequenas marcas e criativos ousados a aparecer online com alma,
+            clareza e confiança.
           </p>
         </div>
         <div class="footer-links">
           <nav class="footer-nav">
-            <a href="#work">Trabalhos</a>
-            <a href="#about">Sobre</a>
-            <a href="#packages">Preços</a>
-            <a href="#contact">Contato</a>
+            <a href="portfolio.pt.html">Trabalhos</a>
+            <a href="services.pt.html">Serviços</a>
+            <a href="studio.pt.html">Studio</a>
+            <a href="contact.pt.html">Contacto</a>
           </nav>
           <div class="footer-social">
             <a
@@ -994,7 +548,7 @@
               <i class="fab fa-instagram"></i>
             </a>
             <a
-              href="mailto:nathielle@pickypixels.studio"
+              href="mailto:hello@pickypixels.studio"
               aria-label="Enviar email"
             >
               <i class="fas fa-envelope"></i>
@@ -1009,13 +563,33 @@
             </a>
           </div>
           <p class="copyright">
-            &copy; 2024 Picky Pixels Studio. Todos os direitos reservados.<br />
-            <a href="privacy-policy.pt.html">Política de Privacidade</a>
+            &copy; 2026 Picky Pixels Studio. Todos os direitos reservados.<br />
+            <a
+              href="privacy-policy.pt.html"
+              style="
+                color: var(--primary);
+                text-decoration: underline;
+                font-size: 0.95rem;
+              "
+              >Política de Privacidade</a
+            >
           </p>
         </div>
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Simple Image Overlay -->
+    <div class="image-overlay" id="image-overlay">
+      <button
+        class="overlay-close"
+        id="overlay-close"
+        aria-label="Fechar sobreposição de imagem"
+      >
+        <i class="fas fa-times"></i>
+      </button>
+      <img class="overlay-image" id="overlay-image" alt="Imagem do portfolio" />
+    </div>
+
+    <script src="script.js?v=1778683087"></script>
   </body>
 </html>
