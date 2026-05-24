@@ -1,0 +1,1490 @@
+/* ============================================
+   Pages CSS - Services & Portfolio pages
+   ============================================ */
+
+/* Page Hero */
+.page-hero {
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px var(--spacing-md) var(--spacing-md);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.page-hero-content {
+  max-width: 800px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero-title {
+  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #2d1f1a;
+  text-shadow: 0 2px 8px #fff9f0;
+  margin-bottom: var(--spacing-sm);
+  font-family: "Syne", sans-serif;
+}
+
+.page-hero-title .gradient-text {
+  text-shadow: none;
+}
+
+.page-hero-title .outline-text {
+  text-shadow: none;
+}
+
+.page-hero-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ============================================
+   Services Page
+   ============================================ */
+
+/* Services Category Section */
+.services-category {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.services-category-alt {
+  background: var(--surface);
+}
+
+.services-category-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.category-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.category-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+  font-stretch: 100%;
+}
+
+.category-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Services Grid - Flex columns for truly independent column flow */
+.services-grid-full {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Each column is independent - expanding a card only affects its own column */
+.services-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+/* === Service Card - Expands in-place, only pushes its own column === */
+.service-card-full {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.1rem 1.4rem;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(92, 64, 51, 0.06);
+  cursor: default;
+  transition: box-shadow 0.4s ease,
+              border-color 0.4s ease;
+}
+
+.service-card-full:hover {
+  box-shadow: 0 8px 32px rgba(92, 64, 51, 0.1);
+  border-color: rgba(255, 94, 50, 0.15);
+}
+
+.services-category-alt .service-card-full {
+  background: white;
+}
+
+.service-icon-full {
+  flex-shrink: 0;
+  align-self: flex-start;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(255, 94, 50, 0.1), rgba(255, 209, 217, 0.25));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  font-size: 1.1rem;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+              background 0.4s ease;
+}
+
+.service-card-full:hover .service-icon-full {
+  transform: scale(1.12) rotate(-6deg);
+  background: linear-gradient(135deg, rgba(255, 94, 50, 0.2), rgba(255, 209, 217, 0.45));
+}
+
+.service-card-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.service-card-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: color 0.35s ease, transform 0.35s ease;
+}
+
+.service-card-full:hover .service-card-content h3 {
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+/* Description - smooth expand on hover (CSS Grid 0fr→1fr technique).
+   This animates to the ACTUAL height of the content (not a max-height overshoot
+   that races to 400px in 25% of the duration). The full transition time is
+   used to grow from 0 to the real content height, so it feels evenly paced.
+   Easing: ease-out-quint, the gentlest "decelerate" curve in common use. */
+.service-card-content p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  margin: 0;
+  transform: translateY(-8px);
+  transition: grid-template-rows 0.85s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.55s ease 0.25s,
+              margin 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.1s;
+}
+
+.service-card-content p > span {
+  display: block;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.service-card-full:hover .service-card-content p {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  margin-top: 0.6rem;
+  transform: translateY(0);
+}
+
+/* Card chrome transitions get a matching easing so the whole interaction feels
+   like one motion, not three. */
+.service-card-full {
+  transition: box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.service-detail {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  gap: 0.4rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: rgba(255, 94, 50, 0.08);
+  color: var(--primary);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s,
+              opacity 0.3s ease 0.15s,
+              margin 0.4s ease 0.1s,
+              padding 0.4s ease 0.1s;
+}
+
+.service-card-full:hover .service-detail {
+  max-height: 40px;
+  opacity: 1;
+  margin-top: 0.6rem;
+  padding: 0.3rem 0.65rem;
+}
+
+.location-badge {
+  background: rgba(185, 172, 56, 0.12);
+  color: var(--secondary);
+}
+
+.location-badge i {
+  font-size: 0.75rem;
+}
+
+/* Services Note */
+.services-note {
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 94, 50, 0.05);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--primary);
+}
+
+.services-note p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+}
+
+.services-note i {
+  color: var(--primary);
+  margin-right: 0.25rem;
+}
+
+/* Services CTA */
+.services-cta {
+  padding: var(--spacing-xl) var(--spacing-md);
+  text-align: center;
+}
+
+.services-cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.services-cta h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.services-cta p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.7;
+}
+
+.services-cta .cta-buttons {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================
+   Studio Page
+   ============================================ */
+
+.studio-manifesto {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.studio-manifesto-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+.studio-note {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  box-shadow: 0 12px 32px rgba(92, 64, 51, 0.06);
+}
+
+.studio-note-label {
+  display: inline-flex;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 94, 50, 0.08);
+  color: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.studio-note h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  line-height: 1.08;
+  margin-bottom: 1rem;
+  color: var(--text);
+}
+
+.studio-note p {
+  color: var(--text-light);
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.studio-principles {
+  display: grid;
+  gap: 1rem;
+}
+
+.studio-principle {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(92, 64, 51, 0.06);
+}
+
+.studio-principle i {
+  font-size: 1.2rem;
+  color: var(--primary);
+  margin-bottom: 0.9rem;
+}
+
+.studio-principle h3 {
+  margin-bottom: 0.4rem;
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.studio-principle p {
+  color: var(--text-light);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+.studio-process {
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.studio-process-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.studio-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.studio-step {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  min-height: 220px;
+}
+
+.studio-step-number {
+  display: inline-flex;
+  margin-bottom: 1rem;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.studio-step h3 {
+  margin-bottom: 0.7rem;
+  color: var(--text);
+}
+
+.studio-step p {
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
+/* ============================================
+   Portfolio Page
+   ============================================ */
+
+/* Portfolio Section */
+.portfolio-section {
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xl);
+}
+
+.portfolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Portfolio Filters */
+.portfolio-filters {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: var(--spacing-lg);
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.5rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid rgba(92, 64, 51, 0.15);
+  background: transparent;
+  color: var(--text);
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: white;
+}
+
+/* Portfolio Grid */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.portfolio-item {
+  background: white;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  transition: var(--transition);
+  transition-property: transform, box-shadow;
+  animation: fadeInUp 0.4s ease forwards;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(92, 64, 51, 0.12);
+}
+
+.portfolio-image {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.portfolio-image img.center-center {
+  object-position: center center;
+}
+
+.portfolio-item:hover .portfolio-image img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-sm);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+  opacity: 1;
+}
+
+.portfolio-overlay .tech-stack {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.portfolio-overlay .tech-stack span {
+  padding: 0.25rem 0.6rem;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: var(--radius-pill);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.portfolio-content {
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-content p {
+  flex: 1;
+}
+
+.portfolio-link {
+  margin-top: auto;
+}
+
+.portfolio-category-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-category-badge.web {
+  background: rgba(255, 94, 50, 0.1);
+  color: var(--primary);
+}
+
+.portfolio-category-badge.marketing {
+  background: rgba(185, 172, 56, 0.15);
+  color: var(--secondary);
+}
+
+.portfolio-content h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+
+.portfolio-content p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.portfolio-link:hover {
+  gap: 0.6rem;
+}
+
+.portfolio-link i {
+  font-size: 0.75rem;
+}
+
+/* Coming Soon placeholder */
+.portfolio-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(185, 172, 56, 0.08), rgba(255, 209, 217, 0.15));
+  aspect-ratio: 4/3;
+}
+
+.coming-soon-content {
+  text-align: center;
+  color: var(--text-light);
+}
+
+.coming-soon-content i {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+  display: block;
+  opacity: 0.4;
+}
+
+.coming-soon-content span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* Portfolio Empty State */
+.portfolio-empty {
+  text-align: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Portfolio Contact */
+.portfolio-contact {
+  padding: var(--spacing-xl) var(--spacing-md);
+  background: var(--surface);
+}
+
+.portfolio-contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.portfolio-contact-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+
+.portfolio-contact-header h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.portfolio-contact-header p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.portfolio-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: var(--spacing-lg);
+  align-items: start;
+}
+
+/* ============================================
+   Homepage Services Overview (updated)
+   ============================================ */
+
+.services-overview-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.service-category-preview {
+  padding: var(--spacing-md);
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(92, 64, 51, 0.08);
+  transition: var(--transition);
+}
+
+.service-category-preview:hover {
+  box-shadow: 0 8px 32px rgba(92, 64, 51, 0.08);
+}
+
+.category-preview-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-preview-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.category-preview-icon.marketing {
+  background: linear-gradient(135deg, rgba(185, 172, 56, 0.15), rgba(185, 172, 56, 0.05));
+  color: var(--secondary);
+}
+
+.category-preview-icon.webdesign {
+  background: linear-gradient(135deg, rgba(255, 94, 50, 0.1), rgba(255, 209, 217, 0.2));
+  color: var(--primary);
+}
+
+.category-preview-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.category-services-list {
+  list-style: none;
+  margin-bottom: var(--spacing-sm);
+}
+
+.category-services-list li {
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.category-services-list li::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+}
+
+.category-see-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.category-see-all:hover {
+  gap: 0.6rem;
+}
+
+/* ============================================
+   About - Team Grid
+   ============================================ */
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+  margin-top: 3rem;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-member {
+  text-align: center;
+}
+
+.team-member .owner-photo-wrapper {
+  max-height: 400px;
+}
+
+.team-member .owner-photo {
+  height: 400px;
+}
+
+/* Team Photo Hover Overlay */
+.owner-social-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  background: rgba(45, 31, 26, 0.55);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.owner-photo-wrapper:hover .owner-social-hover {
+  opacity: 1;
+}
+
+.owner-social-hover .social-link {
+  color: white;
+  font-size: 1.6rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+  opacity: 1;
+}
+
+.owner-social-hover .social-link:hover {
+  transform: scale(1.15);
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.team-message {
+  margin-top: var(--spacing-lg);
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-message .message-content {
+  text-align: center;
+}
+
+.team-message .highlight-paragraph {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-sm);
+}
+
+.team-message .message-content > p {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-md);
+}
+
+.team-message .owner-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0;
+}
+
+.team-message .cta-container {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin: 0 auto;
+    gap: var(--spacing-md);
+  }
+
+  .team-message .owner-values {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Homepage Portfolio Grid */
+.home-portfolio-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-sm);
+}
+
+/* Work Section - See All Button */
+.work-see-all {
+  text-align: center;
+  margin-top: var(--spacing-md);
+  padding-top: var(--spacing-sm);
+}
+
+/* Active nav link on inner pages */
+.nav-link.active {
+  color: var(--primary);
+}
+
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .services-overview-categories {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: auto;
+    padding: 110px var(--spacing-sm) var(--spacing-sm);
+  }
+
+  .page-hero-title {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+  }
+
+  .page-hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .services-category {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+
+  .services-grid-full {
+    flex-wrap: wrap;
+  }
+  .services-grid-full .services-column {
+    flex: 0 0 calc(50% - 0.5rem);
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-manifesto-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-overview-categories {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta {
+    padding: var(--spacing-lg) var(--spacing-sm);
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    min-height: auto;
+    padding: 100px var(--spacing-xs) var(--spacing-sm);
+  }
+
+  .category-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  .portfolio-item {
+    border-radius: var(--radius-md);
+  }
+
+  .services-grid-full .services-column {
+    flex: 0 0 100%;
+  }
+
+  .studio-note,
+  .studio-step {
+    padding: 1.25rem;
+  }
+
+  .studio-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   Marketing Portfolio - Company Groups
+   ============================================ */
+
+.company-groups-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-lg);
+}
+
+.company-card {
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(45, 31, 26, 0.06);
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(45, 31, 26, 0.1);
+}
+
+.company-card-cover {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.company-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.company-card:hover .company-card-cover img {
+  transform: scale(1.05);
+}
+
+.company-card-cover .company-badge {
+  position: absolute;
+  bottom: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.company-card-info {
+  padding: 1.25rem 1.5rem;
+}
+
+.company-card-info h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0 0 0.35rem;
+}
+
+.company-card-info p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0 0 0.5rem;
+  line-height: 1.5;
+}
+
+.company-card-info .company-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.company-card-info .company-tags span {
+  background: var(--bg);
+  color: var(--text-light);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-md);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Company Modal Overlay */
+.company-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-modal.active {
+  display: flex;
+}
+
+.company-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
+}
+
+.company-modal-content {
+  position: relative;
+  background: var(--surface, #fff);
+  border-radius: var(--radius-lg);
+  max-width: 720px;
+  width: 92%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 2rem;
+  animation: fadeInUp 0.3s ease;
+}
+
+.company-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.company-modal-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text, #2d1f1a);
+  margin: 0;
+}
+
+.company-modal-close {
+  background: var(--bg, #f5f0eb);
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--text-light, #666);
+  transition: background 0.2s, color 0.2s;
+}
+
+.company-modal-close:hover {
+  background: var(--text, #2d1f1a);
+  color: white;
+}
+
+/* Carousel */
+.company-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.carousel-viewport {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+/* Image is shown in a uniform landscape frame (16:10) cropped from the top.
+   This keeps long mobile-portrait screenshots (e.g. Turmeric homepage) and
+   landscape marketing pieces from each rendering at wildly different heights —
+   the user always sees the "above-the-fold" of the project. */
+.carousel-viewport img {
+  width: 100%;
+  max-width: 560px;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--radius-md);
+  background: var(--background);
+  transition: opacity 0.3s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.carousel-viewport h4 {
+  margin: 0.75rem 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text, #2d1f1a);
+}
+
+.carousel-btn {
+  background: var(--bg, #f5f0eb);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--text, #2d1f1a);
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background: var(--primary, #c75b39);
+  color: white;
+  transform: scale(1.1);
+}
+
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--bg, #ddd);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--primary, #c75b39);
+  transform: scale(1.3);
+}
+
+.carousel-thumbnails {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  justify-content: center;
+}
+
+.carousel-thumb {
+  width: 60px;
+  height: 45px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.6;
+  transition: opacity 0.2s, border-color 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-thumb.active {
+  border-color: var(--primary, #c75b39);
+  opacity: 1;
+}
+
+.carousel-thumb:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .company-groups-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .company-modal-content {
+    padding: 1.25rem;
+    width: 96%;
+  }
+
+  .carousel-viewport img {
+    max-height: 280px;
+  }
+
+  .carousel-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-groups-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-thumbnails {
+    justify-content: flex-start;
+  }
+}
+
+/* ============================================
+   Onda 2 — Unified work-card pattern
+   Harmonize visual treatment between .portfolio-item (web)
+   and .company-card (marketing) so they read as one component
+   with two variants — not two designs for the same intent.
+   ============================================ */
+
+.portfolio-item,
+.company-card {
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid rgba(45, 31, 26, 0.06);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  overflow: hidden;
+}
+
+.portfolio-item:hover,
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(255, 94, 50, 0.15);
+}
+
+.portfolio-image,
+.company-card-cover {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.portfolio-image img,
+.company-card-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.6s var(--transition);
+}
+
+.portfolio-item:hover .portfolio-image img,
+.company-card:hover .company-card-cover img {
+  transform: scale(1.03);
+}
+
+.portfolio-content,
+.company-card-info {
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+}
+
+
+/* ============================================
+   Onda 3 hotfix — modal extensions + badge collision fix
+   ============================================ */
+
+/* Modal description and visit-website action area */
+.company-modal-description {
+  padding: 0 var(--spacing-md);
+  margin: 0 0 var(--spacing-sm);
+  font-size: 1rem;
+  color: var(--text-light);
+  line-height: 1.55;
+  text-align: center;
+}
+
+.company-modal-actions {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md);
+  margin-top: 0;
+}
+
+.company-modal-actions .btn {
+  text-decoration: none;
+}
+
+/* Badge fix — move "X projects" to top-right (was bottom-right colliding
+   with hero text in some screenshots), and add stronger backdrop. */
+.company-card-cover .company-badge {
+  bottom: auto;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(255, 249, 240, 0.96);
+  border: 1px solid rgba(45, 31, 26, 0.08);
+  box-shadow: var(--shadow-sm);
+  font-weight: 700;
+}
+
+/* Uniform card heights — both web and marketing cards should be the same
+   visual unit. Web cards have shorter content (no Visit Website button now,
+   it's in the modal), so we equalize via min-height on .portfolio-content. */
+.portfolio-grid {
+  align-items: stretch;
+}
+.portfolio-item {
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.portfolio-content p {
+  flex: 1;
+}
+
+/* Tag the new modal-driven web cards with a hover affordance */
+.portfolio-item-clickable {
+  cursor: pointer;
+}
+
+/* Subtle "View project" hint on hover for web cards */
+.portfolio-item-clickable .portfolio-image::after {
+  content: "View project";
+  position: absolute;
+  inset: auto auto 0.75rem 0.75rem;
+  background: rgba(45, 31, 26, 0.85);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-pill);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transition), transform var(--transition);
+  pointer-events: none;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-item-clickable:hover .portfolio-image::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portfolio-item-clickable .portfolio-image {
+  position: relative;
+}
